@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.linux'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.linux'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="Ubuntu" href="https://ubuntu.com/" target="blank">Ubuntu</a></li>
     <li><a title="Debian" href="https://www.debian.org/" target="blank">Debian</a></li>

@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i> <span><?php echo __('menu.design_tools'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i> <span><?php echo __('menu.design_tools'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="Icoen image etc..." href="https://icones8.fr" target="blank">Icone 8</a></li>
     <li><a title="Dribble" href="https://dribbble.com" target="blank">Dribble</a></li>

@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i> <span><?php echo __('menu.free_picture'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i> <span><?php echo __('menu.free_picture'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="FreePik" href="https://fr.freepik.com/" target="blank">FreePik</a></li>
     <li><a title="Snappa" href="https://snappa.com/" target="blank">Snappa</a></li>

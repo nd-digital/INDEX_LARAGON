@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.api'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.api'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="Postman" href="https://www.postman.com/" target="blank">Postman</a></li>
         <li><a title="Swagger / OpenAPI" href="https://swagger.io/" target="blank">Swagger / OpenAPI</a></li>

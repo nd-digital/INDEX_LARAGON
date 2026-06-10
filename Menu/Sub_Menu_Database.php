@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.database'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.database'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="MySQL" href="https://www.mysql.com/fr/" target="blank">MySQL</a></li>
     <li><a title="MariaDB" href="https://mariadb.org/" target="blank">MariaDB</a></li>

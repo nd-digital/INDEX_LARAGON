@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i> <span><?php echo __('menu.code_control'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i> <span><?php echo __('menu.code_control'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="GTMetrix" href="https://gtmetrix.com/" target="blank">GT Metrix</a></li>
     <li><a title="PageSpeed Insights" href="https://pagespeed.web.dev/" target="blank">PageSpeed Insights</a></li>

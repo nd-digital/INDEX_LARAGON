@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i> <span><?php echo __('menu.cms_erp'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i> <span><?php echo __('menu.cms_erp'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="WordPress" href="https://wordpress.org" target="blank">WordPress</a></li>
     <li><a title="Drupal" href="https://www.drupal.org/" target="blank">Drupal</a></li>

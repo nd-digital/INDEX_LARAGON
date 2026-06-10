@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.find_job'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.find_job'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="La Bonne Boite - France Travail" href="https://labonneboite.francetravail.fr/" target="blank">La Bonne Boite</a></li>
         <li><a title="France Travail" href="https://www.francetravail.fr/" target="blank">France Travail</a></li>

@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i> <span><?php echo __('menu.diagram'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i> <span><?php echo __('menu.diagram'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="Euler Diagram" href="https://en.wikipedia.org/wiki/Euler_diagram" target="blank">Euler Diagram</a></li>
     <li><a title="Gantt Diagram" href="https://www.gantt.com/fr/" target="blank">Gantt Diagram</a></li>

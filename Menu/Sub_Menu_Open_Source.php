@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.open_source'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.open_source'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="Framasoft" href="https://framasoft.org" target="blank">Framasoft</a></li>
         <li><a title="OpenOffice" href="https://www.openoffice.org" target="blank">Apache OpenOffice</a></li>

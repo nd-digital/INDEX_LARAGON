@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.coding'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.coding'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="W3C" href="https://www.w3.org" target="blank">W3C</a></li>
     <li><a title="Mozilla DOCS" href="https://developer.mozilla.org/fr/" target="blank">Mozilla DOCS</a></li>

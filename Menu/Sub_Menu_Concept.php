@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.concept'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.concept'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="Six chapeaux de Bono" href="https://fr.wikipedia.org/wiki/M%C3%A9thode_des_six_chapeaux" target="blank">Six Chapeaux de Bono</a></li>
     <li><a title="Agilisme - Scrum.org" href="https://www.scrum.org/resources/what-is-scrum" target="blank">Agilisme (Scrum)</a></li>

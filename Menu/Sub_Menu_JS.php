@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.js'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.js'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="MDN JavaScript" href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="blank">MDN JavaScript</a></li>
     <li><a title="Node.js" href="https://nodejs.org/" target="blank">Node.js</a></li>

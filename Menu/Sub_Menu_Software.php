@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.software'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.software'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="VirtualBox" href="https://www.virtualbox.org/" target="blank">VirtualBox</a></li>
         <li><a title="7-Zip" href="https://www.7-zip.org/" target="blank">7-Zip</a></li>

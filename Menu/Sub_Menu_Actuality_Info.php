@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.actuality_info'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.actuality_info'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="dev.to" href="https://dev.to/" target="blank">dev.to</a></li>
     <li><a title="Journal du Net" href="https://www.journaldunet.com/" target="blank">Journal du Net</a></li>

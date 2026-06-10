@@ -66,6 +66,6 @@
   </aside>
   <!-- Toggle sidebar (mobile/tablet) -->
   <button class="sidebar-toggle" id="sidebarToggle" aria-label="<?php echo __('sidebar.header'); ?>" aria-expanded="false" aria-controls="sidebar">
-    <span class="sidebar-toggle-arrow">&#10095;</span>
+    <span class="sidebar-toggle-arrow" aria-hidden="true">&#10095;</span>
   </button>
   <div class="sidebar-overlay" id="sidebarOverlay"></div>

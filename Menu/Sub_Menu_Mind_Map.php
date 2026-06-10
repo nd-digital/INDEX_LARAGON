@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.mind_map'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.mind_map'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="MindMeister" href="https://www.mindmeister.com" target="blank">MindMeister</a></li>
         <li><a title="FreeMind" href="https://freemind.sourceforge.net/" target="blank">FreeMind</a></li>

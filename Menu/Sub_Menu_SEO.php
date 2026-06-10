@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.seo'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.seo'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="Google Analytics" href="https://analytics.google.com/" target="blank">Google Analytics</a></li>
     <li><a title="Matomo" href="https://fr.matomo.org" target="blank">Matomo Analytics</a></li>

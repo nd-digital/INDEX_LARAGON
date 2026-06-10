@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.learning'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.learning'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="PIX" href="https://app.pix.fr/" target="blank">PIX</a></li>
         <li><a title="OpenClassrooms" href="https://openclassrooms.com/" target="blank">OpenClassrooms</a></li>

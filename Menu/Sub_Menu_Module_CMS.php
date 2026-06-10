@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.module_cms'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.module_cms'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="WordPress Plugins" href="https://wordpress.org/plugins/" target="blank">WP Plugins</a></li>
     <li><a title="WooCommerce" href="https://woocommerce.com/" target="blank">WooCommerce</a></li>

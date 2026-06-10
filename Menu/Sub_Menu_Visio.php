@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.visio'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.visio'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="Microsoft Teams" href="https://www.microsoft.com/fr-fr/microsoft-teams/group-chat-software" target="blank">Microsoft Teams</a></li>
         <li><a title="Zoom" href="https://zoom.us/" target="blank">Zoom</a></li>

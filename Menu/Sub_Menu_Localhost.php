@@ -1,4 +1,4 @@
-<li><a href="#"><i class="ion-bag"></i><span><?php echo __('menu.localhost'); ?></span></a>
+<li><a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.localhost'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="Laragon" href="https://laragon.org" target="blank">Laragon</a></li>
     <li><a title="XAMPP" href="https://www.apachefriends.org" target="blank">XAMPP</a></li>

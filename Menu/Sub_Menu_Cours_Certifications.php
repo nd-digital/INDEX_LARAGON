@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.courses_certifications'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.courses_certifications'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="France Compétences" href="https://www.francecompetences.fr" target="blank">France Compétences</a></li>
     <li><a title="PIX - Validate your digital skills" href="https://app.pix.fr/accueil" target="blank">PIX</a></li>

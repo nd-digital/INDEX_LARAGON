@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.composer'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.composer'); ?></span></a>
     <ul class="nav-flyout">
         <li>
             <a title="Composer" href="https://getcomposer.org/" target="blank">Composer</a>

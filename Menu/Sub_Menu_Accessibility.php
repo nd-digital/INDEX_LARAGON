@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.accessibility'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.accessibility'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="Wave Evaluation Tool" href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh" target="blank">Wave Evaluation Tool</a></li>
         <li><a title="Axe DevTools" href="https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd" target="blank">Axe DevTools</a></li>

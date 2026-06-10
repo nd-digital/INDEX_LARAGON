@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.symfony'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.symfony'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="Symfony" href="https://symfony.com/" target="blank">Symfony</a></li>
         <li><a title="Documentation Symfony" href="https://symfony.com/doc/current/index.html" target="blank">Documentation</a></li>

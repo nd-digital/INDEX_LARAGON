@@ -47,7 +47,7 @@
 
     <!-- Fixed burger button -->
     <button class="btn btn-outline-secondary burger-menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTools" aria-controls="offcanvasTools" aria-label="<?php echo __('header.tools_info'); ?>" title="<?php echo __('header.tools_info'); ?>">
-      <span style="font-size:1.4rem; line-height:1;">&#9776;</span>
+      <span style="font-size:1.4rem; line-height:1;" aria-hidden="true">&#9776;</span>
     </button>
 
     <!-- Offcanvas (side panel) -->

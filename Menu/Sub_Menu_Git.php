@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i> <span><?php echo __('menu.git'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i> <span><?php echo __('menu.git'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="GITHUB" href="https://github.com/login" target="blank">GITHUB</a></li>
     <li><a title="GIT NO DEEP SHIT" href="https://rogerdudler.github.io/git-guide/" target="blank">GIT NO DEEP SHIT</a></li>

@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.diploma_certificate'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.diploma_certificate'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="French Diploma Nomenclature" href="https://www.cfar-hdf.fr/la-nomenclature-des-niveaux-de-diplomes-en-france/" target="blank">French Diploma Nomenclature</a></li>
     <li><a title="France Compétences" href="https://www.francecompetences.fr" target="blank">France Compétences</a></li>

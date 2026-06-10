@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.font'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.font'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="Google Fonts" href="https://fonts.google.com/" target="blank">Google Fonts</a></li>
         <li><a title="Font Awesome" href="https://fontawesome.com/" target="blank">Font Awesome</a></li>

@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i> <span><?php echo __('menu.web_hosting'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i> <span><?php echo __('menu.web_hosting'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="Alwaysdata" href="https://admin.alwaysdata.com" target="blank">Alwaysdata</a></li>
     <li><a title="Infomaniak" href="https://www.infomaniak.com/fr" target="blank">Infomaniak</a></li>

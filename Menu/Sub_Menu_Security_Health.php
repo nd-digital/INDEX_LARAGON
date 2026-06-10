@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.security_health'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.security_health'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="Cyber Malveillance" href="https://www.cybermalveillance.gouv.fr" target="blank">Cyber Malveillance Report</a></li>
     <li><a title="Signal Spam" href="https://www.signal-spam.fr" target="blank">Signal Spam</a></li>

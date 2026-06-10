@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.search_engine'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.search_engine'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="Ref Seek" href="https://www.refseek.com" target="blank">Ref Seek</a></li>
     <li><a title="WorldCat" href="https://www.worldcat.org" target="blank">WorldCat</a></li>

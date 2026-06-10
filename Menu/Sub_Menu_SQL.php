@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.sql'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.sql'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="SQL.SH" href="https://sql.sh" target="blank">SQL.SH</a></li>
         <li><a title="SQL Course" href="https://sql.sh/cours" target="blank">SQL Course</a></li>

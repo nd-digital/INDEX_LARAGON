@@ -240,6 +240,7 @@ pre {
 .Flag {
     font-weight: bolder;
     color: white;
+    list-style: none;
 }
 
 .Danger_Zone {
@@ -466,7 +467,7 @@ pre {
 }
 
 .lang-option.active {
-    background: #e94560;
+    background: #c01f44;
     color: #fff;
 }
 
@@ -548,4 +549,36 @@ button.offcanvas-tools-link {
         transition-duration: .001ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* --- Site footer / signature --- */
+.site-footer {
+    margin-top: 2rem;
+    padding: 1.2rem 1rem;
+    border-top: 1px solid #0f3460;
+}
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-size: .85rem;
+    color: #b9c2d6;
+    flex-wrap: wrap;
+}
+.footer-links a,
+.footer-links a:visited {
+    color: #b9c2d6;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color .15s;
+}
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    color: #fff;
+}
+.footer-sep {
+    color: #4a5878;
 }

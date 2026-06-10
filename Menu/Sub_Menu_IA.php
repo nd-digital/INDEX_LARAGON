@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.ia'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.ia'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="Deep Learning - JDN" href="https://www.journaldunet.fr/web-tech/guide-de-l-intelligence-artificielle/1501333-deep-learning-definition-et-principes-de-l-apprentissage-profond/" target="blank">Deep Learning</a></li>
         <li><a title="Machine Learning" href="https://fr.wikipedia.org/wiki/Apprentissage_automatique" target="blank">Machine Learning</a></li>

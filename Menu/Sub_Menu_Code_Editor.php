@@ -1,5 +1,5 @@
 <li>
-  <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.code_editor'); ?></span></a>
+  <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.code_editor'); ?></span></a>
   <ul class="nav-flyout">
     <li><a title="Visual Studio Code" href="https://code.visualstudio.com/" target="blank">VSCode</a></li>
     <li><a title="Cursor AI Editor" href="https://www.cursor.com/" target="blank">Cursor AI</a></li>

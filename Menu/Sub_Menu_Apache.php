@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.apache'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.apache'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="Apache HTTP Server" href="https://httpd.apache.org/" target="blank">Apache HTTP Server</a></li>
         <li><a title="Documentation Apache" href="https://httpd.apache.org/docs/" target="blank">Documentation Apache</a></li>

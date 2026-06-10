@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.ux_ui'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.ux_ui'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="UX vs UI" href="https://blog-ux.com/quelle-difference-entre-ux-design-et-ui-design/" target="blank">UX vs UI Design</a></li>
         <li><a title="Figma" href="https://www.figma.com/" target="blank">Figma</a></li>

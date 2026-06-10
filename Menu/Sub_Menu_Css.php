@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.css'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.css'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="Flexbox - Jaetheme" href="https://jaetheme.com/blog/flexbox/" target="blank">Flexbox</a></li>
         <li><a title="Alsacreations CSS" href="https://www.alsacreations.com/css/" target="blank">Alsacreations CSS</a></li>

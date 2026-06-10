@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.job'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.job'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="WeLoveDevs" href="https://welovedevs.com/" target="blank">WeLoveDevs</a></li>
         <li><a title="Dev Salaries" href="https://welovedevs.com/fr/salaires/" target="blank">Dev Salaries</a></li>

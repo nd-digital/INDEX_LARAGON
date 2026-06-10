@@ -1,5 +1,5 @@
 <li>
-    <a href="#"><i class="ion-bag"></i><span><?php echo __('menu.recommandation'); ?></span></a>
+    <a href="#"><i aria-hidden="true" class="ion-bag"></i><span><?php echo __('menu.recommandation'); ?></span></a>
     <ul class="nav-flyout">
         <li><a title="PHP-FIG PSR" href="https://www.php-fig.org/psr/" target="blank">PHP-FIG PSR</a></li>
         <li><a title="PSR-1 Basic Standard" href="https://www.php-fig.org/psr/psr-1/" target="blank">PSR-1: Basic Standard</a></li>
