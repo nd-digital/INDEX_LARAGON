@@ -145,7 +145,8 @@
       background-color: rgba(255, 255, 255, 0.05);
     }
 
-    .sidebar-nav ul>li:hover .nav-flyout {
+    .sidebar-nav ul>li:hover .nav-flyout,
+    .sidebar-nav ul>li:focus-within .nav-flyout {
       -webkit-transform: translateX(0);
       -moz-transform: translateX(0);
       -ms-transform: translateX(0);

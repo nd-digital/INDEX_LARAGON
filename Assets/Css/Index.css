@@ -482,3 +482,70 @@ pre {
         font-size: .65rem;
     }
 }
+
+/* ===================================================================
+   Accessibility (a11y)
+   =================================================================== */
+
+/* Skip link — visible only when focused via keyboard */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 2000;
+    padding: .6rem 1rem;
+    background: #e94560;
+    color: #fff;
+    border-radius: 0 0 6px 0;
+    text-decoration: none;
+    font-weight: 600;
+}
+.skip-link:focus {
+    left: 0;
+}
+
+/* Screen-reader-only text (hidden visually, available to assistive tech) */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Visible keyboard focus indicator */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #9fd0ff;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Offcanvas tool links rendered as <button> — reset native button styling */
+button.offcanvas-tools-link {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #343a40;
+    background: transparent;
+    text-align: left;
+    font: inherit;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+    }
+}

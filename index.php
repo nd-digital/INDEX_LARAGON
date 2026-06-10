@@ -63,10 +63,11 @@ include('./INDEX_LARAGON/Partials/Head.php');
 ?>
 
 <body>
+  <a class="skip-link" href="#main-content"><?php echo __('a11y.skip_to_content'); ?></a>
   <?php
   include_once './INDEX_LARAGON/Menu/Menu_Right.php';
   ?>
-  <main>
+  <main id="main-content">
     <?php
     include_once './INDEX_LARAGON/Partials/Header.php';
     ?>
@@ -106,7 +107,7 @@ include('./INDEX_LARAGON/Partials/Head.php');
         // --- Files ---
         if (!empty($files)) {
           sort($files);
-          echo '<div class="Border_Box" style="clear:both; text-align:center; font-weight:bold; color:green; border:1px solid green;">'
+          echo '<div class="Border_Box" style="clear:both; text-align:center; font-weight:bold; color:#57d98e; border:1px solid #57d98e;">'
              . __('main.accessible_files', ['count' => count($files)])
              . '</div><ul id="Color_Link">';
           foreach ($files as $entry) {
@@ -118,7 +119,7 @@ include('./INDEX_LARAGON/Partials/Head.php');
         // --- Directories (grouped by first letter) ---
         if (!empty($directories)) {
           sort($directories, SORT_STRING | SORT_FLAG_CASE);
-          echo '<div style="clear:both; text-align:center; font-weight:bold; color:blue; border:1px solid green;">'
+          echo '<div style="clear:both; text-align:center; font-weight:bold; color:#7fb8ff; border:1px solid #57d98e;">'
              . __('main.web_sites', ['count' => count($directories)])
              . '</div><ul>';
           $currentLetter = '';
@@ -149,22 +150,33 @@ include('./INDEX_LARAGON/Partials/Head.php');
         sidebar.classList.add('sidebar-open');
         toggle.classList.add('shifted');
         overlay.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+        sidebar.setAttribute('tabindex', '-1');
+        sidebar.focus();
       }
-      function closeSidebar() {
+      function closeSidebar(returnFocus) {
         sidebar.classList.remove('sidebar-open');
         toggle.classList.remove('shifted');
         overlay.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        if (returnFocus) toggle.focus();
       }
 
       toggle.addEventListener('click', function() {
         if (sidebar.classList.contains('sidebar-open')) {
-          closeSidebar();
+          closeSidebar(true);
         } else {
           openSidebar();
         }
       });
 
-      overlay.addEventListener('click', closeSidebar);
+      overlay.addEventListener('click', function() { closeSidebar(false); });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('sidebar-open')) {
+          closeSidebar(true);
+        }
+      });
     })();
   </script>
 

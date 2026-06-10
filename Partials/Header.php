@@ -39,14 +39,14 @@
     </header>
 
     <!-- Language selector -->
-    <div class="lang-selector">
+    <nav class="lang-selector" aria-label="<?php echo __('header.language'); ?>">
       <?php foreach (getSupportedLangs() as $code): ?>
-        <a href="<?php echo langUrl($code); ?>" class="lang-option<?php echo getLang() === $code ? ' active' : ''; ?>"><?php echo strtoupper($code); ?></a>
+        <a href="<?php echo langUrl($code); ?>" hreflang="<?php echo $code; ?>" lang="<?php echo $code; ?>" class="lang-option<?php echo getLang() === $code ? ' active' : ''; ?>"<?php echo getLang() === $code ? ' aria-current="true"' : ''; ?>><?php echo strtoupper($code); ?></a>
       <?php endforeach; ?>
-    </div>
+    </nav>
 
     <!-- Fixed burger button -->
-    <button class="btn btn-outline-secondary burger-menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTools" aria-controls="offcanvasTools" title="<?php echo __('header.tools_info'); ?>">
+    <button class="btn btn-outline-secondary burger-menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTools" aria-controls="offcanvasTools" aria-label="<?php echo __('header.tools_info'); ?>" title="<?php echo __('header.tools_info'); ?>">
       <span style="font-size:1.4rem; line-height:1;">&#9776;</span>
     </button>
 
@@ -57,25 +57,25 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body p-0">
-        <a class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#phpinfoModal">
-          <i class="ion-ios-medical-outline"></i> <?php echo __('burger.server_info'); ?>
-        </a>
-        <a class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#adminerModal">
-          <i class="ion-ios-browsers-outline"></i> <?php echo __('burger.adminer'); ?>
-        </a>
-        <a class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#journalModal">
-          <i class="ion-ios-list-outline"></i> <?php echo __('burger.connection_log'); ?>
+        <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#phpinfoModal">
+          <i class="ion-ios-medical-outline" aria-hidden="true"></i> <?php echo __('burger.server_info'); ?>
+        </button>
+        <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#adminerModal">
+          <i class="ion-ios-browsers-outline" aria-hidden="true"></i> <?php echo __('burger.adminer'); ?>
+        </button>
+        <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#journalModal">
+          <i class="ion-ios-list-outline" aria-hidden="true"></i> <?php echo __('burger.connection_log'); ?>
           <?php if (count($log_intrusions) > 0): ?>
             <span class="badge bg-danger ms-auto"><?php echo count($log_intrusions); ?></span>
           <?php endif; ?>
-        </a>
-        <a class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#teachingModal">
-          <i class="ion-ios-circle-outline"></i> <?php echo __('burger.learning_cycle'); ?>
-        </a>
+        </button>
+        <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#teachingModal">
+          <i class="ion-ios-circle-outline" aria-hidden="true"></i> <?php echo __('burger.learning_cycle'); ?>
+        </button>
         <div style="border-top:2px solid #495057; margin-top:.25rem; padding-top:.25rem;">
-          <a class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#readmeModal">
-            <i class="ion-ios-bookmarks-outline"></i> <?php echo __('burger.readme'); ?>
-          </a>
+          <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#readmeModal">
+            <i class="ion-ios-bookmarks-outline" aria-hidden="true"></i> <?php echo __('burger.readme'); ?>
+          </button>
         </div>
       </div>
     </div>

@@ -25,6 +25,8 @@
     "header.document_root": "Carpeta raíz",
     "header.absolute_path": "ruta completa",
     "header.tools_info": "Herramientas e Info",
+    "header.language": "Idioma",
+    "a11y.skip_to_content": "Saltar al contenido",
     "clock.days.0": "Dom",
     "clock.days.1": "Lun",
     "clock.days.2": "Mar",

@@ -15,7 +15,8 @@
           <div class="create-folder-label"><?php echo __('folder.instruction'); ?></div>
           <form class="create-folder-form" onsubmit="return confirm(__('folder.confirm_create', {name: document.getElementById('foldername').value}));" action="./index.php#Create_Folder" method="post">
             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-            <input type="text" name="foldername" id="foldername" value="" required="" placeholder="<?php echo __('folder.placeholder'); ?>">
+            <label for="foldername" class="visually-hidden"><?php echo __('folder.placeholder'); ?></label>
+            <input type="text" name="foldername" id="foldername" value="" required placeholder="<?php echo __('folder.placeholder'); ?>">
             <div class="form-check form-switch" title="<?php echo __('folder.subfolder_tooltip'); ?>">
               <label class="form-check-label" for="SubFolderCreation" title="<?php echo __('folder.subfolder_tooltip'); ?>"><?php echo __('folder.enable_subfolder'); ?></label>
               <input class="form-check-input" type="checkbox" id="SubFolderCreation" name="SubFolderCreation" value="1" checked>

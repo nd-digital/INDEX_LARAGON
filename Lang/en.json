@@ -25,6 +25,8 @@
     "header.document_root": "Root folder",
     "header.absolute_path": "full path",
     "header.tools_info": "Tools & Info",
+    "header.language": "Language",
+    "a11y.skip_to_content": "Skip to content",
     "clock.days.0": "Sun",
     "clock.days.1": "Mon",
     "clock.days.2": "Tue",

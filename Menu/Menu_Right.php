@@ -2,7 +2,7 @@
     <header>
       <?php echo __('sidebar.header'); ?>
     </header>
-    <nav class="sidebar-nav">
+    <nav class="sidebar-nav" aria-label="<?php echo __('sidebar.header'); ?>">
       <ul>
         <?php
         include './INDEX_LARAGON/Menu/Sub_Menu_Laragon.php';
@@ -65,7 +65,7 @@
     </nav>
   </aside>
   <!-- Toggle sidebar (mobile/tablet) -->
-  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Open resources menu">
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="<?php echo __('sidebar.header'); ?>" aria-expanded="false" aria-controls="sidebar">
     <span class="sidebar-toggle-arrow">&#10095;</span>
   </button>
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
