@@ -1,0 +1,14 @@
+# Block direct HTTP access to Adminer/Editor PHP files
+# Only index.php (which has localhost guard) should be accessed directly
+# PHP include() is not affected by .htaccess rules
+<FilesMatch "^(adminer|editor)-.*\.php$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Block direct access to plugins and data directories
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^plugins/ - [F,L]
+    RewriteRule ^data/ - [F,L]
+</IfModule>

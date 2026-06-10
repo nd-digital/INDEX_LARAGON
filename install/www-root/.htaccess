@@ -1,0 +1,19 @@
+# =====================================================================
+#  À placer à la RACINE de www/ · Place at the www/ ROOT (optional).
+#  Restriction réseau : accès LOCAL uniquement (sans mot de passe).
+#  Network restriction: LOCAL access only (no password). Network = 403.
+# =====================================================================
+<IfModule mod_authz_core.c>
+    Require local
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+    Allow from ::1
+</IfModule>
+
+# === Force HTTPS ===
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]

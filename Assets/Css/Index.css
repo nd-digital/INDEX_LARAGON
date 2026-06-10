@@ -1,0 +1,484 @@
+main {
+    margin: 0px;
+    margin-left: 18em;
+}
+
+.Info {
+    text-align: left;
+    color: white;
+}
+
+hr {
+    width: 99%;
+}
+
+h1,
+h6 {
+    color: grey;
+    display: inline-block;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: white;
+}
+
+section {
+    width: 100%;
+    -webkit-column-count: 6;
+    -moz-column-count: 6;
+    column-count: 6;
+    color: white;
+}
+
+.title {
+    word-break: break-word;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Mobile (<576px) */
+@media (max-width: 575.98px) {
+    main {
+        margin-left: 0;
+        padding: 0 .5rem;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    section {
+        width: 100%;
+        column-count: 1;
+    }
+    .burger-menu-btn {
+        width: 40px;
+        height: 40px;
+        top: .5rem;
+        right: .5rem;
+    }
+    .burger-menu-btn span {
+        font-size: 1.1rem !important;
+    }
+    .modal-iframe {
+        height: 55vh;
+    }
+    .teaching-circle-wrapper {
+        transform: scale(0.5);
+        transform-origin: top center;
+        margin-bottom: -120px;
+    }
+    .modal .modal-title {
+        font-size: 1rem;
+    }
+}
+
+/* Tablette (576px — 991px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    main {
+        margin-left: 0;
+        padding: 0 1rem;
+    }
+    .title {
+        font-size: 2.5rem;
+    }
+    section {
+        width: 100%;
+        column-count: 3;
+    }
+    .modal-iframe {
+        height: 65vh;
+    }
+    .teaching-circle-wrapper {
+        transform: scale(0.7);
+        transform-origin: top center;
+        margin-bottom: -60px;
+    }
+}
+
+/* Desktop (≥992px) */
+@media (min-width: 992px) {
+    main {
+        margin-left: 18em;
+    }
+    section {
+        column-count: 6;
+    }
+    .teaching-circle-wrapper {
+        transform: scale(1);
+    }
+}
+
+footer {
+    margin: 0;
+}
+
+pre {
+    color: green;
+    background-color: rgb(2, 3, 4);
+}
+
+
+.accordion-item {
+    background-color: rgb(2, 3, 4);
+}
+
+.accordion-header,
+.accordion-header:visited {
+    color: black;
+    font-weight: 900;
+}
+
+
+
+.date_time {
+    color: rgb(255, 255, 255);
+}
+
+.content {
+    text-align: center;
+    display: inline-block;
+    color: white;
+}
+
+
+.Help {
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.Help a {
+    text-decoration: none;
+    font-size: 100%;
+    color: white;
+    font-style: italic;
+}
+
+.title {
+    font-size: 60px;
+    color: white;
+}
+
+.SubTitle {
+    list-style-type: none;
+    color: white;
+}
+
+.Liens {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 5px;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+.Border_Box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 1px solid grey;
+    width: 99%;
+    padding: 5px;
+}
+
+.create-folder-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .4rem;
+    text-align: center;
+}
+
+.create-folder-label {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.create-folder-form {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#Color_Link a {
+    clear: both;
+    text-align: center;
+    color: white;
+}
+
+#Color_Link .File_Link a {
+    color: yellowgreen;
+    list-style-type: circle;
+}
+
+#Color_Link .Directory_Link a {
+    color: green;
+}
+
+.Title_List {
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+    color: white;
+}
+
+.Border_Box_Simple {
+    border: 1px solid grey;
+    padding: 5px;
+    width: 99%;
+}
+
+.Flag {
+    font-weight: bolder;
+    color: white;
+}
+
+.Danger_Zone {
+    color: red;
+    display: block;
+}
+
+.Border_Box_Danger_Zone {
+    color: red;
+    border: 5px solid red;
+    display: block;
+    width: 100%;
+    padding: 5px;
+}
+
+.Important {
+    font-weight: bolder;
+    color: blue;
+}
+
+.Transmettre,
+.Transposer,
+.Adapter,
+.Imiter {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: white solid 1px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 20px;
+    margin-left: 50px;
+    /* padding: 20px; */
+}
+
+.Transmettre {
+    width: 400px;
+    height: 400px;
+    background-color: greenyellow;
+}
+
+.CircleTexte {
+    padding: 15px;
+    height: 15px;
+    color: black;
+    font-weight: 900;
+}
+
+.Transposer {
+    width: 300px;
+    height: 300px;
+    background-color: green;
+    color: forestgreen;
+}
+
+.Adapter {
+    width: 200px;
+    height: 200px;
+    color: gold;
+    background-color: grey;
+}
+
+.Imiter {
+    width: 100px;
+    height: 100px;
+    color: indigo;
+    background-color: ivory;
+    padding-top: 20px;
+}
+
+/* --- Burger button --- */
+.burger-menu-btn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1040;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #212529;
+    color: #fff;
+    border: 2px solid #6c757d;
+    box-shadow: 0 2px 8px rgba(0,0,0,.4);
+    transition: background .2s, border-color .2s;
+}
+
+.burger-menu-btn:hover,
+.burger-menu-btn:focus {
+    background: #343a40;
+    color: #fff;
+    border-color: #adb5bd;
+}
+
+/* --- Offcanvas links --- */
+.offcanvas-tools-link {
+    display: flex;
+    align-items: center;
+    padding: .75rem 1rem;
+    color: #dee2e6;
+    text-decoration: none;
+    border-bottom: 1px solid #343a40;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+.offcanvas-tools-link:hover {
+    background: #343a40;
+    color: #fff;
+}
+
+.offcanvas-tools-link i {
+    margin-right: .5rem;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* --- Iframes responsive --- */
+.modal-iframe {
+    width: 100%;
+    height: 75vh;
+    border: none;
+}
+
+/* --- Charte graphique commune des modales (thème sombre, lisible) --- */
+.modal-content {
+    background: #16213e;
+    color: #e0e0e0;
+    border: 1px solid #0f3460;
+}
+.modal-header,
+.modal-footer {
+    border-color: #0f3460;
+}
+.modal .modal-title {
+    color: #e94560;
+}
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+.modal-body a {
+    color: #9fd0ff;
+}
+
+/* --- Scrollable tables in modals --- */
+.modal-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* --- Learning circles: centered container --- */
+.teaching-circle-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+/* --- Server info line wrapping --- */
+/* --- Header two-column layout --- */
+.header-two-cols {
+    display: flex;
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-bottom: .5rem;
+}
+
+.header-info-col {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .15rem;
+    font-size: .85rem;
+    word-break: break-word;
+}
+
+/* --- Elephant logo (decorative) --- */
+.laragon-logo {
+    height: 46px;
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 992px) {
+    .header-two-cols {
+        flex-direction: column;
+    }
+}
+
+/* --- Language selector --- */
+.lang-selector {
+    position: fixed;
+    top: 1rem;
+    right: 4.5rem;
+    z-index: 1040;
+    display: flex;
+    gap: 4px;
+    background: rgba(33, 37, 41, .9);
+    border: 1px solid #495057;
+    border-radius: 6px;
+    padding: 3px 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+
+.lang-option {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: .75rem;
+    font-weight: 600;
+    color: #adb5bd;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background .15s, color .15s;
+    letter-spacing: .5px;
+}
+
+.lang-option:hover {
+    background: #343a40;
+    color: #fff;
+    text-decoration: none;
+}
+
+.lang-option.active {
+    background: #e94560;
+    color: #fff;
+}
+
+@media (max-width: 575.98px) {
+    .lang-selector {
+        top: .5rem;
+        right: 3.5rem;
+        padding: 2px 3px;
+        gap: 2px;
+    }
+    .lang-option {
+        padding: 2px 5px;
+        font-size: .65rem;
+    }
+}

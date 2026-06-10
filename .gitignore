@@ -1,0 +1,24 @@
+# Logs (contain IP addresses — never publish)
+/LOG/*.log
+
+# Passwords / secrets
+.htpasswd
+**/.htpasswd
+*.env
+.env
+
+# Adminer runtime data
+/Tools/Adminer/data/*
+!/Tools/Adminer/data/.gitkeep
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Internal working notes (not published on GitHub)
+/CLAUDE.md
+/memory/
