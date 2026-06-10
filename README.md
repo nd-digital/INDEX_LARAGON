@@ -19,7 +19,7 @@ Tableau de bord d'accueil pour le dossier `www/` d'un serveur local (Laragon, th
 - 🧭 **Menu latéral** de liens utiles au développement, classés par catégorie (Git, Docker, SEO, IA, bases de données, sécurité…).
 - ➕ **Création rapide de projet** (avec structure de dossiers optionnelle).
 - 🛠️ **Outil intégré** : Adminer (gestion des bases MySQL).
-- 🌍 **Multilingue** : FR / EN / ES / IT.
+- 🌍 **Multilingue** : FR / EN / ES / IT / DE.
 - 🔒 **Sécurité** : restriction localhost, protection CSRF, journalisation des accès et intrusions.
 
 ### Stack
@@ -60,7 +60,7 @@ Home dashboard for the `www/` folder of a local server (Laragon, theoretically c
 - 🧭 **Side menu** of useful dev links, sorted by category (Git, Docker, SEO, AI, databases, security…).
 - ➕ **Quick project creation** (with an optional folder structure).
 - 🛠️ **Built-in tool**: Adminer (MySQL database management).
-- 🌍 **Multilingual**: FR / EN / ES / IT.
+- 🌍 **Multilingual**: FR / EN / ES / IT / DE.
 - 🔒 **Security**: localhost restriction, CSRF protection, access/intrusion logging.
 
 ### Stack
@@ -101,7 +101,7 @@ Panel de inicio para la carpeta `www/` de un servidor local (Laragon, teóricame
 - 🧭 **Menú lateral** de enlaces útiles para el desarrollo, por categoría (Git, Docker, SEO, IA, bases de datos, seguridad…).
 - ➕ **Creación rápida de proyectos** (con estructura de carpetas opcional).
 - 🛠️ **Herramienta integrada**: Adminer (gestión de bases MySQL).
-- 🌍 **Multilingüe**: FR / EN / ES / IT.
+- 🌍 **Multilingüe**: FR / EN / ES / IT / DE.
 - 🔒 **Seguridad**: restricción a localhost, protección CSRF, registro de accesos e intentos.
 
 ### Stack
@@ -142,7 +142,7 @@ Dashboard iniziale per la cartella `www/` di un server locale (Laragon, teoricam
 - 🧭 **Menu laterale** di link utili allo sviluppo, per categoria (Git, Docker, SEO, IA, database, sicurezza…).
 - ➕ **Creazione rapida di progetti** (con struttura di cartelle opzionale).
 - 🛠️ **Strumento integrato**: Adminer (gestione database MySQL).
-- 🌍 **Multilingue**: FR / EN / ES / IT.
+- 🌍 **Multilingue**: FR / EN / ES / IT / DE.
 - 🔒 **Sicurezza**: restrizione a localhost, protezione CSRF, registrazione di accessi e tentativi.
 
 ### Stack

@@ -57,7 +57,7 @@
     "readme.f_listing": "Lista automáticamente los sitios y archivos de www/.",
     "readme.f_create": "Creación rápida de un nuevo proyecto (con estructura de carpetas opcional).",
     "readme.f_tools": "Herramienta integrada: Adminer (bases de datos MySQL).",
-    "readme.f_lang": "Interfaz multilingüe: francés, inglés, español, italiano.",
+    "readme.f_lang": "Interfaz multilingüe: francés, inglés, español, italiano, alemán.",
     "readme.f_security": "Acceso restringido a localhost; registro de accesos e intentos bloqueados.",
     "readme.usage_title": "Cómo usarlo",
     "readme.u1": "La página lista todos los sitios de www/. Escribe un nombre y haz clic en Crear para generar un nuevo proyecto (con estructura de carpetas opcional).",

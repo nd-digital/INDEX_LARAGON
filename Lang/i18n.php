@@ -1,12 +1,12 @@
 <?php
 /**
  * i18n — Internationalization helper
- * Supports: en, fr, es, it
+ * Supports: en, fr, es, it, de
  */
 
 defined('I18N_LOADED') || define('I18N_LOADED', true);
 
-$GLOBALS['__i18n_supported'] = ['en', 'fr', 'es', 'it'];
+$GLOBALS['__i18n_supported'] = ['en', 'fr', 'es', 'it', 'de'];
 
 /**
  * Detect and set the current language.
