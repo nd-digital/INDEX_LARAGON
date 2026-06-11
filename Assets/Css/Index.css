@@ -616,3 +616,21 @@ button.offcanvas-tools-link {
     cursor: pointer;
     padding: 0 .3rem;
 }
+
+/* --- Menu customization panel + "menu hidden" layout --- */
+.menu-prefs-list {
+    columns: 2;
+    column-gap: 1.5rem;
+}
+.menu-prefs-list .form-check {
+    break-inside: avoid;
+}
+@media (max-width: 575.98px) {
+    .menu-prefs-list {
+        columns: 1;
+    }
+}
+/* When the side menu is disabled, reclaim its space. */
+body.menu-hidden main {
+    margin-left: 0;
+}

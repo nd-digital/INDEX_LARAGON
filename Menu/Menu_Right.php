@@ -18,7 +18,12 @@
             return strcasecmp($a, $b);
         });
         foreach ($subMenus as $subMenu) {
+            // Tag each category's top <li> with a stable, language-independent
+            // key (from the filename) so the "customize menu" panel can target it.
+            $key = strtolower(preg_replace('/^Sub_Menu_|\.php$/', '', basename($subMenu)));
+            ob_start();
             include $subMenu;
+            echo preg_replace('/<li(\s|>)/', '<li data-menu="' . htmlspecialchars($key, ENT_QUOTES) . '"$1', ob_get_clean(), 1);
         }
         ?>
       </ul>

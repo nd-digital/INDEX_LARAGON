@@ -72,6 +72,9 @@
         <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#teachingModal">
           <i class="ion-ios-circle-outline" aria-hidden="true"></i> <?php echo __('burger.learning_cycle'); ?>
         </button>
+        <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#menuPrefsModal">
+          <i class="ion-ios-gear-outline" aria-hidden="true"></i> <?php echo __('burger.customize_menu'); ?>
+        </button>
         <div style="border-top:2px solid #495057; margin-top:.25rem; padding-top:.25rem;">
           <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#readmeModal">
             <i class="ion-ios-bookmarks-outline" aria-hidden="true"></i> <?php echo __('burger.readme'); ?>

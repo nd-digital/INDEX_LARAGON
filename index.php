@@ -227,16 +227,83 @@ include('./INDEX_LARAGON/Partials/Head.php');
         if (c && (Date.now() - c.t) < DAY) {
           if (cmp(c.latest, current) > 0) show(c.latest, c.url);
         } else {
-          fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { 'Accept': 'application/vnd.github+json' } })
+          // /releases returns 200 with [] when there is no release yet
+          // (avoids a console 404 that /releases/latest would produce).
+          fetch('https://api.github.com/repos/' + REPO + '/releases?per_page=1', { headers: { 'Accept': 'application/vnd.github+json' } })
             .then(function (r) { return r.ok ? r.json() : null; })
             .then(function (d) {
-              if (!d || !d.tag_name) return;
-              localStorage.setItem(KEY, JSON.stringify({ t: Date.now(), latest: d.tag_name, url: d.html_url }));
-              if (cmp(d.tag_name, current) > 0) show(d.tag_name, d.html_url);
+              var rel = Array.isArray(d) && d.length ? d[0] : null;
+              if (!rel || !rel.tag_name) return;
+              localStorage.setItem(KEY, JSON.stringify({ t: Date.now(), latest: rel.tag_name, url: rel.html_url }));
+              if (cmp(rel.tag_name, current) > 0) show(rel.tag_name, rel.html_url);
             })
             .catch(function () {});
         }
       } catch (e) {}
+    })();
+  </script>
+
+  <script>
+    // --- Side-menu customization (preferences stored locally; no server write).
+    // Enable/disable the whole menu and choose which categories are shown. ---
+    (function () {
+      var KEY = 'index_laragon_menu_prefs';
+      var sidebar = document.getElementById('sidebar');
+      var toggleBtn = document.getElementById('sidebarToggle');
+      function items() { return Array.prototype.slice.call(document.querySelectorAll('#sidebar .sidebar-nav > ul > li[data-menu]')); }
+      function get() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+      function save(p) { localStorage.setItem(KEY, JSON.stringify(p)); }
+      function apply() {
+        var p = get();
+        var hidden = p.hidden || [];
+        items().forEach(function (li) {
+          li.style.display = hidden.indexOf(li.getAttribute('data-menu')) > -1 ? 'none' : '';
+        });
+        var showSidebar = p.sidebar !== false;
+        if (sidebar) sidebar.style.display = showSidebar ? '' : 'none';
+        if (toggleBtn) toggleBtn.style.display = showSidebar ? '' : 'none';
+        document.body.classList.toggle('menu-hidden', !showSidebar);
+      }
+      apply();
+
+      var modal = document.getElementById('menuPrefsModal');
+      if (!modal) return;
+      var list = modal.querySelector('#menuPrefsList');
+      var sidebarSwitch = modal.querySelector('#prefSidebarToggle');
+      var selectAll = modal.querySelector('#prefSelectAll');
+
+      function build() {
+        var p = get();
+        var hidden = p.hidden || [];
+        sidebarSwitch.checked = p.sidebar !== false;
+        list.innerHTML = '';
+        items().forEach(function (li) {
+          var key = li.getAttribute('data-menu');
+          var labelEl = li.querySelector('a span') || li.querySelector('a');
+          var label = labelEl ? labelEl.textContent.trim() : key;
+          var id = 'pref_' + key;
+          var row = document.createElement('div');
+          row.className = 'form-check';
+          var cb = document.createElement('input');
+          cb.className = 'form-check-input'; cb.type = 'checkbox'; cb.id = id;
+          cb.checked = hidden.indexOf(key) === -1;
+          cb.addEventListener('change', function () {
+            var pp = get(); var h = pp.hidden || []; var i = h.indexOf(key);
+            if (cb.checked) { if (i > -1) h.splice(i, 1); } else if (i === -1) { h.push(key); }
+            pp.hidden = h; save(pp); apply();
+          });
+          var lab = document.createElement('label');
+          lab.className = 'form-check-label'; lab.htmlFor = id; lab.textContent = label;
+          row.appendChild(cb); row.appendChild(lab); list.appendChild(row);
+        });
+      }
+      modal.addEventListener('show.bs.modal', build);
+      sidebarSwitch.addEventListener('change', function () {
+        var p = get(); p.sidebar = sidebarSwitch.checked; save(p); apply();
+      });
+      selectAll.addEventListener('click', function () {
+        var p = get(); p.hidden = []; save(p); apply(); build();
+      });
     })();
   </script>
 

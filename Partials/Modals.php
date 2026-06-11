@@ -267,3 +267,27 @@
         </div>
       </div>
     </div>
+
+    <!-- Menu customization modal (preferences stored locally, no server write) -->
+    <div class="modal fade" id="menuPrefsModal" tabindex="-1" aria-labelledby="menuPrefsLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="menuPrefsLabel"><?php echo __('menuprefs.title'); ?></h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input" type="checkbox" id="prefSidebarToggle" checked>
+              <label class="form-check-label" for="prefSidebarToggle"><?php echo __('menuprefs.show_sidebar'); ?></label>
+            </div>
+            <p style="font-size:.9rem; color:#aaa;"><?php echo __('menuprefs.choose'); ?></p>
+            <div id="menuPrefsList" class="menu-prefs-list"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-light btn-sm" id="prefSelectAll"><?php echo __('menuprefs.all'); ?></button>
+            <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal"><?php echo __('common.close'); ?></button>
+          </div>
+        </div>
+      </div>
+    </div>
