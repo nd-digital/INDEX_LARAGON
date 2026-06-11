@@ -178,7 +178,7 @@ Thumbs.db
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="createResultLabel"><?php echo __('folder.result_title'); ?></h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
               </div>
               <div class="modal-body"><?php echo $createResult; ?></div>
               <div class="modal-footer">

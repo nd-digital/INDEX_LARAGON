@@ -634,3 +634,46 @@ button.offcanvas-tools-link {
 body.menu-hidden main {
     margin-left: 0;
 }
+
+/* --- Accessibility options (user-adjustable, stored locally) --- */
+/* Reduce motion on demand (in addition to the prefers-reduced-motion media query) */
+body.a11y-reduce-motion *,
+body.a11y-reduce-motion *::before,
+body.a11y-reduce-motion *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+}
+/* High-contrast mode: pure black background, white text, bright links/borders */
+body.a11y-contrast,
+body.a11y-contrast main,
+body.a11y-contrast .Info,
+body.a11y-contrast section,
+body.a11y-contrast .Border_Box_Simple {
+    background: #000 !important;
+    color: #fff !important;
+}
+body.a11y-contrast .sidebar,
+body.a11y-contrast .sidebar-nav,
+body.a11y-contrast .sidebar-nav .nav-flyout {
+    background: #000 !important;
+}
+body.a11y-contrast a,
+body.a11y-contrast .File_Link a {
+    color: #6cf !important;
+}
+body.a11y-contrast h1,
+body.a11y-contrast h2,
+body.a11y-contrast .Flag,
+body.a11y-contrast .Title_List {
+    color: #fff !important;
+}
+body.a11y-contrast .Border_Box,
+body.a11y-contrast .Border_Box_Simple {
+    border-color: #fff !important;
+}
+body.a11y-contrast .modal-content {
+    background: #000 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+}

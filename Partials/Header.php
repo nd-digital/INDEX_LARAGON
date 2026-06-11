@@ -5,7 +5,7 @@
                 <h1 class="title"><?php echo __('header.title'); ?></h1>
             </span>
             <span>
-            <h6>by <a href="https://nicolas-degabriel.digital">www.nicolas-degabriel.digital</a></h6>
+            <p class="byline"><?php echo __('header.by'); ?> <a href="https://nicolas-degabriel.digital">www.nicolas-degabriel.digital</a></p>
             </span>
         </div>
         <div class="header-two-cols">
@@ -54,7 +54,7 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTools" aria-labelledby="offcanvasToolsLabel" style="background:#212529; color:#dee2e6; max-width:280px; width:85vw;">
       <div class="offcanvas-header" style="border-bottom:1px solid #343a40;">
         <h5 class="offcanvas-title" id="offcanvasToolsLabel"><?php echo __('header.tools_info'); ?></h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="<?php echo __('common.close'); ?>"></button>
       </div>
       <div class="offcanvas-body p-0">
         <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#phpinfoModal">
@@ -74,6 +74,9 @@
         </button>
         <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#menuPrefsModal">
           <i class="ion-ios-gear-outline" aria-hidden="true"></i> <?php echo __('burger.customize_menu'); ?>
+        </button>
+        <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#a11yModal">
+          <i class="ion-ios-body-outline" aria-hidden="true"></i> <?php echo __('burger.accessibility'); ?>
         </button>
         <div style="border-top:2px solid #495057; margin-top:.25rem; padding-top:.25rem;">
           <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#readmeModal">

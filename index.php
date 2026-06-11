@@ -307,6 +307,46 @@ include('./INDEX_LARAGON/Partials/Head.php');
     })();
   </script>
 
+  <script>
+    // --- Accessibility options (text size / high contrast / reduced motion).
+    // User preferences, stored locally; applied on load. No server write. ---
+    (function () {
+      var KEY = 'index_laragon_a11y';
+      var body = document.body;
+      var ZOOM = [0.9, 1, 1.15, 1.3];
+      function get() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+      function save(p) { localStorage.setItem(KEY, JSON.stringify(p)); }
+      function apply() {
+        var p = get();
+        var t = (typeof p.text === 'number' && p.text >= 0 && p.text < ZOOM.length) ? p.text : 1;
+        body.style.zoom = ZOOM[t];
+        body.classList.toggle('a11y-contrast', !!p.contrast);
+        body.classList.toggle('a11y-reduce-motion', !!p.motion);
+      }
+      apply();
+
+      var modal = document.getElementById('a11yModal');
+      if (!modal) return;
+      var contrast = modal.querySelector('#a11yContrast');
+      var motion = modal.querySelector('#a11yMotion');
+      var sizeButtons = Array.prototype.slice.call(modal.querySelectorAll('[data-a11y-text]'));
+      function sync() {
+        var p = get();
+        contrast.checked = !!p.contrast;
+        motion.checked = !!p.motion;
+        var t = (typeof p.text === 'number') ? p.text : 1;
+        sizeButtons.forEach(function (b) { b.classList.toggle('active', +b.getAttribute('data-a11y-text') === t); });
+      }
+      modal.addEventListener('show.bs.modal', sync);
+      sizeButtons.forEach(function (b) {
+        b.addEventListener('click', function () { var p = get(); p.text = +b.getAttribute('data-a11y-text'); save(p); apply(); sync(); });
+      });
+      contrast.addEventListener('change', function () { var p = get(); p.contrast = contrast.checked; save(p); apply(); });
+      motion.addEventListener('change', function () { var p = get(); p.motion = motion.checked; save(p); apply(); });
+      modal.querySelector('#a11yReset').addEventListener('click', function () { localStorage.removeItem(KEY); apply(); sync(); });
+    })();
+  </script>
+
 </body>
 
 </html>

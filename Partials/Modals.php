@@ -6,10 +6,10 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="phpinfoModalLabel">phpinfo()</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
           </div>
           <div class="modal-body p-0">
-            <iframe id="phpinfoFrame" class="modal-iframe"></iframe>
+            <iframe id="phpinfoFrame" class="modal-iframe" title="<?php echo __('burger.server_info'); ?>"></iframe>
           </div>
         </div>
       </div>
@@ -21,10 +21,10 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="adminerModalLabel">Adminer</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
           </div>
           <div class="modal-body p-0">
-            <iframe id="adminerFrame" class="modal-iframe"></iframe>
+            <iframe id="adminerFrame" class="modal-iframe" title="Adminer"></iframe>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="journalModalLabel"><?php echo __('log.connection_log'); ?></h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
           </div>
           <div class="modal-body">
             <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
@@ -93,7 +93,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="modalAccessLabel"><?php echo __('log.authorized_connections'); ?> &mdash; <?php echo __('log.entries', ['count' => count($log_access)]); ?></h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
           </div>
           <div class="modal-body" style="max-height:70vh;">
             <div class="modal-table-wrap">
@@ -144,7 +144,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="modalIntrusionsLabel"><?php echo __('log.blocked_attempts'); ?> &mdash; <?php echo __('log.entries', ['count' => count($log_intrusions)]); ?></h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
           </div>
           <div class="modal-body" style="max-height:70vh;">
             <div class="modal-table-wrap">
@@ -202,7 +202,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="teachingModalLabel"><?php echo __('learning.title'); ?></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
           </div>
           <div class="modal-body">
             <div style="text-align:left; font-size:.9rem; max-width:540px; margin:0 auto 1.5rem;">
@@ -241,7 +241,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="readmeModalLabel"><?php echo __('burger.readme'); ?></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
           </div>
           <div class="modal-body">
             <p style="margin-bottom:1rem;"><?php echo __('readme.intro'); ?></p>
@@ -286,6 +286,39 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-light btn-sm" id="prefSelectAll"><?php echo __('menuprefs.all'); ?></button>
+            <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal"><?php echo __('common.close'); ?></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accessibility options modal (preferences stored locally, no server write) -->
+    <div class="modal fade" id="a11yModal" tabindex="-1" aria-labelledby="a11yLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="a11yLabel"><?php echo __('a11y.title'); ?></h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
+          </div>
+          <div class="modal-body">
+            <p class="d-block mb-1" style="font-weight:600;"><?php echo __('a11y.text_size'); ?></p>
+            <div class="btn-group mb-3" role="group" aria-label="<?php echo __('a11y.text_size'); ?>">
+              <button type="button" class="btn btn-outline-light btn-sm" data-a11y-text="0">A-</button>
+              <button type="button" class="btn btn-outline-light btn-sm" data-a11y-text="1">A</button>
+              <button type="button" class="btn btn-outline-light btn-sm" data-a11y-text="2">A+</button>
+              <button type="button" class="btn btn-outline-light btn-sm" data-a11y-text="3">A++</button>
+            </div>
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="a11yContrast">
+              <label class="form-check-label" for="a11yContrast"><?php echo __('a11y.contrast'); ?></label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="a11yMotion">
+              <label class="form-check-label" for="a11yMotion"><?php echo __('a11y.reduce_motion'); ?></label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-light btn-sm" id="a11yReset"><?php echo __('a11y.reset'); ?></button>
             <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal"><?php echo __('common.close'); ?></button>
           </div>
         </div>
