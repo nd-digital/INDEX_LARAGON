@@ -677,3 +677,51 @@ body.a11y-contrast .modal-content {
     color: #fff !important;
     border: 1px solid #fff !important;
 }
+
+/* --- Accessibility panel (card grid, matching the standard layout) --- */
+.a11y-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .75rem;
+}
+@media (max-width: 575.98px) {
+    .a11y-grid { grid-template-columns: 1fr; }
+}
+.a11y-card {
+    background: #0f1b33;
+    border: 1px solid #0f3460;
+    border-radius: 8px;
+    padding: .7rem .8rem;
+}
+.a11y-card-title {
+    display: block;
+    font-weight: 600;
+    color: #e94560;
+    margin-bottom: .45rem;
+    font-size: .9rem;
+}
+
+/* OpenDyslexic font, loaded on demand (falls back to Comic Sans MS offline) */
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5/files/opendyslexic-latin-400-normal.woff2') format('woff2');
+    font-display: swap;
+}
+body.a11y-dyslexia,
+body.a11y-dyslexia * {
+    font-family: 'OpenDyslexic', 'Comic Sans MS', 'Verdana', sans-serif !important;
+}
+
+/* Increased text spacing (WCAG 1.4.12) */
+body.a11y-spacing,
+body.a11y-spacing * {
+    letter-spacing: .12em !important;
+    word-spacing: .16em !important;
+    line-height: 1.6 !important;
+}
+
+/* Enlarged cursor */
+body.a11y-cursor,
+body.a11y-cursor * {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath d='M5 2 L5 21 L10 16 L13 22 L16 21 L13 15 L20 15 Z' fill='%23000' stroke='%23fff' stroke-width='1.5'/%3E%3C/svg%3E") 4 2, auto !important;
+}

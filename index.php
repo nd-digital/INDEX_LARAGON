@@ -308,42 +308,57 @@ include('./INDEX_LARAGON/Partials/Head.php');
   </script>
 
   <script>
-    // --- Accessibility options (text size / high contrast / reduced motion).
-    // User preferences, stored locally; applied on load. No server write. ---
+    // --- Accessibility options panel (preferences stored locally, applied on
+    // load; no server write). Theme + colour-blindness visuals land in stage 2. ---
     (function () {
       var KEY = 'index_laragon_a11y';
-      var body = document.body;
-      var ZOOM = [0.9, 1, 1.15, 1.3];
+      var body = document.body, html = document.documentElement;
+      var ZOOM = { 1: 1, 2: 1.2, 3: 1.45 };
+      var CB = ['protanopia', 'deuteranopia', 'tritanopia'];
       function get() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
       function save(p) { localStorage.setItem(KEY, JSON.stringify(p)); }
       function apply() {
         var p = get();
-        var t = (typeof p.text === 'number' && p.text >= 0 && p.text < ZOOM.length) ? p.text : 1;
-        body.style.zoom = ZOOM[t];
+        body.style.zoom = ZOOM[p.text] || 1;
+        body.classList.toggle('theme-light', p.theme === 'light');
         body.classList.toggle('a11y-contrast', !!p.contrast);
-        body.classList.toggle('a11y-reduce-motion', !!p.motion);
+        body.classList.toggle('a11y-dyslexia', !!p.dyslexia);
+        body.classList.toggle('a11y-spacing', !!p.spacing);
+        body.classList.toggle('a11y-cursor', !!p.cursor);
+        body.classList.toggle('a11y-reduce-motion', p.animations === false);
+        CB.forEach(function (t) { html.classList.toggle('a11y-cb-' + t, p.colorblind === t); });
       }
       apply();
 
       var modal = document.getElementById('a11yModal');
       if (!modal) return;
-      var contrast = modal.querySelector('#a11yContrast');
-      var motion = modal.querySelector('#a11yMotion');
-      var sizeButtons = Array.prototype.slice.call(modal.querySelectorAll('[data-a11y-text]'));
+      var $ = function (id) { return modal.querySelector(id); };
+      var theme = $('#a11yTheme'), lang = $('#a11yLang'), text = $('#a11yTextSize'),
+          contrast = $('#a11yContrast'), dys = $('#a11yDyslexia'), spc = $('#a11ySpacing'),
+          cur = $('#a11yCursor'), anim = $('#a11yAnimations'), cb = $('#a11yColorblind');
       function sync() {
         var p = get();
+        theme.value = p.theme || 'dark';
+        text.value = String(p.text || 1);
         contrast.checked = !!p.contrast;
-        motion.checked = !!p.motion;
-        var t = (typeof p.text === 'number') ? p.text : 1;
-        sizeButtons.forEach(function (b) { b.classList.toggle('active', +b.getAttribute('data-a11y-text') === t); });
+        dys.checked = !!p.dyslexia;
+        spc.checked = !!p.spacing;
+        cur.checked = !!p.cursor;
+        anim.checked = p.animations !== false;
+        cb.value = p.colorblind || 'none';
       }
       modal.addEventListener('show.bs.modal', sync);
-      sizeButtons.forEach(function (b) {
-        b.addEventListener('click', function () { var p = get(); p.text = +b.getAttribute('data-a11y-text'); save(p); apply(); sync(); });
-      });
-      contrast.addEventListener('change', function () { var p = get(); p.contrast = contrast.checked; save(p); apply(); });
-      motion.addEventListener('change', function () { var p = get(); p.motion = motion.checked; save(p); apply(); });
-      modal.querySelector('#a11yReset').addEventListener('click', function () { localStorage.removeItem(KEY); apply(); sync(); });
+      function bind(el, fn) { if (el) el.addEventListener('change', fn); }
+      bind(theme,    function () { var p = get(); p.theme = theme.value;        save(p); apply(); });
+      bind(text,     function () { var p = get(); p.text = +text.value;         save(p); apply(); });
+      bind(contrast, function () { var p = get(); p.contrast = contrast.checked; save(p); apply(); });
+      bind(dys,      function () { var p = get(); p.dyslexia = dys.checked;      save(p); apply(); });
+      bind(spc,      function () { var p = get(); p.spacing = spc.checked;       save(p); apply(); });
+      bind(cur,      function () { var p = get(); p.cursor = cur.checked;        save(p); apply(); });
+      bind(anim,     function () { var p = get(); p.animations = anim.checked;   save(p); apply(); });
+      bind(cb,       function () { var p = get(); p.colorblind = cb.value;       save(p); apply(); });
+      bind(lang,     function () { window.location.href = '?lang=' + encodeURIComponent(lang.value); });
+      $('#a11yReset').addEventListener('click', function () { localStorage.removeItem(KEY); apply(); sync(); });
     })();
   </script>
 

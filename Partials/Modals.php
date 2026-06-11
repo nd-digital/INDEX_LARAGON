@@ -301,24 +301,82 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
           </div>
           <div class="modal-body">
-            <p class="d-block mb-1" style="font-weight:600;"><?php echo __('a11y.text_size'); ?></p>
-            <div class="btn-group mb-3" role="group" aria-label="<?php echo __('a11y.text_size'); ?>">
-              <button type="button" class="btn btn-outline-light btn-sm" data-a11y-text="0">A-</button>
-              <button type="button" class="btn btn-outline-light btn-sm" data-a11y-text="1">A</button>
-              <button type="button" class="btn btn-outline-light btn-sm" data-a11y-text="2">A+</button>
-              <button type="button" class="btn btn-outline-light btn-sm" data-a11y-text="3">A++</button>
-            </div>
-            <div class="form-check form-switch mb-2">
-              <input class="form-check-input" type="checkbox" id="a11yContrast">
-              <label class="form-check-label" for="a11yContrast"><?php echo __('a11y.contrast'); ?></label>
-            </div>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="a11yMotion">
-              <label class="form-check-label" for="a11yMotion"><?php echo __('a11y.reduce_motion'); ?></label>
+            <div class="a11y-grid">
+              <div class="a11y-card">
+                <label class="a11y-card-title" for="a11yTheme"><?php echo __('a11y.display_mode'); ?></label>
+                <select class="form-select form-select-sm" id="a11yTheme">
+                  <option value="dark"><?php echo __('a11y.theme_dark'); ?></option>
+                  <option value="light"><?php echo __('a11y.theme_light'); ?></option>
+                </select>
+              </div>
+              <div class="a11y-card">
+                <label class="a11y-card-title" for="a11yLang"><?php echo __('header.language'); ?></label>
+                <select class="form-select form-select-sm" id="a11yLang">
+                  <?php foreach (getSupportedLangs() as $code): ?>
+                    <option value="<?php echo $code; ?>"<?php echo getLang() === $code ? ' selected' : ''; ?>><?php echo strtoupper($code); ?></option>
+                  <?php endforeach; ?>
+                </select>
+              </div>
+              <div class="a11y-card">
+                <label class="a11y-card-title" for="a11yTextSize"><?php echo __('a11y.text_size'); ?></label>
+                <select class="form-select form-select-sm" id="a11yTextSize">
+                  <option value="1"><?php echo __('a11y.text_normal'); ?></option>
+                  <option value="2"><?php echo __('a11y.text_large'); ?></option>
+                  <option value="3"><?php echo __('a11y.text_xlarge'); ?></option>
+                </select>
+              </div>
+              <div class="a11y-card">
+                <span class="a11y-card-title"><?php echo __('a11y.contrast'); ?></span>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="a11yContrast">
+                  <label class="form-check-label" for="a11yContrast"><?php echo __('a11y.contrast_desc'); ?></label>
+                </div>
+              </div>
+              <div class="a11y-card">
+                <span class="a11y-card-title"><?php echo __('a11y.dyslexia'); ?></span>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="a11yDyslexia">
+                  <label class="form-check-label" for="a11yDyslexia"><?php echo __('a11y.dyslexia_desc'); ?></label>
+                </div>
+              </div>
+              <div class="a11y-card">
+                <span class="a11y-card-title"><?php echo __('a11y.spacing'); ?></span>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="a11ySpacing">
+                  <label class="form-check-label" for="a11ySpacing"><?php echo __('a11y.spacing_desc'); ?></label>
+                </div>
+              </div>
+              <div class="a11y-card">
+                <span class="a11y-card-title"><?php echo __('a11y.cursor'); ?></span>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="a11yCursor">
+                  <label class="form-check-label" for="a11yCursor"><?php echo __('a11y.cursor_desc'); ?></label>
+                </div>
+              </div>
+              <div class="a11y-card">
+                <span class="a11y-card-title"><?php echo __('a11y.animations'); ?></span>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="a11yAnimations" checked>
+                  <label class="form-check-label" for="a11yAnimations"><?php echo __('a11y.animations_desc'); ?></label>
+                </div>
+              </div>
+              <div class="a11y-card">
+                <label class="a11y-card-title" for="a11yColorblind"><?php echo __('a11y.colorblind'); ?></label>
+                <select class="form-select form-select-sm" id="a11yColorblind">
+                  <option value="none"><?php echo __('a11y.cb_none'); ?></option>
+                  <option value="protanopia"><?php echo __('a11y.cb_prot'); ?></option>
+                  <option value="deuteranopia"><?php echo __('a11y.cb_deut'); ?></option>
+                  <option value="tritanopia"><?php echo __('a11y.cb_trit'); ?></option>
+                </select>
+              </div>
+              <div class="a11y-card">
+                <span class="a11y-card-title"><?php echo __('a11y.actions'); ?></span>
+                <button type="button" class="btn btn-outline-light btn-sm w-100 mb-2" id="a11yReset"><?php echo __('a11y.reset_all'); ?></button>
+                <a class="btn btn-outline-light btn-sm w-100" href="https://nicolas-degabriel.digital" target="_blank" rel="noopener noreferrer"><?php echo __('a11y.contact'); ?></a>
+              </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-outline-light btn-sm" id="a11yReset"><?php echo __('a11y.reset'); ?></button>
             <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal"><?php echo __('common.close'); ?></button>
           </div>
         </div>
