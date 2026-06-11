@@ -68,6 +68,11 @@ include('./INDEX_LARAGON/Partials/Head.php');
   include_once './INDEX_LARAGON/Menu/Menu_Right.php';
   ?>
   <main id="main-content">
+    <div id="updateBanner" class="update-banner" role="status">
+      <span><?php echo __('update.available'); ?> <strong id="updateLatest"></strong></span>
+      <a id="updateLink" href="https://github.com/nd-digital/INDEX_LARAGON/releases" target="_blank" rel="noopener noreferrer"><?php echo __('update.view'); ?></a>
+      <button type="button" class="update-dismiss" id="updateDismiss" aria-label="<?php echo __('common.close'); ?>">&times;</button>
+    </div>
     <?php
     include_once './INDEX_LARAGON/Partials/Header.php';
     ?>
@@ -189,6 +194,49 @@ include('./INDEX_LARAGON/Partials/Head.php');
           closeSidebar(true);
         }
       });
+    })();
+  </script>
+
+  <script>
+    // --- Update check (READ-ONLY): compares the local VERSION to the latest
+    // GitHub release and shows a banner. Cached 24h in localStorage, async and
+    // non-blocking — silently skipped when offline. Never modifies anything. ---
+    (function () {
+      var current = <?php echo json_encode(trim(@file_get_contents(__DIR__ . '/VERSION')) ?: '0.0.0'); ?>;
+      var REPO = 'nd-digital/INDEX_LARAGON';
+      var KEY = 'index_laragon_update';
+      var DAY = 86400000;
+      function cmp(a, b) {
+        var pa = String(a).replace(/^v/, '').split('.').map(Number);
+        var pb = String(b).replace(/^v/, '').split('.').map(Number);
+        for (var i = 0; i < 3; i++) { var d = (pa[i] || 0) - (pb[i] || 0); if (d) return d; }
+        return 0;
+      }
+      function show(latest, url) {
+        var b = document.getElementById('updateBanner'); if (!b) return;
+        document.getElementById('updateLatest').textContent = 'v' + String(latest).replace(/^v/, '');
+        if (url) document.getElementById('updateLink').href = url;
+        b.classList.add('show');
+      }
+      var dismiss = document.getElementById('updateDismiss');
+      if (dismiss) dismiss.addEventListener('click', function () {
+        document.getElementById('updateBanner').classList.remove('show');
+      });
+      try {
+        var c = JSON.parse(localStorage.getItem(KEY) || 'null');
+        if (c && (Date.now() - c.t) < DAY) {
+          if (cmp(c.latest, current) > 0) show(c.latest, c.url);
+        } else {
+          fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { 'Accept': 'application/vnd.github+json' } })
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (d) {
+              if (!d || !d.tag_name) return;
+              localStorage.setItem(KEY, JSON.stringify({ t: Date.now(), latest: d.tag_name, url: d.html_url }));
+              if (cmp(d.tag_name, current) > 0) show(d.tag_name, d.html_url);
+            })
+            .catch(function () {});
+        }
+      } catch (e) {}
     })();
   </script>
 

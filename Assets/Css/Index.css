@@ -582,3 +582,37 @@ button.offcanvas-tools-link {
 .footer-sep {
     color: #4a5878;
 }
+
+/* --- Update-available banner (read-only GitHub version check) --- */
+.update-banner {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: #0f3460;
+    color: #e0e0e0;
+    padding: .6rem 1rem;
+    border-bottom: 1px solid #e94560;
+    font-size: .9rem;
+}
+.update-banner.show {
+    display: flex;
+}
+.update-banner a {
+    color: #9fd0ff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.update-banner a:hover {
+    text-decoration: underline;
+}
+.update-dismiss {
+    background: none;
+    border: 0;
+    color: #e0e0e0;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 .3rem;
+}

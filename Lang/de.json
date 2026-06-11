@@ -27,6 +27,8 @@
     "header.tools_info": "Tools & Infos",
     "header.language": "Sprache",
     "a11y.skip_to_content": "Zum Inhalt springen",
+    "update.available": "Eine neue Version ist verfügbar:",
+    "update.view": "Update ansehen",
     "clock.days.0": "So",
     "clock.days.1": "Mo",
     "clock.days.2": "Di",
