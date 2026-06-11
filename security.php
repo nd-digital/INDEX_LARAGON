@@ -9,6 +9,11 @@ define('SECURITY_LOG_DIR', __DIR__ . '/LOG');
 // Consistent timezone across every entry point (logs, live clock, etc.).
 date_default_timezone_set('Europe/Paris');
 
+// Never expose PHP errors (and absolute server paths) to the browser; log them
+// server-side instead. Scoped to the dashboard (this file is only loaded here).
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+
 function get_client_ip(): string {
     return $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 }

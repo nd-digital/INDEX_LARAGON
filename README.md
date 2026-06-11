@@ -196,6 +196,8 @@ install/www-root/  Fichiers à copier à la racine de www/ / Files to copy to th
 
 ---
 
-## Licence · License · Licencia · Licenza
+## Licence · License · Licencia · Licenza · Lizenz
 
 [MIT](LICENSE) — © Nicolas Degabriel — [nicolas-degabriel.digital](https://nicolas-degabriel.digital)
+
+> Traductions (FR / ES / IT / DE), à titre informatif : [LICENSE-translations.md](LICENSE-translations.md). Seule la version anglaise dans [LICENSE](LICENSE) fait foi.

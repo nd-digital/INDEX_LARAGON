@@ -1,0 +1,42 @@
+# =====================================================================
+#  INDEX_LARAGON — defense in depth.
+#  The whole www/ is already restricted to localhost (root .htaccess).
+#  This additionally hides the project internals from any direct HTTP
+#  request and returns a UNIFORM 404 (no information leak).
+# =====================================================================
+
+# No directory listings.
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Let the rewrite handle dotfiles / .ht* so Apache's default 403 becomes
+    # a uniform 404. The rewrite aborts before any file is ever served.
+    <FilesMatch "^\.">
+        Require all granted
+    </FilesMatch>
+
+    # Dotfiles & dotdirs: .git/, .gitignore, .gitattributes, .htaccess ...
+    RewriteRule (^|/)\.[^/]+(/|$) - [R=404,L]
+
+    # Internal notes / docs (never fetched by the running app).
+    RewriteRule \.md$    - [R=404,L]
+    RewriteRule ^memory/ - [R=404,L]
+
+    # Server-side-only PHP fragments and install helpers.
+    RewriteRule ^Partials/ - [R=404,L]
+    RewriteRule ^install/  - [R=404,L]
+</IfModule>
+
+# install/ is a deployment template; its own .htaccess resets mod_rewrite,
+# so block it via mod_alias (not affected by that reset).
+<IfModule mod_alias.c>
+    RedirectMatch 404 (?i)^/INDEX_LARAGON/install/
+</IfModule>
+
+# Fallback if mod_rewrite is unavailable.
+<IfModule !mod_rewrite.c>
+    RedirectMatch 404 (?i)/(\.git|memory|Partials|install)(/|$)
+    RedirectMatch 404 (?i)\.md$
+</IfModule>
