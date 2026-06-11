@@ -1,6 +1,12 @@
 # Hidden from the web: return 404 (more discreet than 403) for any direct access.
 # Logs and local data are never meant to be served to the browser.
 <IfModule mod_rewrite.c>
+    # Re-allow .ht* at the authorization phase so the rewrite below turns
+    # EVERY request (incl. .htaccess itself) into a UNIFORM 404 — no info leak.
+    # The rewrite aborts with 404 before any file is ever served.
+    <FilesMatch "^\.ht">
+        Require all granted
+    </FilesMatch>
     RewriteEngine On
     RewriteRule ^ - [R=404,L]
 </IfModule>
