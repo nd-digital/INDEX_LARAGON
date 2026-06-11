@@ -347,6 +347,38 @@ include('./INDEX_LARAGON/Partials/Head.php');
     })();
   </script>
 
+  <script>
+    // --- Accessible disclosure for the side-menu categories (screen reader /
+    // keyboard). Each category becomes a button with aria-haspopup and an
+    // aria-expanded state kept in sync with the focus-driven reveal; Escape
+    // returns focus to the category, and the "#" jump-to-top is suppressed. ---
+    (function () {
+      var cats = document.querySelectorAll('#sidebar .sidebar-nav > ul > li[data-menu]');
+      cats.forEach(function (li) {
+        var link = li.querySelector('a');
+        var flyout = li.querySelector('.nav-flyout');
+        if (!link) return;
+        link.setAttribute('role', 'button');
+        if (flyout) {
+          if (!flyout.id) flyout.id = 'flyout-' + li.getAttribute('data-menu');
+          link.setAttribute('aria-haspopup', 'true');
+          link.setAttribute('aria-expanded', 'false');
+          link.setAttribute('aria-controls', flyout.id);
+        }
+        link.addEventListener('click', function (e) { e.preventDefault(); });
+        // Space would scroll the page on a link; neutralize it (the reveal is focus-driven).
+        link.addEventListener('keydown', function (e) { if (e.key === ' ') e.preventDefault(); });
+        li.addEventListener('focusin', function () { if (flyout) link.setAttribute('aria-expanded', 'true'); });
+        li.addEventListener('focusout', function () {
+          setTimeout(function () {
+            if (flyout && !li.contains(document.activeElement)) link.setAttribute('aria-expanded', 'false');
+          }, 0);
+        });
+        li.addEventListener('keydown', function (e) { if (e.key === 'Escape') link.focus(); });
+      });
+    })();
+  </script>
+
 </body>
 
 </html>
