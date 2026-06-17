@@ -20,6 +20,9 @@ Tableau de bord d'accueil pour le dossier `www/` d'un serveur local (Laragon, th
 - ➕ **Création rapide de projet** (avec structure de dossiers optionnelle).
 - 🛠️ **Outil intégré** : Adminer (gestion des bases MySQL).
 - 🌍 **Multilingue** : FR / EN / ES / IT / DE.
+- ♿ **Accessibilité réglable** : thème clair/sombre, taille du texte, contraste élevé, police dyslexie, modes daltonisme, réduction des animations.
+- 🎛️ **Menu personnalisable** : activer/désactiver le menu, choisir les catégories affichées.
+- 🔔 **Bandeau de mise à jour** : vérifie la dernière version publiée sur GitHub.
 - 🔒 **Sécurité** : restriction localhost, protection CSRF, journalisation des accès et intrusions.
 
 ### Stack
@@ -61,6 +64,9 @@ Home dashboard for the `www/` folder of a local server (Laragon, theoretically c
 - ➕ **Quick project creation** (with an optional folder structure).
 - 🛠️ **Built-in tool**: Adminer (MySQL database management).
 - 🌍 **Multilingual**: FR / EN / ES / IT / DE.
+- ♿ **Adjustable accessibility**: light/dark theme, text size, high contrast, dyslexia font, colour-blindness modes, reduced motion.
+- 🎛️ **Customizable menu**: enable/disable the menu, choose which categories show.
+- 🔔 **Update banner**: checks the latest version released on GitHub.
 - 🔒 **Security**: localhost restriction, CSRF protection, access/intrusion logging.
 
 ### Stack
@@ -102,6 +108,9 @@ Panel de inicio para la carpeta `www/` de un servidor local (Laragon, teóricame
 - ➕ **Creación rápida de proyectos** (con estructura de carpetas opcional).
 - 🛠️ **Herramienta integrada**: Adminer (gestión de bases MySQL).
 - 🌍 **Multilingüe**: FR / EN / ES / IT / DE.
+- ♿ **Accesibilidad ajustable**: tema claro/oscuro, tamaño del texto, alto contraste, fuente para dislexia, modos de daltonismo, reducción de animaciones.
+- 🎛️ **Menú personalizable**: activar/desactivar el menú, elegir las categorías mostradas.
+- 🔔 **Aviso de actualización**: comprueba la última versión publicada en GitHub.
 - 🔒 **Seguridad**: restricción a localhost, protección CSRF, registro de accesos e intentos.
 
 ### Stack
@@ -143,6 +152,9 @@ Dashboard iniziale per la cartella `www/` di un server locale (Laragon, teoricam
 - ➕ **Creazione rapida di progetti** (con struttura di cartelle opzionale).
 - 🛠️ **Strumento integrato**: Adminer (gestione database MySQL).
 - 🌍 **Multilingue**: FR / EN / ES / IT / DE.
+- ♿ **Accessibilità regolabile**: tema chiaro/scuro, dimensione del testo, alto contrasto, font dislessia, modalità daltonismo, riduzione delle animazioni.
+- 🎛️ **Menu personalizzabile**: attiva/disattiva il menu, scegli le categorie mostrate.
+- 🔔 **Banner di aggiornamento**: controlla l'ultima versione pubblicata su GitHub.
 - 🔒 **Sicurezza**: restrizione a localhost, protezione CSRF, registrazione di accessi e tentativi.
 
 ### Stack
