@@ -54,6 +54,24 @@ a {
     color: var(--link);
 }
 
+/* Colour-blindness palettes — remap status/accent hues to colour-blind-safe
+   colours (Okabe–Ito) so they no longer rely on confusable pairs. Layers on
+   top of the current theme. (Safer than a simulation filter, which would
+   worsen vision for an actually colour-blind user.) */
+body.a11y-cb-protanopia,
+body.a11y-cb-deuteranopia {
+    --ok: #0072b2;            /* green → blue */
+    --info: #e69f00;          /* blue → orange */
+    --accent: #e69f00;
+    --accent-strong: #b36c00;
+}
+body.a11y-cb-tritanopia {
+    --ok: #009e73;            /* green (kept, distinguishable) */
+    --info: #d55e00;          /* → vermillion */
+    --link: #cc79a7;          /* blue → magenta */
+    --accent: #cc79a7;
+}
+
 main {
     margin: 0px;
     margin-left: 18em;

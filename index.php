@@ -326,7 +326,7 @@ include('./INDEX_LARAGON/Partials/Head.php');
         body.classList.toggle('a11y-spacing', !!p.spacing);
         body.classList.toggle('a11y-cursor', !!p.cursor);
         body.classList.toggle('a11y-reduce-motion', p.animations === false);
-        CB.forEach(function (t) { html.classList.toggle('a11y-cb-' + t, p.colorblind === t); });
+        CB.forEach(function (t) { body.classList.toggle('a11y-cb-' + t, p.colorblind === t); });
       }
       apply();
 
