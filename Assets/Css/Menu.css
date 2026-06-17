@@ -13,8 +13,8 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
-      background-color: black;
-      color: white;
+      background-color: var(--bg);
+      color: var(--text);
       width: 100%;
 
     }
@@ -43,14 +43,14 @@
       top: 0;
       left: 0;
       overflow: hidden;
-      background-color: #19222a;
+      background-color: var(--sidebar-bg);
       -webkit-transform: translateZ(0);
       visibility: visible;
       -webkit-backface-visibility: hidden;
     }
 
     .sidebar header {
-      background-color: #09f;
+      background-color: var(--sidebar-accent);
       width: 100%;
       display: block;
       padding: 0.75em 1em;
@@ -58,7 +58,7 @@
 
     .sidebar-nav {
       position: fixed;
-      background-color: #19222a;
+      background-color: var(--sidebar-bg);
       height: calc(100vh - 4rem);
       font-weight: 400;
       font-size: 1.2em;
@@ -88,7 +88,7 @@
     }
 
     .sidebar-nav ul li a {
-      color: rgba(255, 255, 255, 0.9);
+      color: var(--text);
       font-size: 0.75em;
       padding: 1.05em 1em;
       position: relative;
@@ -115,7 +115,7 @@
       font-family: ionicons;
       font-size: 0.5em;
       width: 10px;
-      color: #fff;
+      color: var(--text);
       position: absolute;
       right: 0.75em;
       top: 45%;
@@ -123,7 +123,7 @@
 
     .sidebar-nav .nav-flyout {
       position: absolute;
-      background-color: #080D11;
+      background-color: var(--flyout-bg);
       z-index: 9;
       left: 2.5em;
       top: 0;
@@ -191,10 +191,10 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 1051;
-        background: #19222a;
+        background: var(--sidebar-bg);
         border: none;
-        border-right: 2px solid #09f;
-        color: #09f;
+        border-right: 2px solid var(--sidebar-accent);
+        color: var(--sidebar-accent);
         width: 1.8rem;
         height: 5rem;
         cursor: pointer;

@@ -112,7 +112,7 @@ include('./INDEX_LARAGON/Partials/Head.php');
         // --- Files ---
         if (!empty($files)) {
           sort($files);
-          echo '<div class="Border_Box" style="clear:both; text-align:center; font-weight:bold; color:#57d98e; border:1px solid #57d98e;">'
+          echo '<div class="Border_Box" style="clear:both; text-align:center; font-weight:bold; color:var(--ok); border:1px solid var(--ok);">'
              . __('main.accessible_files', ['count' => count($files)])
              . '</div><ul id="Color_Link">';
           foreach ($files as $entry) {
@@ -124,7 +124,7 @@ include('./INDEX_LARAGON/Partials/Head.php');
         // --- Directories (grouped by first letter) ---
         if (!empty($directories)) {
           sort($directories, SORT_STRING | SORT_FLAG_CASE);
-          echo '<div style="clear:both; text-align:center; font-weight:bold; color:#7fb8ff; border:1px solid #57d98e;">'
+          echo '<div style="clear:both; text-align:center; font-weight:bold; color:var(--info); border:1px solid var(--ok);">'
              . __('main.web_sites', ['count' => count($directories)])
              . '</div><ul>';
           $currentLetter = '';

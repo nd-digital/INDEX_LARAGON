@@ -1,3 +1,59 @@
+/* ===================================================================
+   Theme palette — dark by default, overridden by body.theme-light.
+   (The #a11yTheme selector toggles body.theme-light.)
+   =================================================================== */
+:root {
+    --bg: #000;
+    --text: #fff;
+    --text-muted: #adb5bd;
+    --surface: #16213e;       /* modals / panels */
+    --surface-2: #0f1b33;     /* a11y cards */
+    --border: #0f3460;
+    --accent: #e94560;
+    --accent-strong: #c01f44; /* active language pill */
+    --link: #9fd0ff;
+    --sidebar-bg: #19222a;
+    --sidebar-accent: #09f;
+    --flyout-bg: #080D11;
+    --ok: #57d98e;            /* "files" header */
+    --info: #7fb8ff;          /* "sites" header */
+}
+body.theme-light {
+    --bg: #f4f6fb;
+    --text: #1a1a2e;
+    --text-muted: #5a6b8c;
+    --surface: #ffffff;
+    --surface-2: #eef2fb;
+    --border: #cdd6e4;
+    --accent: #c0224a;
+    --accent-strong: #a01038;
+    --link: #0a58ca;
+    --sidebar-bg: #ffffff;
+    --sidebar-accent: #0a58ca;
+    --flyout-bg: #eef2fb;
+    --ok: #1a7f4b;
+    --info: #1456b0;
+}
+/* Light-theme fixes for components originally designed for the dark UI */
+body.theme-light .modal-header .btn-close {
+    filter: none;
+}
+body.theme-light .btn-outline-light {
+    color: var(--text);
+    border-color: var(--border);
+}
+body.theme-light .btn-outline-light:hover,
+body.theme-light .btn-outline-light:focus {
+    color: #fff;
+    background-color: var(--text-muted);
+    border-color: var(--text-muted);
+}
+
+/* Themed link colour (readable on both themes; overridden where needed) */
+a {
+    color: var(--link);
+}
+
 main {
     margin: 0px;
     margin-left: 18em;
@@ -5,7 +61,7 @@ main {
 
 .Info {
     text-align: left;
-    color: white;
+    color: var(--text);
 }
 
 hr {
@@ -14,7 +70,7 @@ hr {
 
 h1,
 h6 {
-    color: grey;
+    color: var(--text-muted);
     display: inline-block;
 }
 
@@ -23,7 +79,7 @@ form {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    color: white;
+    color: var(--text);
 }
 
 section {
@@ -31,7 +87,7 @@ section {
     -webkit-column-count: 6;
     -moz-column-count: 6;
     column-count: 6;
-    color: white;
+    color: var(--text);
 }
 
 .title {
@@ -134,38 +190,38 @@ pre {
 
 
 .date_time {
-    color: rgb(255, 255, 255);
+    color: var(--text);
 }
 
 .content {
     text-align: center;
     display: inline-block;
-    color: white;
+    color: var(--text);
 }
 
 
 .Help {
     margin-top: 10px;
     text-align: center;
-    color: white;
+    color: var(--text);
     font-weight: bold;
 }
 
 .Help a {
     text-decoration: none;
     font-size: 100%;
-    color: white;
+    color: var(--text);
     font-style: italic;
 }
 
 .title {
     font-size: 60px;
-    color: white;
+    color: var(--text);
 }
 
 .SubTitle {
     list-style-type: none;
-    color: white;
+    color: var(--text);
 }
 
 .Liens {
@@ -184,7 +240,7 @@ pre {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    border: 1px solid grey;
+    border: 1px solid var(--border);
     width: 99%;
     padding: 5px;
 }
@@ -212,11 +268,11 @@ pre {
 #Color_Link a {
     clear: both;
     text-align: center;
-    color: white;
+    color: var(--text);
 }
 
 #Color_Link .File_Link a {
-    color: yellowgreen;
+    color: var(--ok);
     list-style-type: circle;
 }
 
@@ -228,18 +284,18 @@ pre {
     text-align: center;
     font-weight: bolder;
     font-size: larger;
-    color: white;
+    color: var(--text);
 }
 
 .Border_Box_Simple {
-    border: 1px solid grey;
+    border: 1px solid var(--border);
     padding: 5px;
     width: 99%;
 }
 
 .Flag {
     font-weight: bolder;
-    color: white;
+    color: var(--text);
     list-style: none;
 }
 
@@ -369,22 +425,22 @@ pre {
 
 /* --- Charte graphique commune des modales (thème sombre, lisible) --- */
 .modal-content {
-    background: #16213e;
-    color: #e0e0e0;
-    border: 1px solid #0f3460;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
 }
 .modal-header,
 .modal-footer {
-    border-color: #0f3460;
+    border-color: var(--border);
 }
 .modal .modal-title {
-    color: #e94560;
+    color: var(--accent);
 }
 .modal-header .btn-close {
     filter: brightness(0) invert(1);
 }
 .modal-body a {
-    color: #9fd0ff;
+    color: var(--link);
 }
 
 /* --- Scrollable tables in modals --- */
@@ -467,7 +523,7 @@ pre {
 }
 
 .lang-option.active {
-    background: #c01f44;
+    background: var(--accent-strong);
     color: #fff;
 }
 
@@ -495,7 +551,7 @@ pre {
     top: 0;
     z-index: 2000;
     padding: .6rem 1rem;
-    background: #e94560;
+    background: var(--accent);
     color: #fff;
     border-radius: 0 0 6px 0;
     text-decoration: none;
@@ -524,7 +580,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 [tabindex]:focus-visible {
-    outline: 3px solid #9fd0ff;
+    outline: 3px solid var(--link);
     outline-offset: 2px;
     border-radius: 2px;
 }
@@ -555,7 +611,7 @@ button.offcanvas-tools-link {
 .site-footer {
     margin-top: 2rem;
     padding: 1.2rem 1rem;
-    border-top: 1px solid #0f3460;
+    border-top: 1px solid var(--border);
 }
 .footer-links {
     display: flex;
@@ -563,12 +619,12 @@ button.offcanvas-tools-link {
     justify-content: center;
     gap: 14px;
     font-size: .85rem;
-    color: #b9c2d6;
+    color: var(--text-muted);
     flex-wrap: wrap;
 }
 .footer-links a,
 .footer-links a:visited {
-    color: #b9c2d6;
+    color: var(--text-muted);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -590,17 +646,17 @@ button.offcanvas-tools-link {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-    background: #0f3460;
-    color: #e0e0e0;
+    background: var(--surface-2);
+    color: var(--text);
     padding: .6rem 1rem;
-    border-bottom: 1px solid #e94560;
+    border-bottom: 1px solid var(--accent);
     font-size: .9rem;
 }
 .update-banner.show {
     display: flex;
 }
 .update-banner a {
-    color: #9fd0ff;
+    color: var(--link);
     font-weight: 600;
     text-decoration: none;
 }
@@ -610,7 +666,7 @@ button.offcanvas-tools-link {
 .update-dismiss {
     background: none;
     border: 0;
-    color: #e0e0e0;
+    color: var(--text);
     font-size: 1.4rem;
     line-height: 1;
     cursor: pointer;
@@ -688,15 +744,15 @@ body.a11y-contrast .modal-content {
     .a11y-grid { grid-template-columns: 1fr; }
 }
 .a11y-card {
-    background: #0f1b33;
-    border: 1px solid #0f3460;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: .7rem .8rem;
 }
 .a11y-card-title {
     display: block;
     font-weight: 600;
-    color: #e94560;
+    color: var(--accent);
     margin-bottom: .45rem;
     font-size: .9rem;
 }
