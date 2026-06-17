@@ -51,8 +51,8 @@
     </button>
 
     <!-- Offcanvas (side panel) -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTools" aria-labelledby="offcanvasToolsLabel" style="background:#212529; color:#dee2e6; max-width:280px; width:85vw;">
-      <div class="offcanvas-header" style="border-bottom:1px solid #343a40;">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTools" aria-labelledby="offcanvasToolsLabel" style="background:var(--surface); color:var(--text); max-width:280px; width:85vw;">
+      <div class="offcanvas-header" style="border-bottom:1px solid var(--border);">
         <h5 class="offcanvas-title" id="offcanvasToolsLabel"><?php echo __('header.tools_info'); ?></h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="<?php echo __('common.close'); ?>"></button>
       </div>
@@ -78,7 +78,7 @@
         <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#a11yModal">
           <i class="ion-ios-body-outline" aria-hidden="true"></i> <?php echo __('burger.accessibility'); ?>
         </button>
-        <div style="border-top:2px solid #495057; margin-top:.25rem; padding-top:.25rem;">
+        <div style="border-top:2px solid var(--border); margin-top:.25rem; padding-top:.25rem;">
           <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#readmeModal">
             <i class="ion-ios-bookmarks-outline" aria-hidden="true"></i> <?php echo __('burger.readme'); ?>
           </button>

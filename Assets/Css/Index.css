@@ -35,7 +35,8 @@ body.theme-light {
     --info: #1456b0;
 }
 /* Light-theme fixes for components originally designed for the dark UI */
-body.theme-light .modal-header .btn-close {
+body.theme-light .modal-header .btn-close,
+body.theme-light .offcanvas .btn-close {
     filter: none;
 }
 body.theme-light .btn-outline-light {
@@ -416,16 +417,15 @@ pre {
     display: flex;
     align-items: center;
     padding: .75rem 1rem;
-    color: #dee2e6;
+    color: var(--text);
     text-decoration: none;
-    border-bottom: 1px solid #343a40;
+    border-bottom: 1px solid var(--border);
     cursor: pointer;
     transition: background .15s;
 }
 
 .offcanvas-tools-link:hover {
-    background: #343a40;
-    color: #fff;
+    background: var(--surface-2);
 }
 
 .offcanvas-tools-link i {

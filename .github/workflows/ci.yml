@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    name: PHP lint + JSON validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Lint PHP (project files, excluding bundled Adminer)
+        run: |
+          err=0
+          while IFS= read -r f; do
+            php -l "$f" >/dev/null 2>&1 || { echo "::error file=$f::PHP syntax error"; err=1; }
+          done < <(find . -path './Tools' -prune -o -name '*.php' -print)
+          exit $err
+
+      - name: Validate language JSON files
+        run: |
+          err=0
+          for f in Lang/*.json; do
+            php -r "json_decode(file_get_contents('\$argv[1]')); exit(json_last_error() === JSON_ERROR_NONE ? 0 : 1);" "$f" \
+              || { echo "::error file=$f::Invalid JSON"; err=1; }
+          done
+          exit $err
