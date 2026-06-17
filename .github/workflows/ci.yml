@@ -24,11 +24,10 @@ jobs:
           done < <(find . -path './Tools' -prune -o -name '*.php' -print)
           exit $err
 
-      - name: Validate language JSON files
+      - name: Validate JSON files (languages + menu)
         run: |
           err=0
-          for f in Lang/*.json; do
-            php -r "json_decode(file_get_contents('\$argv[1]')); exit(json_last_error() === JSON_ERROR_NONE ? 0 : 1);" "$f" \
-              || { echo "::error file=$f::Invalid JSON"; err=1; }
+          for f in Lang/*.json Menu/menu.json; do
+            jq empty "$f" || { echo "::error file=$f::Invalid JSON"; err=1; }
           done
           exit $err

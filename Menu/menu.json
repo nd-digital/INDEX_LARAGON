@@ -1,0 +1,1867 @@
+[
+    {
+        "key": "laragon",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Getting Started with Laragon",
+                "url": "https://laragon.org/docs",
+                "title": "Getting Started"
+            },
+            {
+                "label": "Tutoriel par Graphikart",
+                "url": "https://grafikart.fr/tutoriels/laragon-1010",
+                "title": "Tutoriel par Graphikart"
+            }
+        ]
+    },
+    {
+        "key": "accessibility",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Wave Evaluation Tool",
+                "url": "https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh",
+                "title": "Wave Evaluation Tool"
+            },
+            {
+                "label": "Axe DevTools",
+                "url": "https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd",
+                "title": "Axe DevTools"
+            },
+            {
+                "label": "HeadingsMap",
+                "url": "https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi",
+                "title": "HeadingsMap"
+            },
+            {
+                "label": "Color Contrast Checker",
+                "url": "https://www.tpgi.com/color-contrast-checker/",
+                "title": "Color Contrast Checker"
+            },
+            {
+                "label": "NVDA (Screen Reader)",
+                "url": "https://www.nvaccess.org/",
+                "title": "NVDA - Screen Reader"
+            },
+            {
+                "label": "Nu HTML Checker",
+                "url": "https://validator.w3.org/nu/",
+                "title": "Nu HTML Checker"
+            },
+            {
+                "label": "WCAG Bookmarklet",
+                "url": "https://www.tpgi.com/wcag-2-0-parsing-error-bookmarklet/",
+                "title": "WCAG Bookmarklet"
+            },
+            {
+                "label": "HTML Semantics",
+                "url": "https://fr.semrush.com/blog/balises-structurelles-html-semantique/",
+                "title": "HTML Semantics"
+            },
+            {
+                "label": "ARIA Roles (MDN)",
+                "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles",
+                "title": "ARIA Roles - MDN"
+            },
+            {
+                "label": "AChecker",
+                "url": "https://achecker.ca/",
+                "title": "AChecker - Web Accessibility Checker"
+            },
+            {
+                "label": "WCAG Testing Guide (PDF)",
+                "url": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/6691346/Guide+de+test+d'accessibilite+des+WCAG.pdf",
+                "title": "WCAG Testing Guide (PDF)"
+            }
+        ]
+    },
+    {
+        "key": "actuality_info",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "dev.to",
+                "url": "https://dev.to/",
+                "title": "dev.to"
+            },
+            {
+                "label": "Journal du Net",
+                "url": "https://www.journaldunet.com/",
+                "title": "Journal du Net"
+            },
+            {
+                "label": "Developpez.com",
+                "url": "https://www.developpez.com/",
+                "title": "Developpez.com"
+            },
+            {
+                "label": "Le Monde Informatique",
+                "url": "https://www.lemondeinformatique.fr/",
+                "title": "Le Monde Informatique"
+            },
+            {
+                "label": "Hacker News",
+                "url": "https://news.ycombinator.com/",
+                "title": "Hacker News"
+            },
+            {
+                "label": "CSS Weekly",
+                "url": "https://css-weekly.com/",
+                "title": "CSS Weekly"
+            }
+        ]
+    },
+    {
+        "key": "agile",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Scrum.org",
+                "url": "https://www.scrum.org/",
+                "title": "Scrum.org"
+            },
+            {
+                "label": "Agile Manifesto",
+                "url": "https://agilemanifesto.org/iso/fr/manifesto.html",
+                "title": "Agile Manifesto"
+            },
+            {
+                "label": "Kanban",
+                "url": "https://fr.wikipedia.org/wiki/Kanban_(d%C3%A9veloppement)",
+                "title": "Kanban"
+            }
+        ]
+    },
+    {
+        "key": "apache",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Apache HTTP Server",
+                "url": "https://httpd.apache.org/",
+                "title": "Apache HTTP Server"
+            },
+            {
+                "label": "Documentation Apache",
+                "url": "https://httpd.apache.org/docs/",
+                "title": "Documentation Apache"
+            },
+            {
+                "label": "Codes HTTP (Wikipedia)",
+                "url": "https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP",
+                "title": "Codes HTTP"
+            },
+            {
+                "label": "HTTP Status Codes",
+                "url": "https://httpstatuses.io/",
+                "title": "HTTP Status Codes"
+            }
+        ]
+    },
+    {
+        "key": "api",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Postman",
+                "url": "https://www.postman.com/",
+                "title": "Postman"
+            },
+            {
+                "label": "Swagger / OpenAPI",
+                "url": "https://swagger.io/",
+                "title": "Swagger / OpenAPI"
+            },
+            {
+                "label": "JSONPlaceholder (fake API)",
+                "url": "https://jsonplaceholder.typicode.com/",
+                "title": "JSONPlaceholder"
+            },
+            {
+                "label": "TMDB API",
+                "url": "https://www.themoviedb.org/documentation/api",
+                "title": "TMDB API"
+            },
+            {
+                "label": "ReqBin (REST tester)",
+                "url": "https://reqbin.com/",
+                "title": "ReqBin REST tester"
+            },
+            {
+                "label": "HTTP Status Codes",
+                "url": "https://httpstatuses.io/",
+                "title": "HTTP Status Codes"
+            }
+        ]
+    },
+    {
+        "key": "appointment_test",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Calendly",
+                "url": "https://calendly.com/",
+                "title": "Calendly"
+            },
+            {
+                "label": "Doodle",
+                "url": "https://doodle.com/fr/",
+                "title": "Doodle"
+            },
+            {
+                "label": "Framadate",
+                "url": "https://framadate.org/",
+                "title": "Framadate"
+            }
+        ]
+    },
+    {
+        "key": "backup",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Cobian Backup",
+                "url": "https://www.cobiansoft.com/cobianbackup.html",
+                "title": "Cobian Backup"
+            },
+            {
+                "label": "Duplicati",
+                "url": "https://www.duplicati.com/",
+                "title": "Duplicati"
+            },
+            {
+                "label": "Rsync",
+                "url": "https://rsync.samba.org/",
+                "title": "Rsync"
+            }
+        ]
+    },
+    {
+        "key": "cms_erp",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "WordPress",
+                "url": "https://wordpress.org",
+                "title": "WordPress"
+            },
+            {
+                "label": "Drupal",
+                "url": "https://www.drupal.org/",
+                "title": "Drupal"
+            },
+            {
+                "label": "Joomla",
+                "url": "https://www.joomla.fr/",
+                "title": "Joomla"
+            },
+            {
+                "label": "PrestaShop",
+                "url": "https://www.prestashop.com/fr/",
+                "title": "PrestaShop"
+            },
+            {
+                "label": "Strapi (Headless CMS)",
+                "url": "https://strapi.io/",
+                "title": "Strapi - Headless CMS"
+            },
+            {
+                "label": "Comparatif CMS (W3Techs)",
+                "url": "https://w3techs.com/technologies/overview/content_management",
+                "title": "Comparer les CMS"
+            }
+        ]
+    },
+    {
+        "key": "code_control",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "GT Metrix",
+                "url": "https://gtmetrix.com/",
+                "title": "GTMetrix"
+            },
+            {
+                "label": "PageSpeed Insights",
+                "url": "https://pagespeed.web.dev/",
+                "title": "PageSpeed Insights"
+            },
+            {
+                "label": "WebPageTest",
+                "url": "https://www.webpagetest.org/",
+                "title": "WebPageTest"
+            },
+            {
+                "label": "SonarCloud",
+                "url": "https://sonarcloud.io/",
+                "title": "SonarCloud"
+            },
+            {
+                "label": "PHP Mess Detector",
+                "url": "https://phpmd.org/",
+                "title": "PHP Mess Detector"
+            },
+            {
+                "label": "PHPStan",
+                "url": "https://phpstan.org/",
+                "title": "PHPStan"
+            }
+        ]
+    },
+    {
+        "key": "code_editor",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "VSCode",
+                "url": "https://code.visualstudio.com/",
+                "title": "Visual Studio Code"
+            },
+            {
+                "label": "Cursor AI",
+                "url": "https://www.cursor.com/",
+                "title": "Cursor AI Editor"
+            },
+            {
+                "label": "PhpStorm",
+                "url": "https://www.jetbrains.com/fr-fr/phpstorm/",
+                "title": "PhpStorm"
+            },
+            {
+                "label": "Visual Studio",
+                "url": "https://visualstudio.microsoft.com/fr/",
+                "title": "Visual Studio"
+            },
+            {
+                "label": "Notepad++",
+                "url": "https://notepad-plus-plus.org",
+                "title": "Notepad++"
+            },
+            {
+                "label": "Sublime Text",
+                "url": "https://www.sublimetext.com",
+                "title": "SublimeText"
+            },
+            {
+                "label": "Kate",
+                "url": "https://kate-editor.org",
+                "title": "Kate"
+            },
+            {
+                "label": "Geany",
+                "url": "https://www.geany.org",
+                "title": "Geany"
+            },
+            {
+                "label": "Eclipse",
+                "url": "https://www.eclipse.org",
+                "title": "Eclipse"
+            }
+        ]
+    },
+    {
+        "key": "coding",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "W3C",
+                "url": "https://www.w3.org",
+                "title": "W3C"
+            },
+            {
+                "label": "Mozilla DOCS",
+                "url": "https://developer.mozilla.org/fr/",
+                "title": "Mozilla DOCS"
+            },
+            {
+                "label": "W3SCHOOLS",
+                "url": "https://www.w3schools.com",
+                "title": "W3school"
+            },
+            {
+                "label": "PHP.NET",
+                "url": "https://www.php.net",
+                "title": "PHP.NET"
+            },
+            {
+                "label": "SQL",
+                "url": "https://sql.sh/",
+                "title": "SQL"
+            },
+            {
+                "label": "Can I Use",
+                "url": "https://caniuse.com",
+                "title": "Can I Use"
+            },
+            {
+                "label": "SEO",
+                "url": "https://www.seo.fr",
+                "title": "SEO.FR"
+            },
+            {
+                "label": "Bootstrap",
+                "url": "https://getbootstrap.com",
+                "title": "Bootstrap"
+            },
+            {
+                "label": "Materialize CSS",
+                "url": "https://materializecss.com/",
+                "title": "Materialize CSS"
+            },
+            {
+                "label": "Bulma",
+                "url": "https://bulma.io/",
+                "title": "Bulma"
+            },
+            {
+                "label": "Tailwind CSS",
+                "url": "https://tailwindcss.com/",
+                "title": "Tailwind CSS"
+            },
+            {
+                "label": "Google Font",
+                "url": "https://fonts.google.com",
+                "title": "Google Font"
+            },
+            {
+                "label": "Figma",
+                "url": "https://www.figma.com",
+                "title": "Figma"
+            }
+        ]
+    },
+    {
+        "key": "composer",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Composer",
+                "url": "https://getcomposer.org/",
+                "title": "Composer"
+            },
+            {
+                "label": "Packagist",
+                "url": "https://packagist.org/",
+                "title": "Packagist"
+            }
+        ]
+    },
+    {
+        "key": "concept",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Six Chapeaux de Bono",
+                "url": "https://fr.wikipedia.org/wiki/M%C3%A9thode_des_six_chapeaux",
+                "title": "Six chapeaux de Bono"
+            },
+            {
+                "label": "Agilisme (Scrum)",
+                "url": "https://www.scrum.org/resources/what-is-scrum",
+                "title": "Agilisme - Scrum.org"
+            },
+            {
+                "label": "Rasoir d'Ockham",
+                "url": "https://fr.wikipedia.org/wiki/Rasoir_d%27Ockham",
+                "title": "Rasoir d'Ockham"
+            },
+            {
+                "label": "Eco-conception Web",
+                "url": "https://www.useweb.fr/blog/post/eco-conception-web-bonnes-pratiques/",
+                "title": "Eco-conception Web"
+            },
+            {
+                "label": "Principes KISS / DRY / YAGNI",
+                "url": "https://fr.wikipedia.org/wiki/Principe_KISS",
+                "title": "KISS / DRY / YAGNI"
+            },
+            {
+                "label": "Ecoconception (Eyrolles)",
+                "url": "https://www.eyrolles.com/Informatique/Livre/ecoconception-web-les-115-bonnes-pratiques-9782212678062/",
+                "title": "Ecoconception Web - 115 bonnes pratiques (Eyrolles)"
+            }
+        ]
+    },
+    {
+        "key": "courses_certifications",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "France Compétences",
+                "url": "https://www.francecompetences.fr",
+                "title": "France Compétences"
+            },
+            {
+                "label": "PIX",
+                "url": "https://app.pix.fr/accueil",
+                "title": "PIX - Validate your digital skills"
+            },
+            {
+                "label": "BUSUU (English)",
+                "url": "https://www.busuu.com",
+                "title": "BUSUU"
+            },
+            {
+                "label": "Open Class Room",
+                "url": "https://openclassrooms.com/",
+                "title": "Open Class Room"
+            },
+            {
+                "label": "CODE PEN",
+                "url": "https://codepen.io/",
+                "title": "CODE PEN"
+            },
+            {
+                "label": "SecNumAcadémie",
+                "url": "https://secnumacademie.gouv.fr",
+                "title": "Sec Num Académie"
+            },
+            {
+                "label": "La Cascade",
+                "url": "https://la-cascade.io/",
+                "title": "La Cascade"
+            },
+            {
+                "label": "CERTIFICATION OPQUAST",
+                "url": "https://www.opquast.com",
+                "title": "CERTIFICATION OPQUAST"
+            },
+            {
+                "label": "Progressive Web App (PWA)",
+                "url": "https://progressive-web-apps.fr/definition-progressive-web-apps-pwa/",
+                "title": "Progressive Web App"
+            },
+            {
+                "label": "Responsive",
+                "url": "https://www.alsacreations.com/article/lire/1615-cest-quoi-le-responsive-web-design.html",
+                "title": "Alsa Creations - Responsive"
+            },
+            {
+                "label": "Elements Of AI Finland",
+                "url": "https://www.elementsofai.com",
+                "title": "Elements of AI Finland"
+            },
+            {
+                "label": "My Mooc",
+                "url": "https://www.my-mooc.com/fr/",
+                "title": "My Mooc"
+            },
+            {
+                "label": "TOEIC",
+                "url": "https://www.etsglobal.org",
+                "title": "Toeic ETS GLOBAL"
+            }
+        ]
+    },
+    {
+        "key": "css",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Flexbox",
+                "url": "https://jaetheme.com/blog/flexbox/",
+                "title": "Flexbox - Jaetheme"
+            },
+            {
+                "label": "Alsacreations CSS",
+                "url": "https://www.alsacreations.com/css/",
+                "title": "Alsacreations CSS"
+            },
+            {
+                "label": "CSS-Tricks",
+                "url": "https://css-tricks.com/",
+                "title": "CSS Tricks"
+            },
+            {
+                "label": "Can I Use",
+                "url": "https://caniuse.com/",
+                "title": "Can I Use"
+            },
+            {
+                "label": "Animate.css",
+                "url": "https://animate.style/",
+                "title": "Animate.css"
+            }
+        ]
+    },
+    {
+        "key": "database",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "MySQL",
+                "url": "https://www.mysql.com/fr/",
+                "title": "MySQL"
+            },
+            {
+                "label": "MariaDB",
+                "url": "https://mariadb.org/",
+                "title": "MariaDB"
+            },
+            {
+                "label": "PostgreSQL",
+                "url": "https://www.postgresql.org/",
+                "title": "PostgreSQL"
+            },
+            {
+                "label": "Redis",
+                "url": "https://redis.io/",
+                "title": "Redis"
+            },
+            {
+                "label": "MongoDB",
+                "url": "https://www.mongodb.com/",
+                "title": "MongoDB"
+            },
+            {
+                "label": "phpMyAdmin",
+                "url": "https://www.phpmyadmin.net/",
+                "title": "phpMyAdmin"
+            },
+            {
+                "label": "DB Fiddle (sandbox SQL)",
+                "url": "https://www.db-fiddle.com/",
+                "title": "DB Fiddle"
+            },
+            {
+                "label": "Replace URL WP (BDD)",
+                "url": "https://interconnectit.com/search-and-replace-for-wordpress-databases/",
+                "title": "Replace URL WordPress BDD"
+            }
+        ]
+    },
+    {
+        "key": "debug",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Chrome DevTools",
+                "url": "https://developer.chrome.com/docs/devtools/",
+                "title": "Chrome DevTools"
+            },
+            {
+                "label": "Firefox DevTools",
+                "url": "https://firefox-source-docs.mozilla.org/devtools-user/",
+                "title": "Firefox DevTools"
+            },
+            {
+                "label": "Xdebug (PHP)",
+                "url": "https://xdebug.org/",
+                "title": "Xdebug PHP"
+            },
+            {
+                "label": "PHP DebugBar",
+                "url": "https://phpdebugbar.com/",
+                "title": "PHP DebugBar"
+            }
+        ]
+    },
+    {
+        "key": "design_tools",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Icone 8",
+                "url": "https://icones8.fr",
+                "title": "Icoen image etc..."
+            },
+            {
+                "label": "Dribble",
+                "url": "https://dribbble.com",
+                "title": "Dribble"
+            },
+            {
+                "label": "Collect UI",
+                "url": "https://collectui.com",
+                "title": "CollectUI"
+            },
+            {
+                "label": "Paletton",
+                "url": "https://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF",
+                "title": "Paletton"
+            },
+            {
+                "label": "ColorMind",
+                "url": "http://colormind.io",
+                "title": "ColorMind"
+            },
+            {
+                "label": "Canva",
+                "url": "https://www.canva.com/colors/color-palette-generator/",
+                "title": "Canva"
+            },
+            {
+                "label": "Unsplash",
+                "url": "https://unsplash.com/",
+                "title": "Unsplash"
+            },
+            {
+                "label": "Tiny JPG",
+                "url": "https://tinyjpg.com/",
+                "title": "TinyJPG"
+            },
+            {
+                "label": "Tin Eye",
+                "url": "https://tineye.com/",
+                "title": "Reverse Image Search by URL"
+            }
+        ]
+    },
+    {
+        "key": "diagram",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Euler Diagram",
+                "url": "https://en.wikipedia.org/wiki/Euler_diagram",
+                "title": "Euler Diagram"
+            },
+            {
+                "label": "Gantt Diagram",
+                "url": "https://www.gantt.com/fr/",
+                "title": "Gantt Diagram"
+            },
+            {
+                "label": "Ven Diagram",
+                "url": "https://fr.wikipedia.org/wiki/Diagramme_de_Venn",
+                "title": "Venn Diagram"
+            },
+            {
+                "label": "Taxonomie",
+                "url": "https://fr.wikipedia.org/wiki/Taxonomie",
+                "title": "Taxonomie"
+            }
+        ]
+    },
+    {
+        "key": "diploma_certificate",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "French Diploma Nomenclature",
+                "url": "https://www.cfar-hdf.fr/la-nomenclature-des-niveaux-de-diplomes-en-france/",
+                "title": "French Diploma Nomenclature"
+            },
+            {
+                "label": "France Compétences",
+                "url": "https://www.francecompetences.fr",
+                "title": "France Compétences"
+            },
+            {
+                "label": "TOSA",
+                "url": "https://www.tosa.org/FR/faq",
+                "title": "TOSA"
+            },
+            {
+                "label": "FUN MOOC",
+                "url": "https://www.fun-mooc.fr/fr/",
+                "title": "FUN MOOC"
+            },
+            {
+                "label": "Coursera",
+                "url": "https://www.coursera.org/",
+                "title": "Coursera"
+            },
+            {
+                "label": "edX",
+                "url": "https://www.edx.org/",
+                "title": "edX"
+            },
+            {
+                "label": "My Mooc",
+                "url": "https://www.my-mooc.com/fr/",
+                "title": "My Mooc"
+            }
+        ]
+    },
+    {
+        "key": "docker",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Docker",
+                "url": "https://www.docker.com/",
+                "title": "Docker"
+            },
+            {
+                "label": "Docker Hub",
+                "url": "https://hub.docker.com/",
+                "title": "Docker Hub"
+            },
+            {
+                "label": "Docker Compose",
+                "url": "https://docs.docker.com/compose/",
+                "title": "Docker Compose"
+            },
+            {
+                "label": "Documentation Docker",
+                "url": "https://docs.docker.com/",
+                "title": "Documentation Docker"
+            },
+            {
+                "label": "Play with Docker",
+                "url": "https://labs.play-with-docker.com/",
+                "title": "Play with Docker"
+            }
+        ]
+    },
+    {
+        "key": "emulation",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Bluestacks (Android/PC)",
+                "url": "https://www.bluestacks.com",
+                "title": "Bluestacks - Android sur PC"
+            },
+            {
+                "label": "Android Studio AVD",
+                "url": "https://developer.android.com/studio/run/emulator",
+                "title": "Android Studio AVD"
+            },
+            {
+                "label": "VirtualBox",
+                "url": "https://www.virtualbox.org/",
+                "title": "VirtualBox"
+            },
+            {
+                "label": "BrowserStack",
+                "url": "https://www.browserstack.com/",
+                "title": "BrowserStack"
+            }
+        ]
+    },
+    {
+        "key": "find_job",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "La Bonne Boite",
+                "url": "https://labonneboite.francetravail.fr/",
+                "title": "La Bonne Boite - France Travail"
+            },
+            {
+                "label": "France Travail",
+                "url": "https://www.francetravail.fr/",
+                "title": "France Travail"
+            },
+            {
+                "label": "Welcome to the Jungle",
+                "url": "https://www.welcometothejungle.com/",
+                "title": "Welcome to the Jungle"
+            },
+            {
+                "label": "LinkedIn Jobs",
+                "url": "https://www.linkedin.com/jobs/",
+                "title": "LinkedIn Jobs"
+            }
+        ]
+    },
+    {
+        "key": "font",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Google Fonts",
+                "url": "https://fonts.google.com/",
+                "title": "Google Fonts"
+            },
+            {
+                "label": "Font Awesome",
+                "url": "https://fontawesome.com/",
+                "title": "Font Awesome"
+            },
+            {
+                "label": "Convertio TTF → WOFF",
+                "url": "https://convertio.co/fr/ttf-woff/",
+                "title": "Convertio TTF vers WOFF"
+            },
+            {
+                "label": "DaFont",
+                "url": "https://www.dafont.com/fr/",
+                "title": "DaFont"
+            }
+        ]
+    },
+    {
+        "key": "free_picture",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "FreePik",
+                "url": "https://fr.freepik.com/",
+                "title": "FreePik"
+            },
+            {
+                "label": "Snappa",
+                "url": "https://snappa.com/",
+                "title": "Snappa"
+            },
+            {
+                "label": "Canva",
+                "url": "https://www.canva.com/",
+                "title": "Canva"
+            },
+            {
+                "label": "Undraw",
+                "url": "https://undraw.co/",
+                "title": "Undraw - illustrations SVG"
+            },
+            {
+                "label": "Pexels",
+                "url": "https://www.pexels.com/fr-fr/",
+                "title": "Pexels"
+            },
+            {
+                "label": "Pixabay",
+                "url": "https://pixabay.com/fr/",
+                "title": "Pixabay"
+            }
+        ]
+    },
+    {
+        "key": "git",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "GITHUB",
+                "url": "https://github.com/login",
+                "title": "GITHUB"
+            },
+            {
+                "label": "GIT NO DEEP SHIT",
+                "url": "https://rogerdudler.github.io/git-guide/",
+                "title": "GIT NO DEEP SHIT"
+            },
+            {
+                "label": "GIT POUR LES NULS",
+                "url": "https://wiki.labomedia.org/index.php/Publier_sur_GitHub_pour_les_nuls",
+                "title": "GIT POUR LES NULS"
+            },
+            {
+                "label": "GitLab",
+                "url": "https://about.gitlab.com/",
+                "title": "GitLab"
+            },
+            {
+                "label": "Bitbucket",
+                "url": "https://bitbucket.org/",
+                "title": "Bitbucket"
+            },
+            {
+                "label": "Git SCM",
+                "url": "https://git-scm.com/downloads",
+                "title": "Git SCM"
+            }
+        ]
+    },
+    {
+        "key": "html",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "HTML5 Tags",
+                "url": "https://jaetheme.com/balises-html5/",
+                "title": "HTML5 Tags - Jaetheme"
+            },
+            {
+                "label": "MDN — HTML Reference",
+                "url": "https://developer.mozilla.org/fr/docs/Web/HTML/Element",
+                "title": "MDN HTML Reference"
+            },
+            {
+                "label": "W3Schools HTML",
+                "url": "https://www.w3schools.com/html/",
+                "title": "W3Schools HTML"
+            },
+            {
+                "label": "Validator W3C",
+                "url": "https://validator.w3.org/",
+                "title": "Validator W3C"
+            }
+        ]
+    },
+    {
+        "key": "ia",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Deep Learning",
+                "url": "https://www.journaldunet.fr/web-tech/guide-de-l-intelligence-artificielle/1501333-deep-learning-definition-et-principes-de-l-apprentissage-profond/",
+                "title": "Deep Learning - JDN"
+            },
+            {
+                "label": "Machine Learning",
+                "url": "https://fr.wikipedia.org/wiki/Apprentissage_automatique",
+                "title": "Machine Learning"
+            },
+            {
+                "label": "Turing Test",
+                "url": "https://fr.wikipedia.org/wiki/Test_de_Turing",
+                "title": "Turing Test"
+            },
+            {
+                "label": "Chinese Room (Searle)",
+                "url": "https://iep.utm.edu/chinese-room-argument/",
+                "title": "Chinese Room Argument"
+            },
+            {
+                "label": "Tower of Hanoi",
+                "url": "https://fr.wikipedia.org/wiki/Tours_de_Hano%C3%AF",
+                "title": "Tower of Hanoi"
+            },
+            {
+                "label": "Dartmouth Conference",
+                "url": "https://fr.wikipedia.org/wiki/Conf%C3%A9rence_de_Dartmouth",
+                "title": "Dartmouth Conference"
+            },
+            {
+                "label": "Minimax Algorithm",
+                "url": "https://fr.wikipedia.org/wiki/Algorithme_minimax",
+                "title": "Minimax Algorithm"
+            },
+            {
+                "label": "Philosophy of AI (Stanford)",
+                "url": "http://jmc.stanford.edu/articles/aiphil/aiphil.pdf",
+                "title": "Philosophy of AI - Stanford (PDF)"
+            }
+        ]
+    },
+    {
+        "key": "job",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "WeLoveDevs",
+                "url": "https://welovedevs.com/",
+                "title": "WeLoveDevs"
+            },
+            {
+                "label": "Dev Salaries",
+                "url": "https://welovedevs.com/fr/salaires/",
+                "title": "Dev Salaries"
+            },
+            {
+                "label": "APEC",
+                "url": "https://www.apec.fr/",
+                "title": "APEC"
+            }
+        ]
+    },
+    {
+        "key": "js",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "MDN JavaScript",
+                "url": "https://developer.mozilla.org/fr/docs/Web/JavaScript",
+                "title": "MDN JavaScript"
+            },
+            {
+                "label": "Node.js",
+                "url": "https://nodejs.org/",
+                "title": "Node.js"
+            },
+            {
+                "label": "NPM",
+                "url": "https://www.npmjs.com/",
+                "title": "NPM"
+            },
+            {
+                "label": "Vue.js",
+                "url": "https://vuejs.org/",
+                "title": "Vue.js"
+            },
+            {
+                "label": "React",
+                "url": "https://react.dev/",
+                "title": "React"
+            },
+            {
+                "label": "JS Bin",
+                "url": "https://jsbin.com/",
+                "title": "JS Bin"
+            },
+            {
+                "label": "jQuery",
+                "url": "https://jquery.com/",
+                "title": "jQuery"
+            },
+            {
+                "label": "Electron",
+                "url": "https://www.electronjs.org/",
+                "title": "Electron"
+            }
+        ]
+    },
+    {
+        "key": "learning",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "PIX",
+                "url": "https://app.pix.fr/",
+                "title": "PIX"
+            },
+            {
+                "label": "OpenClassrooms",
+                "url": "https://openclassrooms.com/",
+                "title": "OpenClassrooms"
+            },
+            {
+                "label": "LinkedIn Learning",
+                "url": "https://www.linkedin.com/learning/",
+                "title": "LinkedIn Learning"
+            },
+            {
+                "label": "MDN Web Docs",
+                "url": "https://developer.mozilla.org/",
+                "title": "MDN Web Docs"
+            },
+            {
+                "label": "SQL Course",
+                "url": "https://sql.sh/cours",
+                "title": "SQL Course"
+            },
+            {
+                "label": "GitHub Education",
+                "url": "https://education.github.com/teachers",
+                "title": "GitHub Education"
+            },
+            {
+                "label": "W3C",
+                "url": "https://www.w3.org",
+                "title": "W3C"
+            }
+        ]
+    },
+    {
+        "key": "legislation",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Legal Notice",
+                "url": "https://www.service-public.fr/professionnels-entreprises/vosdroits/F31228",
+                "title": "Legal Notice"
+            },
+            {
+                "label": "Legifrance",
+                "url": "https://www.legifrance.gouv.fr",
+                "title": "Legifrance"
+            }
+        ]
+    },
+    {
+        "key": "linux",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Ubuntu",
+                "url": "https://ubuntu.com/",
+                "title": "Ubuntu"
+            },
+            {
+                "label": "Debian",
+                "url": "https://www.debian.org/",
+                "title": "Debian"
+            },
+            {
+                "label": "DistroWatch",
+                "url": "https://distrowatch.com/",
+                "title": "DistroWatch"
+            },
+            {
+                "label": "Timeline des distributions (SVG)",
+                "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg",
+                "title": "Linux Distribution Timeline"
+            },
+            {
+                "label": "Linux Command",
+                "url": "https://www.linuxcommand.org/",
+                "title": "Commandes Linux"
+            },
+            {
+                "label": "ExplainShell",
+                "url": "https://explainshell.com/",
+                "title": "ExplainShell"
+            }
+        ]
+    },
+    {
+        "key": "localhost",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Laragon",
+                "url": "https://laragon.org",
+                "title": "Laragon"
+            },
+            {
+                "label": "XAMPP",
+                "url": "https://www.apachefriends.org",
+                "title": "XAMPP"
+            },
+            {
+                "label": "MAMP",
+                "url": "https://www.mamp.info/en/downloads/",
+                "title": "MAMP"
+            },
+            {
+                "label": "WAMP",
+                "url": "https://www.wampserver.com",
+                "title": "WAMP"
+            },
+            {
+                "label": "Easy PHP",
+                "url": "https://www.easyphp.org",
+                "title": "EasyPHP"
+            },
+            {
+                "label": "UWAMP",
+                "url": "https://www.uwamp.com/fr/",
+                "title": "UWAMP"
+            },
+            {
+                "label": "CADDY",
+                "url": "https://caddyserver.com",
+                "title": "CADDY"
+            },
+            {
+                "label": "SERVER PHP",
+                "url": "https://www.php.net/manual/fr/features.commandline.webserver.php",
+                "title": "SERVER PHP"
+            },
+            {
+                "label": "Tiny Server",
+                "url": "http://tinyserver.sourceforge.net",
+                "title": "Tiny Server"
+            },
+            {
+                "label": "IZ WAMP",
+                "url": "https://sourceforge.net/projects/iz-wamp/",
+                "title": "IZ_WAMP"
+            }
+        ]
+    },
+    {
+        "key": "mind_map",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "MindMeister",
+                "url": "https://www.mindmeister.com",
+                "title": "MindMeister"
+            },
+            {
+                "label": "FreeMind",
+                "url": "https://freemind.sourceforge.net/",
+                "title": "FreeMind"
+            },
+            {
+                "label": "draw.io",
+                "url": "https://www.drawio.com/",
+                "title": "draw.io"
+            },
+            {
+                "label": "XMind",
+                "url": "https://xmind.app/",
+                "title": "XMind"
+            }
+        ]
+    },
+    {
+        "key": "module_cms",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "WP Plugins",
+                "url": "https://wordpress.org/plugins/",
+                "title": "WordPress Plugins"
+            },
+            {
+                "label": "WooCommerce",
+                "url": "https://woocommerce.com/",
+                "title": "WooCommerce"
+            },
+            {
+                "label": "ACF (Advanced Custom Fields)",
+                "url": "https://www.advancedcustomfields.com/",
+                "title": "Advanced Custom Fields"
+            },
+            {
+                "label": "Envato / Elementor",
+                "url": "https://wordpress.org/plugins/envato-elements/",
+                "title": "Envato Elements Elementor"
+            },
+            {
+                "label": "Yoast SEO",
+                "url": "https://yoast.com/wordpress/plugins/seo/",
+                "title": "Yoast SEO"
+            }
+        ]
+    },
+    {
+        "key": "open_source",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Framasoft",
+                "url": "https://framasoft.org",
+                "title": "Framasoft"
+            },
+            {
+                "label": "Apache OpenOffice",
+                "url": "https://www.openoffice.org",
+                "title": "OpenOffice"
+            },
+            {
+                "label": "GNU",
+                "url": "https://www.gnu.org/home.fr.html",
+                "title": "GNU"
+            },
+            {
+                "label": "Open Source Initiative",
+                "url": "https://opensource.org",
+                "title": "Open Source Initiative"
+            }
+        ]
+    },
+    {
+        "key": "recommandation",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "PHP-FIG PSR",
+                "url": "https://www.php-fig.org/psr/",
+                "title": "PHP-FIG PSR"
+            },
+            {
+                "label": "PSR-1: Basic Standard",
+                "url": "https://www.php-fig.org/psr/psr-1/",
+                "title": "PSR-1 Basic Standard"
+            },
+            {
+                "label": "PSR-12: Extended Style",
+                "url": "https://www.php-fig.org/psr/psr-12/",
+                "title": "PSR-12 Extended Style"
+            },
+            {
+                "label": "W3C Standards",
+                "url": "https://www.w3c.fr/standards/",
+                "title": "W3C Standards"
+            },
+            {
+                "label": "Web Open Font Format",
+                "url": "https://fr.wikipedia.org/wiki/Web_Open_Font_Format",
+                "title": "Web Open Font Format"
+            },
+            {
+                "label": "Green IT",
+                "url": "https://www.hellocarbo.com/blog/communaute/green-it/",
+                "title": "Green IT"
+            }
+        ]
+    },
+    {
+        "key": "rgpd",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "CNIL",
+                "url": "https://www.cnil.fr/",
+                "title": "CNIL"
+            },
+            {
+                "label": "GDPR — What is it?",
+                "url": "https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on",
+                "title": "GDPR - What is it?"
+            },
+            {
+                "label": "GDPR Regulation (Europa)",
+                "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32016R0679",
+                "title": "GDPR Regulation Europa"
+            }
+        ]
+    },
+    {
+        "key": "sand_box",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "3v4l.org (PHP multi-versions)",
+                "url": "https://3v4l.org/",
+                "title": "3v4l.org - PHP multi-versions"
+            },
+            {
+                "label": "CodePen",
+                "url": "https://codepen.io/",
+                "title": "CodePen"
+            },
+            {
+                "label": "JSFiddle",
+                "url": "https://jsfiddle.net/",
+                "title": "JSFiddle"
+            }
+        ]
+    },
+    {
+        "key": "search_engine",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Ref Seek",
+                "url": "https://www.refseek.com",
+                "title": "Ref Seek"
+            },
+            {
+                "label": "WorldCat",
+                "url": "https://www.worldcat.org",
+                "title": "WorldCat"
+            },
+            {
+                "label": "Springer",
+                "url": "https://link.springer.com",
+                "title": "Springer"
+            },
+            {
+                "label": "Bioline",
+                "url": "http://www.bioline.org.br",
+                "title": "Bioline"
+            },
+            {
+                "label": "Repec",
+                "url": "https://repec.org",
+                "title": "Repec"
+            },
+            {
+                "label": "Science.gov",
+                "url": "https://www.science.gov",
+                "title": "Science.gov"
+            },
+            {
+                "label": "PDF Drive",
+                "url": "https://www.pdfdrive.com",
+                "title": "PDF Drive"
+            },
+            {
+                "label": "Base Search",
+                "url": "https://www.base-search.net",
+                "title": "Base Search"
+            }
+        ]
+    },
+    {
+        "key": "security",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "ANSSI",
+                "url": "https://www.ssi.gouv.fr/",
+                "title": "ANSSI"
+            },
+            {
+                "label": "In Case of Incident",
+                "url": "https://www.ssi.gouv.fr/en-cas-dincident/",
+                "title": "In Case of Incident"
+            },
+            {
+                "label": "OWASP Top 10",
+                "url": "https://owasp.org/www-project-top-ten/",
+                "title": "OWASP"
+            }
+        ]
+    },
+    {
+        "key": "security_health",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Cyber Malveillance Report",
+                "url": "https://www.cybermalveillance.gouv.fr",
+                "title": "Cyber Malveillance"
+            },
+            {
+                "label": "Signal Spam",
+                "url": "https://www.signal-spam.fr",
+                "title": "Signal Spam"
+            },
+            {
+                "label": "INRS Occupational Health",
+                "url": "https://www.inrs.fr",
+                "title": "INRS Occupational Health"
+            },
+            {
+                "label": "Have I Been Pwned ?",
+                "url": "https://haveibeenpwned.com/",
+                "title": "Have I Been Pwned"
+            }
+        ]
+    },
+    {
+        "key": "seo",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Google Analytics",
+                "url": "https://analytics.google.com/",
+                "title": "Google Analytics"
+            },
+            {
+                "label": "Matomo Analytics",
+                "url": "https://fr.matomo.org",
+                "title": "Matomo"
+            },
+            {
+                "label": "H1 H2 H3 Tags",
+                "url": "https://www.webrankinfo.com/dossiers/techniques/balises-h1-h2-h3",
+                "title": "H1 H2 H3 Tags"
+            },
+            {
+                "label": "Robots.txt Disallow",
+                "url": "https://robots-txt.com/ressources/robots-txt-disallow-all/",
+                "title": "Robots.txt Disallow"
+            },
+            {
+                "label": "SEO Technique & Robots",
+                "url": "https://smartkeyword.io/seo-technique-seo-robots-txt/",
+                "title": "SEO Technique et Robots"
+            }
+        ]
+    },
+    {
+        "key": "server",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "REST & SOAP API Test",
+                "url": "https://reqbin.com/curl",
+                "title": "Online REST & SOAP API Testing Tool"
+            },
+            {
+                "label": "Pingtool DNS / Adresse Web",
+                "url": "https://pingtool.org/",
+                "title": "Pingtool"
+            },
+            {
+                "label": "Web Archives (WayBack)",
+                "url": "https://web.archive.org",
+                "title": "WayBack Machine"
+            }
+        ]
+    },
+    {
+        "key": "software",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "VirtualBox",
+                "url": "https://www.virtualbox.org/",
+                "title": "VirtualBox"
+            },
+            {
+                "label": "7-Zip",
+                "url": "https://www.7-zip.org/",
+                "title": "7-Zip"
+            },
+            {
+                "label": "WinSCP (FTP/SFTP)",
+                "url": "https://winscp.net/eng/index.php",
+                "title": "WinSCP"
+            },
+            {
+                "label": "FileZilla",
+                "url": "https://filezilla-project.org/",
+                "title": "FileZilla"
+            },
+            {
+                "label": "PuTTY (SSH)",
+                "url": "https://www.putty.org/",
+                "title": "PuTTY"
+            },
+            {
+                "label": "Postman (API)",
+                "url": "https://www.postman.com/",
+                "title": "Postman"
+            }
+        ]
+    },
+    {
+        "key": "sql",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "SQL.SH",
+                "url": "https://sql.sh",
+                "title": "SQL.SH"
+            },
+            {
+                "label": "SQL Course",
+                "url": "https://sql.sh/cours",
+                "title": "SQL Course"
+            },
+            {
+                "label": "SQL Course (PDF)",
+                "url": "https://sql.sh/2143-cours-sql-pdf",
+                "title": "SQL Course PDF"
+            },
+            {
+                "label": "MySQL Cheat Sheet",
+                "url": "https://sql.sh/ressources/document/mysql-aide-memoire-sql.pdf",
+                "title": "MySQL Cheat Sheet"
+            },
+            {
+                "label": "SQL Injection (Wikipedia)",
+                "url": "https://fr.wikipedia.org/wiki/Injection_SQL",
+                "title": "SQL Injection"
+            }
+        ]
+    },
+    {
+        "key": "symfony",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Symfony",
+                "url": "https://symfony.com/",
+                "title": "Symfony"
+            },
+            {
+                "label": "Documentation",
+                "url": "https://symfony.com/doc/current/index.html",
+                "title": "Documentation Symfony"
+            },
+            {
+                "label": "Symfony CLI",
+                "url": "https://symfony.com/download",
+                "title": "Symfony CLI"
+            },
+            {
+                "label": "Packagist",
+                "url": "https://packagist.org/",
+                "title": "Packagist"
+            },
+            {
+                "label": "EasyAdmin Bundle",
+                "url": "https://symfony.com/bundles/EasyAdminBundle/current/index.html",
+                "title": "EasyAdmin Bundle"
+            },
+            {
+                "label": "API Platform",
+                "url": "https://api-platform.com/",
+                "title": "API Platform"
+            },
+            {
+                "label": "Doctrine ORM",
+                "url": "https://www.doctrine-project.org/projects/orm.html",
+                "title": "Doctrine ORM"
+            }
+        ]
+    },
+    {
+        "key": "terminal",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Cygwin",
+                "url": "https://www.cygwin.com/install.html",
+                "title": "Cygwin"
+            },
+            {
+                "label": "WSL (Windows Linux)",
+                "url": "https://learn.microsoft.com/fr-fr/windows/wsl/install",
+                "title": "WSL - Windows Subsystem for Linux"
+            },
+            {
+                "label": "Windows Terminal",
+                "url": "https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701",
+                "title": "Windows Terminal"
+            },
+            {
+                "label": "Oh My Zsh",
+                "url": "https://ohmyz.sh/",
+                "title": "Oh My Zsh"
+            }
+        ]
+    },
+    {
+        "key": "tools",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "ADMINER",
+                "url": "../INDEX_LARAGON/Tools/Adminer/",
+                "title": "Adminer"
+            },
+            {
+                "label": "Adminer",
+                "url": "https://www.adminer.org",
+                "title": "Adminer Online"
+            },
+            {
+                "label": "Adminer PlugIn",
+                "url": "https://www.adminer.org/en/plugins/",
+                "title": "Adminer PlugIn"
+            },
+            {
+                "label": "Trello",
+                "url": "https://trello.com/",
+                "title": "Trello"
+            },
+            {
+                "label": "MyPeopleDoc",
+                "url": "https://www.mypeopledoc.com",
+                "title": "MyPeopleDoc"
+            },
+            {
+                "label": "Favicon Generator",
+                "url": "https://favicon.io/",
+                "title": "Favicon Generator"
+            },
+            {
+                "label": "Favicon Drawer",
+                "url": "https://www.favicon.cc/",
+                "title": "Favicon Drawer"
+            },
+            {
+                "label": "I Love PDF",
+                "url": "https://www.ilovepdf.com/fr",
+                "title": "Favicon Drawer"
+            }
+        ]
+    },
+    {
+        "key": "ux_ui",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "UX vs UI Design",
+                "url": "https://blog-ux.com/quelle-difference-entre-ux-design-et-ui-design/",
+                "title": "UX vs UI"
+            },
+            {
+                "label": "Figma",
+                "url": "https://www.figma.com/",
+                "title": "Figma"
+            },
+            {
+                "label": "Penpot (open source)",
+                "url": "https://penpot.app/",
+                "title": "Penpot - open source"
+            },
+            {
+                "label": "Sketch",
+                "url": "https://www.sketch.com/",
+                "title": "Sketch"
+            },
+            {
+                "label": "CSS Stats",
+                "url": "https://cssstats.com/",
+                "title": "CSS Stats"
+            },
+            {
+                "label": "jQuery UI ThemeRoller",
+                "url": "https://jqueryui.com/themeroller/",
+                "title": "jQuery UI ThemeRoller"
+            }
+        ]
+    },
+    {
+        "key": "validation",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Structured DATA",
+                "url": "https://developers.google.com/search/docs/advanced/structured-data",
+                "title": "Structured DATA"
+            },
+            {
+                "label": "Rich Results Test",
+                "url": "https://search.google.com/test/rich-results",
+                "title": "Rich Results Test"
+            },
+            {
+                "label": "Schema Markup Validation",
+                "url": "https://validator.schema.org",
+                "title": "Schema Markup Validation"
+            },
+            {
+                "label": "Validator W3.org",
+                "url": "https://validator.w3.org",
+                "title": "Validator W3.org"
+            },
+            {
+                "label": "CSS Validator W3C",
+                "url": "https://jigsaw.w3.org/css-validator/",
+                "title": "CSS Validator W3C"
+            }
+        ]
+    },
+    {
+        "key": "visio",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Microsoft Teams",
+                "url": "https://www.microsoft.com/fr-fr/microsoft-teams/group-chat-software",
+                "title": "Microsoft Teams"
+            },
+            {
+                "label": "Zoom",
+                "url": "https://zoom.us/",
+                "title": "Zoom"
+            },
+            {
+                "label": "Google Meet",
+                "url": "https://meet.google.com/",
+                "title": "Google Meet"
+            },
+            {
+                "label": "Webex",
+                "url": "https://www.webex.com/fr/",
+                "title": "Webex"
+            },
+            {
+                "label": "Livestorm",
+                "url": "https://livestorm.co/fr/",
+                "title": "Livestorm"
+            },
+            {
+                "label": "Skype",
+                "url": "https://www.skype.com/fr/",
+                "title": "Skype"
+            }
+        ]
+    },
+    {
+        "key": "web_hosting",
+        "icon": "ion-bag",
+        "links": [
+            {
+                "label": "Alwaysdata",
+                "url": "https://admin.alwaysdata.com",
+                "title": "Alwaysdata"
+            },
+            {
+                "label": "Infomaniak",
+                "url": "https://www.infomaniak.com/fr",
+                "title": "Infomaniak"
+            },
+            {
+                "label": "OVHcloud",
+                "url": "https://www.ovhcloud.com/fr/",
+                "title": "OVHcloud"
+            },
+            {
+                "label": "Webflow",
+                "url": "https://webflow.com",
+                "title": "Webflow"
+            },
+            {
+                "label": "BookStack",
+                "url": "https://www.bookstackapp.com",
+                "title": "BookStack"
+            }
+        ]
+    }
+]
