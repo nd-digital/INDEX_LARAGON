@@ -1,7 +1,7 @@
 [
     {
         "key": "laragon",
-        "icon": "ion-bag",
+        "icon": "ion-ios-flask",
         "links": [
             {
                 "label": "Getting Started with Laragon",
@@ -17,7 +17,7 @@
     },
     {
         "key": "accessibility",
-        "icon": "ion-bag",
+        "icon": "ion-ios-body",
         "links": [
             {
                 "label": "Wave Evaluation Tool",
@@ -78,7 +78,7 @@
     },
     {
         "key": "actuality_info",
-        "icon": "ion-bag",
+        "icon": "ion-ios-paper",
         "links": [
             {
                 "label": "dev.to",
@@ -114,7 +114,7 @@
     },
     {
         "key": "agile",
-        "icon": "ion-bag",
+        "icon": "ion-refresh",
         "links": [
             {
                 "label": "Scrum.org",
@@ -135,7 +135,7 @@
     },
     {
         "key": "apache",
-        "icon": "ion-bag",
+        "icon": "ion-ios-cog",
         "links": [
             {
                 "label": "Apache HTTP Server",
@@ -161,7 +161,7 @@
     },
     {
         "key": "api",
-        "icon": "ion-bag",
+        "icon": "ion-link",
         "links": [
             {
                 "label": "Postman",
@@ -197,7 +197,7 @@
     },
     {
         "key": "appointment_test",
-        "icon": "ion-bag",
+        "icon": "ion-calendar",
         "links": [
             {
                 "label": "Calendly",
@@ -218,7 +218,7 @@
     },
     {
         "key": "backup",
-        "icon": "ion-bag",
+        "icon": "ion-archive",
         "links": [
             {
                 "label": "Cobian Backup",
@@ -239,7 +239,7 @@
     },
     {
         "key": "cms_erp",
-        "icon": "ion-bag",
+        "icon": "ion-grid",
         "links": [
             {
                 "label": "WordPress",
@@ -275,7 +275,7 @@
     },
     {
         "key": "code_control",
-        "icon": "ion-bag",
+        "icon": "ion-fork-repo",
         "links": [
             {
                 "label": "GT Metrix",
@@ -311,7 +311,7 @@
     },
     {
         "key": "code_editor",
-        "icon": "ion-bag",
+        "icon": "ion-edit",
         "links": [
             {
                 "label": "VSCode",
@@ -362,7 +362,7 @@
     },
     {
         "key": "coding",
-        "icon": "ion-bag",
+        "icon": "ion-code-working",
         "links": [
             {
                 "label": "W3C",
@@ -433,7 +433,7 @@
     },
     {
         "key": "composer",
-        "icon": "ion-bag",
+        "icon": "ion-ios-box",
         "links": [
             {
                 "label": "Composer",
@@ -449,7 +449,7 @@
     },
     {
         "key": "concept",
-        "icon": "ion-bag",
+        "icon": "ion-ios-lightbulb",
         "links": [
             {
                 "label": "Six Chapeaux de Bono",
@@ -485,7 +485,7 @@
     },
     {
         "key": "courses_certifications",
-        "icon": "ion-bag",
+        "icon": "ion-university",
         "links": [
             {
                 "label": "France Compétences",
@@ -556,7 +556,7 @@
     },
     {
         "key": "css",
-        "icon": "ion-bag",
+        "icon": "ion-paintbrush",
         "links": [
             {
                 "label": "Flexbox",
@@ -587,7 +587,7 @@
     },
     {
         "key": "database",
-        "icon": "ion-bag",
+        "icon": "ion-ios-list",
         "links": [
             {
                 "label": "MySQL",
@@ -633,7 +633,7 @@
     },
     {
         "key": "debug",
-        "icon": "ion-bag",
+        "icon": "ion-bug",
         "links": [
             {
                 "label": "Chrome DevTools",
@@ -659,7 +659,7 @@
     },
     {
         "key": "design_tools",
-        "icon": "ion-bag",
+        "icon": "ion-ios-color-wand",
         "links": [
             {
                 "label": "Icone 8",
@@ -710,7 +710,7 @@
     },
     {
         "key": "diagram",
-        "icon": "ion-bag",
+        "icon": "ion-pie-graph",
         "links": [
             {
                 "label": "Euler Diagram",
@@ -736,7 +736,7 @@
     },
     {
         "key": "diploma_certificate",
-        "icon": "ion-bag",
+        "icon": "ion-ribbon-a",
         "links": [
             {
                 "label": "French Diploma Nomenclature",
@@ -777,7 +777,7 @@
     },
     {
         "key": "docker",
-        "icon": "ion-bag",
+        "icon": "ion-cube",
         "links": [
             {
                 "label": "Docker",
@@ -808,7 +808,7 @@
     },
     {
         "key": "emulation",
-        "icon": "ion-bag",
+        "icon": "ion-ios-game-controller-b",
         "links": [
             {
                 "label": "Bluestacks (Android/PC)",
@@ -834,7 +834,7 @@
     },
     {
         "key": "find_job",
-        "icon": "ion-bag",
+        "icon": "ion-briefcase",
         "links": [
             {
                 "label": "La Bonne Boite",
@@ -860,7 +860,7 @@
     },
     {
         "key": "font",
-        "icon": "ion-bag",
+        "icon": "ion-compose",
         "links": [
             {
                 "label": "Google Fonts",
@@ -886,7 +886,7 @@
     },
     {
         "key": "free_picture",
-        "icon": "ion-bag",
+        "icon": "ion-images",
         "links": [
             {
                 "label": "FreePik",
@@ -922,7 +922,7 @@
     },
     {
         "key": "git",
-        "icon": "ion-bag",
+        "icon": "ion-social-github",
         "links": [
             {
                 "label": "GITHUB",
@@ -958,7 +958,7 @@
     },
     {
         "key": "html",
-        "icon": "ion-bag",
+        "icon": "ion-ios-browsers",
         "links": [
             {
                 "label": "HTML5 Tags",
@@ -984,7 +984,7 @@
     },
     {
         "key": "ia",
-        "icon": "ion-bag",
+        "icon": "ion-flash",
         "links": [
             {
                 "label": "Deep Learning",
@@ -1030,7 +1030,7 @@
     },
     {
         "key": "job",
-        "icon": "ion-bag",
+        "icon": "ion-ios-briefcase",
         "links": [
             {
                 "label": "WeLoveDevs",
@@ -1051,7 +1051,7 @@
     },
     {
         "key": "js",
-        "icon": "ion-bag",
+        "icon": "ion-coffee",
         "links": [
             {
                 "label": "MDN JavaScript",
@@ -1097,7 +1097,7 @@
     },
     {
         "key": "learning",
-        "icon": "ion-bag",
+        "icon": "ion-ios-book",
         "links": [
             {
                 "label": "PIX",
@@ -1138,7 +1138,7 @@
     },
     {
         "key": "legislation",
-        "icon": "ion-bag",
+        "icon": "ion-document-text",
         "links": [
             {
                 "label": "Legal Notice",
@@ -1154,7 +1154,7 @@
     },
     {
         "key": "linux",
-        "icon": "ion-bag",
+        "icon": "ion-social-tux",
         "links": [
             {
                 "label": "Ubuntu",
@@ -1190,7 +1190,7 @@
     },
     {
         "key": "localhost",
-        "icon": "ion-bag",
+        "icon": "ion-home",
         "links": [
             {
                 "label": "Laragon",
@@ -1246,7 +1246,7 @@
     },
     {
         "key": "mind_map",
-        "icon": "ion-bag",
+        "icon": "ion-share",
         "links": [
             {
                 "label": "MindMeister",
@@ -1272,7 +1272,7 @@
     },
     {
         "key": "module_cms",
-        "icon": "ion-bag",
+        "icon": "ion-ios-grid-view",
         "links": [
             {
                 "label": "WP Plugins",
@@ -1303,7 +1303,7 @@
     },
     {
         "key": "open_source",
-        "icon": "ion-bag",
+        "icon": "ion-heart",
         "links": [
             {
                 "label": "Framasoft",
@@ -1329,7 +1329,7 @@
     },
     {
         "key": "recommandation",
-        "icon": "ion-bag",
+        "icon": "ion-thumbsup",
         "links": [
             {
                 "label": "PHP-FIG PSR",
@@ -1365,7 +1365,7 @@
     },
     {
         "key": "rgpd",
-        "icon": "ion-bag",
+        "icon": "ion-ios-locked",
         "links": [
             {
                 "label": "CNIL",
@@ -1386,7 +1386,7 @@
     },
     {
         "key": "sand_box",
-        "icon": "ion-bag",
+        "icon": "ion-erlenmeyer-flask",
         "links": [
             {
                 "label": "3v4l.org (PHP multi-versions)",
@@ -1407,7 +1407,7 @@
     },
     {
         "key": "search_engine",
-        "icon": "ion-bag",
+        "icon": "ion-search",
         "links": [
             {
                 "label": "Ref Seek",
@@ -1453,7 +1453,7 @@
     },
     {
         "key": "security",
-        "icon": "ion-bag",
+        "icon": "ion-locked",
         "links": [
             {
                 "label": "ANSSI",
@@ -1474,7 +1474,7 @@
     },
     {
         "key": "security_health",
-        "icon": "ion-bag",
+        "icon": "ion-medkit",
         "links": [
             {
                 "label": "Cyber Malveillance Report",
@@ -1500,7 +1500,7 @@
     },
     {
         "key": "seo",
-        "icon": "ion-bag",
+        "icon": "ion-stats-bars",
         "links": [
             {
                 "label": "Google Analytics",
@@ -1531,7 +1531,7 @@
     },
     {
         "key": "server",
-        "icon": "ion-bag",
+        "icon": "ion-ios-cloud",
         "links": [
             {
                 "label": "REST & SOAP API Test",
@@ -1552,7 +1552,7 @@
     },
     {
         "key": "software",
-        "icon": "ion-bag",
+        "icon": "ion-android-apps",
         "links": [
             {
                 "label": "VirtualBox",
@@ -1588,7 +1588,7 @@
     },
     {
         "key": "sql",
-        "icon": "ion-bag",
+        "icon": "ion-android-list",
         "links": [
             {
                 "label": "SQL.SH",
@@ -1619,7 +1619,7 @@
     },
     {
         "key": "symfony",
-        "icon": "ion-bag",
+        "icon": "ion-leaf",
         "links": [
             {
                 "label": "Symfony",
@@ -1660,7 +1660,7 @@
     },
     {
         "key": "terminal",
-        "icon": "ion-bag",
+        "icon": "ion-ios-monitor",
         "links": [
             {
                 "label": "Cygwin",
@@ -1686,7 +1686,7 @@
     },
     {
         "key": "tools",
-        "icon": "ion-bag",
+        "icon": "ion-wrench",
         "links": [
             {
                 "label": "ADMINER",
@@ -1732,7 +1732,7 @@
     },
     {
         "key": "ux_ui",
-        "icon": "ion-bag",
+        "icon": "ion-android-color-palette",
         "links": [
             {
                 "label": "UX vs UI Design",
@@ -1768,7 +1768,7 @@
     },
     {
         "key": "validation",
-        "icon": "ion-bag",
+        "icon": "ion-checkmark-circled",
         "links": [
             {
                 "label": "Structured DATA",
@@ -1799,7 +1799,7 @@
     },
     {
         "key": "visio",
-        "icon": "ion-bag",
+        "icon": "ion-ios-videocam",
         "links": [
             {
                 "label": "Microsoft Teams",
@@ -1835,7 +1835,7 @@
     },
     {
         "key": "web_hosting",
-        "icon": "ion-bag",
+        "icon": "ion-ios-world",
         "links": [
             {
                 "label": "Alwaysdata",
