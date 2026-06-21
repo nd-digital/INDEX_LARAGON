@@ -243,6 +243,6 @@
     "readme.f_menuedit": "Éditeur de menu intégré : ajouter, modifier, réordonner catégories et liens (enregistré sur la machine).",
     "phonefake.where": "Fonctionnement : chaque sous-dossier de www/appli/ contenant un index.html apparaît comme une appli testable dans PhoneFake.",
     "menuedit.icon_hint": "L'icône est une classe Ionicons (ex. ion-bag, ion-code) affichée à côté de la catégorie.",
-    "menuedit.choose_icon": "Choisir…",
+    "menuedit.choose_icon": "Changer l'icône",
     "menuedit.search_icon": "Rechercher une icône…"
 }

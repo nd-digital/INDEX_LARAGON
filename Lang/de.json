@@ -243,6 +243,6 @@
     "readme.f_menuedit": "Integrierter Menü-Editor: Kategorien und Links hinzufügen, bearbeiten, neu anordnen (auf dem Rechner gespeichert).",
     "phonefake.where": "So funktioniert's: Jeder Unterordner von www/appli/ mit einer index.html erscheint als testbare App in PhoneFake.",
     "menuedit.icon_hint": "Das Icon ist eine Ionicons-Klasse (z. B. ion-bag, ion-code), die neben der Kategorie erscheint.",
-    "menuedit.choose_icon": "Wählen…",
+    "menuedit.choose_icon": "Icon ändern",
     "menuedit.search_icon": "Icon suchen…"
 }
