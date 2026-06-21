@@ -502,3 +502,25 @@
 
   modal.addEventListener('show.bs.modal', loadFromServer);
 })();
+
+// --- Cross-navigation between the "customize menu" and "menu editor" modals.
+// Hide the current one, then open the other once it is fully hidden (avoids
+// stacked backdrops). ---
+(function () {
+  function bridge(btnId, fromId, toId) {
+    var btn = document.getElementById(btnId);
+    var from = document.getElementById(fromId);
+    var to = document.getElementById(toId);
+    if (!btn || !from || !to || typeof bootstrap === 'undefined') return;
+    btn.addEventListener('click', function () {
+      var inst = bootstrap.Modal.getInstance(from) || new bootstrap.Modal(from);
+      from.addEventListener('hidden.bs.modal', function handler() {
+        from.removeEventListener('hidden.bs.modal', handler);
+        (bootstrap.Modal.getInstance(to) || new bootstrap.Modal(to)).show();
+      });
+      inst.hide();
+    });
+  }
+  bridge('menuEditorToPrefs', 'menuEditorModal', 'menuPrefsModal');
+  bridge('menuPrefsToEditor', 'menuPrefsModal', 'menuEditorModal');
+})();

@@ -289,6 +289,7 @@
             <div id="menuPrefsList" class="menu-prefs-list"></div>
           </div>
           <div class="modal-footer">
+            <button type="button" class="btn btn-outline-info btn-sm me-auto" id="menuPrefsToEditor"><i class="ion-ios-compose-outline" aria-hidden="true"></i> <?php echo __('menuedit.title'); ?></button>
             <button type="button" class="btn btn-outline-light btn-sm" id="prefSelectAll"><?php echo __('menuprefs.all'); ?></button>
             <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal"><?php echo __('common.close'); ?></button>
           </div>
@@ -446,6 +447,7 @@
             <div id="menuEditorStatus" class="menu-editor-status" role="status" aria-live="polite"></div>
           </div>
           <div class="modal-footer">
+            <button type="button" class="btn btn-outline-info btn-sm me-auto" id="menuEditorToPrefs"><i class="ion-ios-gear-outline" aria-hidden="true"></i> <?php echo __('menuprefs.title'); ?></button>
             <button type="button" class="btn btn-outline-light btn-sm" id="menuEditorReload"><?php echo __('menuedit.reload'); ?></button>
             <button type="button" class="btn btn-success btn-sm" id="menuEditorSave"><?php echo __('common.save'); ?></button>
             <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal"><?php echo __('common.close'); ?></button>
