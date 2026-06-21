@@ -243,6 +243,7 @@
   var listEl   = modal.querySelector('#menuEditorList');
   var statusEl = modal.querySelector('#menuEditorStatus');
   var addCatBtn = modal.querySelector('#menuEditorAddCat');
+  var addCatTopBtn = modal.querySelector('#menuEditorAddCatTop');
   var saveBtn  = modal.querySelector('#menuEditorSave');
   var reloadBtn = modal.querySelector('#menuEditorReload');
   var labels   = window.INDEX_LARAGON_MENU_LABELS || {};
@@ -321,9 +322,23 @@
     }
     head.appendChild(labelField);
 
-    var icon = input(cat.icon, t('menuedit.icon'), function (v) { cat.icon = v; });
+    // Icon field with a live preview of the Ionicons glyph next to it.
+    var iconWrap = el('div', 'menu-editor-icon-wrap');
+    var iconPrev = el('i', 'menu-editor-icon-prev ' + (cat.icon || ''));
+    iconPrev.setAttribute('aria-hidden', 'true');
+    var icon = input(cat.icon, t('menuedit.icon'), function (v) {
+      cat.icon = v;
+      iconPrev.className = 'menu-editor-icon-prev ' + v;
+    });
     icon.classList.add('menu-editor-icon-input');
-    head.appendChild(icon);
+    iconWrap.appendChild(iconPrev);
+    iconWrap.appendChild(icon);
+    var chooseBtn = el('button', 'btn btn-sm btn-outline-light menu-editor-icbtn');
+    chooseBtn.type = 'button';
+    chooseBtn.textContent = t('menuedit.choose_icon');
+    chooseBtn.addEventListener('click', function () { openIconPicker(ci); });
+    iconWrap.appendChild(chooseBtn);
+    head.appendChild(iconWrap);
 
     head.appendChild(iconBtn('&times;', t('menuedit.delete'), function () {
       if (confirm(t('menuedit.confirm_delete_cat'))) { model.splice(ci, 1); render(); }
@@ -381,13 +396,17 @@
     status('');
   }
 
-  addCatBtn.addEventListener('click', function () {
-    model.push({ label: '', icon: '', links: [] });
+  function addCategory(toTop) {
+    var cat = { label: '', icon: '', links: [] };
+    if (toTop) { model.unshift(cat); } else { model.push(cat); }
     render();
-    // Focus the new category label input.
+    // Focus the new category's label input.
     var inputs = listEl.querySelectorAll('.menu-editor-cat-label-input');
-    if (inputs.length) inputs[inputs.length - 1].focus();
-  });
+    var target = toTop ? inputs[0] : inputs[inputs.length - 1];
+    if (target) { target.focus(); target.scrollIntoView({ block: 'nearest' }); }
+  }
+  addCatBtn.addEventListener('click', function () { addCategory(false); });
+  if (addCatTopBtn) addCatTopBtn.addEventListener('click', function () { addCategory(true); });
 
   reloadBtn.addEventListener('click', function () {
     if (confirm(t('menuedit.confirm_reload'))) loadFromServer();
@@ -420,6 +439,66 @@
         status(t('menuedit.save_error'), 'error');
       });
   });
+
+  // Icon picker (Ionicons grid) -------------------------------------------
+  var picker = modal.querySelector('#menuEditorIconPicker');
+  var pickerGrid = modal.querySelector('#iconPickerGrid');
+  var pickerSearch = modal.querySelector('#iconPickerSearch');
+  var pickerClose = modal.querySelector('#iconPickerClose');
+  var pickerTarget = -1;
+  var pickerBuilt = false;
+
+  function buildIconGrid() {
+    if (pickerBuilt || !pickerGrid) return;
+    var frag = document.createDocumentFragment();
+    (window.IONICONS || []).forEach(function (name) {
+      var b = el('button', 'icon-pick');
+      b.type = 'button';
+      b.title = name;
+      b.setAttribute('data-name', name);
+      var i = el('i', name);
+      i.setAttribute('aria-hidden', 'true');
+      b.appendChild(i);
+      frag.appendChild(b);
+    });
+    pickerGrid.appendChild(frag);
+    pickerBuilt = true;
+  }
+  function filterIcons(q) {
+    q = (q || '').toLowerCase();
+    var btns = pickerGrid.children;
+    for (var i = 0; i < btns.length; i++) {
+      var name = btns[i].getAttribute('data-name');
+      btns[i].style.display = (!q || name.indexOf(q) > -1) ? '' : 'none';
+    }
+  }
+  function openIconPicker(ci) {
+    if (!picker) return;
+    buildIconGrid();
+    pickerTarget = ci;
+    picker.hidden = false;
+    pickerSearch.value = '';
+    filterIcons('');
+    pickerSearch.focus();
+  }
+  function closeIconPicker() { if (picker) { picker.hidden = true; pickerTarget = -1; } }
+
+  if (picker) {
+    pickerGrid.addEventListener('click', function (e) {
+      var b = e.target.closest('.icon-pick');
+      if (!b || pickerTarget < 0) return;
+      model[pickerTarget].icon = b.getAttribute('data-name');
+      closeIconPicker();
+      render();
+    });
+    pickerSearch.addEventListener('input', function () { filterIcons(pickerSearch.value); });
+    pickerClose.addEventListener('click', closeIconPicker);
+    picker.addEventListener('click', function (e) { if (e.target === picker) closeIconPicker(); });
+    // Escape closes the picker first (without closing the whole modal).
+    modal.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !picker.hidden) { e.stopPropagation(); closeIconPicker(); }
+    });
+  }
 
   modal.addEventListener('show.bs.modal', loadFromServer);
 })();

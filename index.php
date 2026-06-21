@@ -253,6 +253,7 @@ include('./INDEX_LARAGON/Partials/Head.php');
     window.INDEX_LARAGON_MENU_LABELS = <?php echo json_encode($menu_labels, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP); ?>;
     window.INDEX_LARAGON_CSRF = <?php echo json_encode($csrf_token); ?>;
   </script>
+  <script src="./INDEX_LARAGON/Assets/Js/ionicons-list.js?v=<?php echo asset_v('Assets/Js/ionicons-list.js'); ?>"></script>
   <script src="./INDEX_LARAGON/Assets/Js/dashboard.js?v=<?php echo asset_v('Assets/Js/dashboard.js'); ?>"></script>
 
 </body>

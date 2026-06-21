@@ -896,6 +896,27 @@ body.a11y-cursor * {
 /* ===================================================================
    Menu editor modal
    =================================================================== */
+.menu-editor-toolbar {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    flex-wrap: wrap;
+    margin-bottom: .7rem;
+}
+.menu-editor-icon-wrap {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    flex: 0 1 200px;
+    min-width: 140px;
+}
+.menu-editor-icon-prev {
+    font-size: 1.25rem;
+    width: 1.5rem;
+    text-align: center;
+    color: var(--sidebar-accent);
+    flex: 0 0 auto;
+}
 .menu-editor-cat {
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -920,8 +941,8 @@ body.a11y-cursor * {
     min-width: 120px;
 }
 .menu-editor-icon-input {
-    flex: 0 1 160px;
-    min-width: 110px;
+    flex: 1 1 auto;
+    min-width: 90px;
 }
 .menu-editor-badge {
     display: inline-block;
@@ -971,6 +992,62 @@ body.a11y-cursor * {
 }
 .menu-editor-status.is-ok    { color: var(--ok); }
 .menu-editor-status.is-error { color: var(--accent); }
+
+/* Icon picker overlay (covers the menu editor; Ionicons grid) */
+.icon-picker {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, .55);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem;
+}
+.icon-picker[hidden] { display: none; }
+.icon-picker-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 560px;
+    max-height: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .5);
+}
+.icon-picker-head {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .6rem .7rem;
+    border-bottom: 1px solid var(--border);
+}
+.icon-picker-grid {
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(46px, 1fr));
+    gap: 5px;
+    padding: .6rem;
+}
+.icon-pick {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    font-size: 1.4rem;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color .12s, color .12s;
+}
+.icon-pick:hover,
+.icon-pick:focus-visible {
+    border-color: var(--sidebar-accent);
+    color: var(--sidebar-accent);
+}
 
 @media (max-width: 575.98px) {
     .menu-editor-link {

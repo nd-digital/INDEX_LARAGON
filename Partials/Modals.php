@@ -437,6 +437,10 @@
           </div>
           <div class="modal-body">
             <p class="text-muted" style="font-size:.9rem;"><?php echo __('menuedit.intro'); ?></p>
+            <div class="menu-editor-toolbar">
+              <button type="button" class="btn btn-success btn-sm" id="menuEditorAddCatTop">+ <?php echo __('menuedit.add_category'); ?></button>
+              <small class="text-muted"><?php echo __('menuedit.icon_hint'); ?></small>
+            </div>
             <div id="menuEditorList" class="menu-editor-list"></div>
             <button type="button" class="btn btn-outline-light btn-sm mt-2" id="menuEditorAddCat">+ <?php echo __('menuedit.add_category'); ?></button>
             <div id="menuEditorStatus" class="menu-editor-status" role="status" aria-live="polite"></div>
@@ -445,6 +449,16 @@
             <button type="button" class="btn btn-outline-light btn-sm" id="menuEditorReload"><?php echo __('menuedit.reload'); ?></button>
             <button type="button" class="btn btn-success btn-sm" id="menuEditorSave"><?php echo __('common.save'); ?></button>
             <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal"><?php echo __('common.close'); ?></button>
+          </div>
+          <!-- Icon picker overlay (Ionicons) for the menu editor; populated by JS -->
+          <div id="menuEditorIconPicker" class="icon-picker" hidden>
+            <div class="icon-picker-inner">
+              <div class="icon-picker-head">
+                <input type="text" id="iconPickerSearch" class="form-control form-control-sm" placeholder="<?php echo __('menuedit.search_icon'); ?>" autocomplete="off">
+                <button type="button" class="btn-close btn-close-white" id="iconPickerClose" aria-label="<?php echo __('common.close'); ?>"></button>
+              </div>
+              <div id="iconPickerGrid" class="icon-picker-grid"></div>
+            </div>
           </div>
         </div>
       </div>

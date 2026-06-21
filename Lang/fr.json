@@ -241,5 +241,8 @@
     "menuedit.confirm_delete_cat": "Supprimer cette catégorie et tous ses liens ?",
     "menuedit.confirm_reload": "Abandonner les modifications non enregistrées ?",
     "readme.f_menuedit": "Éditeur de menu intégré : ajouter, modifier, réordonner catégories et liens (enregistré sur la machine).",
-    "phonefake.where": "Fonctionnement : chaque sous-dossier de www/appli/ contenant un index.html apparaît comme une appli testable dans PhoneFake."
+    "phonefake.where": "Fonctionnement : chaque sous-dossier de www/appli/ contenant un index.html apparaît comme une appli testable dans PhoneFake.",
+    "menuedit.icon_hint": "L'icône est une classe Ionicons (ex. ion-bag, ion-code) affichée à côté de la catégorie.",
+    "menuedit.choose_icon": "Choisir…",
+    "menuedit.search_icon": "Rechercher une icône…"
 }

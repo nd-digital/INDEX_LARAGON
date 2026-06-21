@@ -241,5 +241,8 @@
     "menuedit.confirm_delete_cat": "¿Eliminar esta categoría y todos sus enlaces?",
     "menuedit.confirm_reload": "¿Descartar los cambios sin guardar?",
     "readme.f_menuedit": "Editor de menú integrado: añadir, editar y reordenar categorías y enlaces (guardado en la máquina).",
-    "phonefake.where": "Cómo funciona: cada subcarpeta de www/appli/ que contiene un index.html aparece como una app de prueba dentro de PhoneFake."
+    "phonefake.where": "Cómo funciona: cada subcarpeta de www/appli/ que contiene un index.html aparece como una app de prueba dentro de PhoneFake.",
+    "menuedit.icon_hint": "El icono es una clase Ionicons (p. ej. ion-bag, ion-code) que se muestra junto a la categoría.",
+    "menuedit.choose_icon": "Elegir…",
+    "menuedit.search_icon": "Buscar un icono…"
 }

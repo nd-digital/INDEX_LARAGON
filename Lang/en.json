@@ -241,5 +241,8 @@
     "menuedit.confirm_delete_cat": "Delete this category and all its links?",
     "menuedit.confirm_reload": "Discard your unsaved changes?",
     "readme.f_menuedit": "Built-in menu editor: add, edit, reorder categories and links (saved on this machine).",
-    "phonefake.where": "How it works: each subfolder of www/appli/ that contains an index.html appears as a testable app inside PhoneFake."
+    "phonefake.where": "How it works: each subfolder of www/appli/ that contains an index.html appears as a testable app inside PhoneFake.",
+    "menuedit.icon_hint": "The icon is an Ionicons class (e.g. ion-bag, ion-code) shown next to the category.",
+    "menuedit.choose_icon": "Choose…",
+    "menuedit.search_icon": "Search an icon…"
 }
