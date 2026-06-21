@@ -254,6 +254,7 @@
               <li><?php echo __('readme.f_security'); ?></li>
               <li><?php echo __('readme.f_a11y'); ?></li>
               <li><?php echo __('readme.f_customize'); ?></li>
+              <li><?php echo __('readme.f_menuedit'); ?></li>
             </ul>
             <h6 style="color:#e94560; border-bottom:1px solid #0f3460; padding-bottom:.4rem; margin:1.1rem 0 .6rem;"><?php echo __('readme.usage_title'); ?></h6>
             <ul style="line-height:1.7; padding-left:1.2rem;">
@@ -381,6 +382,69 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal"><?php echo __('common.close'); ?></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PhoneFake discovery modal — cross-promo shown when the app is not installed
+         in www/ (or forced for preview). Screenshot + features + GitHub link. -->
+    <div class="modal fade" id="phonefakeModal" tabindex="-1" aria-labelledby="phonefakeLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="phonefakeLabel">
+              <img src="./INDEX_LARAGON/Assets/Picture/phonefake.svg" alt="" width="22" height="22" style="vertical-align:-4px; margin-right:.4rem;">
+              <?php echo __('phonefake.title'); ?>
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
+          </div>
+          <div class="modal-body">
+            <img src="./INDEX_LARAGON/Assets/Picture/phonefake-preview.png" alt="<?php echo __('phonefake.title'); ?>" class="phonefake-shot">
+            <p class="phonefake-tagline"><?php echo __('phonefake.tagline'); ?></p>
+            <ul class="phonefake-features">
+              <li><?php echo __('phonefake.f1'); ?></li>
+              <li><?php echo __('phonefake.f2'); ?></li>
+              <li><?php echo __('phonefake.f3'); ?></li>
+              <li><?php echo __('phonefake.f4'); ?></li>
+              <li><?php echo __('phonefake.f5'); ?></li>
+            </ul>
+            <p class="phonefake-where text-muted"><?php echo __('phonefake.where'); ?></p>
+            <?php if (empty($phonefake_installed)): ?>
+            <p class="phonefake-note text-muted"><?php echo __('phonefake.not_installed'); ?></p>
+            <?php endif; ?>
+          </div>
+          <div class="modal-footer">
+            <?php if (!empty($phonefake_installed)): ?>
+            <a class="btn btn-primary btn-sm" href="/<?php echo htmlspecialchars($phonefake_slug ?? 'appli', ENT_QUOTES); ?>/"><?php echo __('phonefake.open'); ?></a>
+            <?php endif; ?>
+            <a class="btn btn-success btn-sm" href="https://github.com/nd-digital/phonefake" target="_blank" rel="noopener noreferrer"><?php echo __('phonefake.github'); ?></a>
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal"><?php echo __('common.close'); ?></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu editor modal — edits Menu/menu.json (categories + links).
+         The form is built by Assets/Js/dashboard.js; saving POSTs to index.php
+         (CSRF protected + server-side validation). -->
+    <div class="modal fade" id="menuEditorModal" tabindex="-1" aria-labelledby="menuEditorLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="menuEditorLabel"><?php echo __('menuedit.title'); ?></h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-muted" style="font-size:.9rem;"><?php echo __('menuedit.intro'); ?></p>
+            <div id="menuEditorList" class="menu-editor-list"></div>
+            <button type="button" class="btn btn-outline-light btn-sm mt-2" id="menuEditorAddCat">+ <?php echo __('menuedit.add_category'); ?></button>
+            <div id="menuEditorStatus" class="menu-editor-status" role="status" aria-live="polite"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-light btn-sm" id="menuEditorReload"><?php echo __('menuedit.reload'); ?></button>
+            <button type="button" class="btn btn-success btn-sm" id="menuEditorSave"><?php echo __('common.save'); ?></button>
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal"><?php echo __('common.close'); ?></button>
           </div>
         </div>
       </div>

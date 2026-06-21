@@ -231,3 +231,195 @@
     li.addEventListener('keydown', function (e) { if (e.key === 'Escape') link.focus(); });
   });
 })();
+
+// --- Menu editor: edit Menu/menu.json (categories + links) from the UI.
+// localhost-only + CSRF + server-side validation/sanitization (see index.php
+// save_menu handler). Built-in categories keep their i18n key (label read-only,
+// shown translated); custom ones use a free-text label. ---
+(function () {
+  var modal = document.getElementById('menuEditorModal');
+  if (!modal || !Array.isArray(window.INDEX_LARAGON_MENU)) return;
+
+  var listEl   = modal.querySelector('#menuEditorList');
+  var statusEl = modal.querySelector('#menuEditorStatus');
+  var addCatBtn = modal.querySelector('#menuEditorAddCat');
+  var saveBtn  = modal.querySelector('#menuEditorSave');
+  var reloadBtn = modal.querySelector('#menuEditorReload');
+  var labels   = window.INDEX_LARAGON_MENU_LABELS || {};
+  var model    = [];
+
+  function t(k) { return window.__ ? window.__(k) : k; }
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+  function status(msg, kind) {
+    statusEl.textContent = msg || '';
+    statusEl.className = 'menu-editor-status' + (kind ? ' is-' + kind : '');
+  }
+  function move(arr, i, d) {
+    var j = i + d;
+    if (j < 0 || j >= arr.length) return false;
+    var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp; return true;
+  }
+
+  // Small DOM helpers ------------------------------------------------------
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function input(value, placeholder, onChange) {
+    var i = el('input', 'form-control form-control-sm');
+    i.type = 'text';
+    i.value = value || '';
+    if (placeholder) i.placeholder = placeholder;
+    i.addEventListener('input', function () { onChange(i.value); });
+    return i;
+  }
+  function iconBtn(symbol, label, onClick) {
+    var b = el('button', 'btn btn-sm btn-outline-light menu-editor-icbtn');
+    b.type = 'button';
+    b.innerHTML = symbol;
+    b.title = label;
+    b.setAttribute('aria-label', label);
+    b.addEventListener('click', onClick);
+    return b;
+  }
+
+  // Render -----------------------------------------------------------------
+  function render() {
+    listEl.innerHTML = '';
+    if (!model.length) {
+      listEl.appendChild(el('p', 'text-muted', t('menuedit.no_links')));
+    }
+    model.forEach(function (cat, ci) {
+      listEl.appendChild(renderCategory(cat, ci));
+    });
+  }
+
+  function renderCategory(cat, ci) {
+    var isBuiltin = !!cat.key;
+    var card = el('div', 'menu-editor-cat');
+
+    // Header row: order controls + label + icon + delete
+    var head = el('div', 'menu-editor-cat-head');
+    head.appendChild(iconBtn('&#9650;', t('menuedit.move_up'), function () {
+      if (move(model, ci, -1)) render();
+    }));
+    head.appendChild(iconBtn('&#9660;', t('menuedit.move_down'), function () {
+      if (move(model, ci, 1)) render();
+    }));
+
+    var labelField;
+    if (isBuiltin) {
+      labelField = el('span', 'menu-editor-cat-label');
+      labelField.textContent = labels[cat.key] || cat.key;
+      var badge = el('span', 'menu-editor-badge', t('menuedit.builtin'));
+      labelField.appendChild(badge);
+    } else {
+      labelField = input(cat.label, t('menuedit.category_label'), function (v) { cat.label = v; });
+      labelField.classList.add('menu-editor-cat-label-input');
+    }
+    head.appendChild(labelField);
+
+    var icon = input(cat.icon, t('menuedit.icon'), function (v) { cat.icon = v; });
+    icon.classList.add('menu-editor-icon-input');
+    head.appendChild(icon);
+
+    head.appendChild(iconBtn('&times;', t('menuedit.delete'), function () {
+      if (confirm(t('menuedit.confirm_delete_cat'))) { model.splice(ci, 1); render(); }
+    }));
+    card.appendChild(head);
+
+    // Links
+    var links = cat.links || (cat.links = []);
+    var linksWrap = el('div', 'menu-editor-links');
+    if (!links.length) {
+      linksWrap.appendChild(el('p', 'text-muted menu-editor-empty', t('menuedit.no_links')));
+    }
+    links.forEach(function (lnk, li) {
+      linksWrap.appendChild(renderLink(links, lnk, li));
+    });
+    card.appendChild(linksWrap);
+
+    var addLink = el('button', 'btn btn-sm btn-outline-light mt-1');
+    addLink.type = 'button';
+    addLink.textContent = '+ ' + t('menuedit.add_link');
+    addLink.addEventListener('click', function () {
+      links.push({ label: '', url: '', title: '' });
+      render();
+    });
+    card.appendChild(addLink);
+    return card;
+  }
+
+  function renderLink(links, lnk, li) {
+    var row = el('div', 'menu-editor-link');
+    var ctrls = el('div', 'menu-editor-link-ctrls');
+    ctrls.appendChild(iconBtn('&#9650;', t('menuedit.move_up'), function () {
+      if (move(links, li, -1)) render();
+    }));
+    ctrls.appendChild(iconBtn('&#9660;', t('menuedit.move_down'), function () {
+      if (move(links, li, 1)) render();
+    }));
+    ctrls.appendChild(iconBtn('&times;', t('menuedit.delete'), function () {
+      links.splice(li, 1); render();
+    }));
+    row.appendChild(ctrls);
+
+    var fields = el('div', 'menu-editor-link-fields');
+    fields.appendChild(input(lnk.label, t('menuedit.link_label'), function (v) { lnk.label = v; }));
+    fields.appendChild(input(lnk.url, t('menuedit.link_url'), function (v) { lnk.url = v; }));
+    fields.appendChild(input(lnk.title, t('menuedit.link_title'), function (v) { lnk.title = v; }));
+    row.appendChild(fields);
+    return row;
+  }
+
+  // Actions ----------------------------------------------------------------
+  function loadFromServer() {
+    model = clone(window.INDEX_LARAGON_MENU);
+    render();
+    status('');
+  }
+
+  addCatBtn.addEventListener('click', function () {
+    model.push({ label: '', icon: '', links: [] });
+    render();
+    // Focus the new category label input.
+    var inputs = listEl.querySelectorAll('.menu-editor-cat-label-input');
+    if (inputs.length) inputs[inputs.length - 1].focus();
+  });
+
+  reloadBtn.addEventListener('click', function () {
+    if (confirm(t('menuedit.confirm_reload'))) loadFromServer();
+  });
+
+  saveBtn.addEventListener('click', function () {
+    saveBtn.disabled = true;
+    status(t('common.loading'));
+    var body = 'save_menu=' + encodeURIComponent(JSON.stringify(model)) +
+               '&csrf_token=' + encodeURIComponent(window.INDEX_LARAGON_CSRF || '');
+    fetch('./index.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body
+    })
+      .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+      .then(function (d) {
+        saveBtn.disabled = false;
+        if (d && d.ok) {
+          status(t('menuedit.saved'), 'ok');
+          // Reflect the saved state and refresh the live sidebar.
+          window.INDEX_LARAGON_MENU = clone(model);
+          setTimeout(function () { window.location.reload(); }, 600);
+        } else {
+          status((d && d.error) || t('menuedit.save_error'), 'error');
+        }
+      })
+      .catch(function () {
+        saveBtn.disabled = false;
+        status(t('menuedit.save_error'), 'error');
+      });
+  });
+
+  modal.addEventListener('show.bs.modal', loadFromServer);
+})();

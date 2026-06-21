@@ -46,6 +46,79 @@ if (!empty($_POST['clear_log'])) {
   exit;
 }
 
+// Menu editing (CSRF protected; writes Menu/menu.json). The localhost guard above
+// already restricts access; the payload is validated/sanitized before writing.
+if (isset($_POST['save_menu'])) {
+  header('Content-Type: application/json; charset=utf-8');
+  if (empty($_POST['csrf_token']) || !hash_equals($csrf_token, $_POST['csrf_token'])) {
+    http_response_code(403);
+    echo json_encode(['ok' => false, 'error' => __('api.invalid_csrf')]);
+    exit;
+  }
+  $clean = sanitize_menu(json_decode((string) $_POST['save_menu'], true));
+  if ($clean === null) {
+    http_response_code(400);
+    echo json_encode(['ok' => false, 'error' => __('menuedit.err_invalid')]);
+    exit;
+  }
+  $target = __DIR__ . '/Menu/menu.json';
+  $tmp    = $target . '.tmp';
+  $json   = json_encode($clean, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+  // Atomic write: write a temp file then rename it over the target.
+  if ($json === false || file_put_contents($tmp, $json, LOCK_EX) === false || !rename($tmp, $target)) {
+    @unlink($tmp);
+    http_response_code(500);
+    echo json_encode(['ok' => false, 'error' => __('menuedit.err_write')]);
+    exit;
+  }
+  echo json_encode(['ok' => true]);
+  exit;
+}
+
+/**
+ * Validate and sanitize a decoded menu structure before writing menu.json.
+ * Returns a clean list of categories, or null if the input is not a list.
+ * Mirrors the on-output rules of Menu/Menu_Right.php (blocked URL schemes, escaping).
+ */
+function sanitize_menu($data): ?array {
+  if (!is_array($data)) return null;
+  $clean = [];
+  foreach (array_values($data) as $cat) {
+    if (!is_array($cat) || count($clean) >= 200) continue;
+    $out = [];
+    // Built-in categories keep a [a-z0-9_] i18n key; custom ones use a plain label.
+    $key = isset($cat['key']) ? trim((string) $cat['key']) : '';
+    if ($key !== '' && preg_match('/^[a-z0-9_]+$/i', $key)) {
+      $out['key'] = $key;
+    }
+    $label = isset($cat['label']) ? trim(strip_tags((string) $cat['label'])) : '';
+    if ($label !== '') $out['label'] = mb_substr($label, 0, 80);
+    // A category needs at least a key or a label to be meaningful.
+    if (!isset($out['key']) && !isset($out['label'])) continue;
+    $icon = isset($cat['icon']) ? trim((string) $cat['icon']) : '';
+    $out['icon'] = preg_match('/^[a-z0-9 _-]{0,40}$/i', $icon) ? $icon : '';
+    // Links
+    $out['links'] = [];
+    $links = isset($cat['links']) && is_array($cat['links']) ? $cat['links'] : [];
+    foreach (array_values($links) as $lnk) {
+      if (!is_array($lnk) || count($out['links']) >= 500) continue;
+      $url = isset($lnk['url']) ? trim((string) $lnk['url']) : '';
+      if ($url === '' || mb_strlen($url) > 2048) continue;
+      // Block dangerous schemes; when a scheme is present, allow only http(s).
+      if (preg_match('~^\s*(?:javascript|data|vbscript):~i', $url)) continue;
+      if (preg_match('~^[a-z][a-z0-9+.\-]*:~i', $url) && !preg_match('~^https?://~i', $url)) continue;
+      $lLabel = isset($lnk['label']) ? trim(strip_tags((string) $lnk['label'])) : '';
+      if ($lLabel === '') $lLabel = $url;
+      $lTitle = isset($lnk['title']) ? trim(strip_tags((string) $lnk['title'])) : '';
+      $link = ['label' => mb_substr($lLabel, 0, 120), 'url' => $url];
+      if ($lTitle !== '') $link['title'] = mb_substr($lTitle, 0, 200);
+      $out['links'][] = $link;
+    }
+    $clean[] = $out;
+  }
+  return $clean;
+}
+
 // Read log lines for display in modals
 function read_log_lines(string $path): array {
   if (!file_exists($path)) return [];
@@ -54,6 +127,14 @@ function read_log_lines(string $path): array {
 }
 $log_access     = read_log_lines('./INDEX_LARAGON/LOG/access.log');
 $log_intrusions = read_log_lines('./INDEX_LARAGON/LOG/intrusions.log');
+
+// Raw menu structure + translated category labels, exposed to the menu editor (JS).
+$menu_for_js = json_decode(@file_get_contents(__DIR__ . '/Menu/menu.json'), true);
+if (!is_array($menu_for_js)) $menu_for_js = [];
+$menu_labels = [];
+foreach ($menu_for_js as $c) {
+  if (!empty($c['key'])) $menu_labels[$c['key']] = __('menu.' . $c['key']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo getLang(); ?>">
@@ -123,10 +204,21 @@ include('./INDEX_LARAGON/Partials/Head.php');
 
         // --- Directories (grouped by first letter) ---
         if (!empty($directories)) {
+          $total_dirs = count($directories);
           sort($directories, SORT_STRING | SORT_FLAG_CASE);
+          // Feature PhoneFake (folder "appli") at the top of the list, with its
+          // logo and a friendly alias, instead of the bare folder name.
+          $pf_idx = array_search('appli', $directories, true);
+          $pf_featured = ($pf_idx !== false);
+          if ($pf_featured) { array_splice($directories, $pf_idx, 1); }
           echo '<div style="clear:both; text-align:center; font-weight:bold; color:var(--info); border:1px solid var(--ok);">'
-             . __('main.web_sites', ['count' => count($directories)])
+             . __('main.web_sites', ['count' => $total_dirs])
              . '</div><ul>';
+          if ($pf_featured) {
+            echo '<li class="featured-site"><a href="' . $dirPath . '/appli/">'
+               . '<img src="./INDEX_LARAGON/Assets/Picture/phonefake.svg" alt="" width="18" height="18" class="featured-site-logo">'
+               . 'PhoneFake <span class="featured-site-alias">(appli)</span></a></li>';
+          }
           $currentLetter = '';
           foreach ($directories as $entry) {
             if ($entry[0] !== $currentLetter) {
@@ -157,6 +249,9 @@ include('./INDEX_LARAGON/Partials/Head.php');
   <script src="./INDEX_LARAGON/Assets/Bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
     window.INDEX_LARAGON_VERSION = <?php echo json_encode(trim(@file_get_contents(__DIR__ . '/VERSION')) ?: '0.0.0'); ?>;
+    window.INDEX_LARAGON_MENU = <?php echo json_encode($menu_for_js, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP); ?>;
+    window.INDEX_LARAGON_MENU_LABELS = <?php echo json_encode($menu_labels, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP); ?>;
+    window.INDEX_LARAGON_CSRF = <?php echo json_encode($csrf_token); ?>;
   </script>
   <script src="./INDEX_LARAGON/Assets/Js/dashboard.js?v=<?php echo asset_v('Assets/Js/dashboard.js'); ?>"></script>
 

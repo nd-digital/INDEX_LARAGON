@@ -38,12 +38,36 @@
         </script>
     </header>
 
-    <!-- Language selector -->
-    <nav class="lang-selector" aria-label="<?php echo __('header.language'); ?>">
-      <?php foreach (getSupportedLangs() as $code): ?>
-        <a href="<?php echo langUrl($code); ?>" hreflang="<?php echo $code; ?>" lang="<?php echo $code; ?>" class="lang-option<?php echo getLang() === $code ? ' active' : ''; ?>"<?php echo getLang() === $code ? ' aria-current="true"' : ''; ?>><?php echo strtoupper($code); ?></a>
-      <?php endforeach; ?>
-    </nav>
+    <?php
+      // PhoneFake cross-promo logo (sits just before the language bar). When the
+      // app is installed in www/ the logo opens it directly; otherwise it opens a
+      // discovery modal (screenshot + features + GitHub link). See #phonefakeModal.
+      $phonefake_slug      = 'appli'; // PhoneFake folder name inside www/
+      $phonefake_installed = is_file($_SERVER['DOCUMENT_ROOT'] . '/' . $phonefake_slug . '/index.html');
+      // Optional: force the discovery modal even when PhoneFake is installed
+      // (handy to preview the cross-promo). Normal behaviour: false.
+      $phonefake_force_modal = false;
+      if ($phonefake_force_modal) $phonefake_installed = false;
+      $phonefake_show_modal  = !$phonefake_installed;
+    ?>
+    <!-- Right-hand header tools: PhoneFake logo + language bar -->
+    <div class="header-right-tools">
+      <?php if ($phonefake_show_modal): ?>
+      <button type="button" class="phonefake-logo" data-bs-toggle="modal" data-bs-target="#phonefakeModal" aria-label="<?php echo __('phonefake.discover'); ?>" title="<?php echo __('phonefake.discover'); ?>">
+        <img src="./INDEX_LARAGON/Assets/Picture/phonefake.svg" alt="PhoneFake" width="22" height="22">
+      </button>
+      <?php else: ?>
+      <a class="phonefake-logo" href="/<?php echo htmlspecialchars($phonefake_slug, ENT_QUOTES); ?>/" aria-label="<?php echo __('phonefake.open'); ?>" title="<?php echo __('phonefake.open'); ?>">
+        <img src="./INDEX_LARAGON/Assets/Picture/phonefake.svg" alt="PhoneFake" width="22" height="22">
+      </a>
+      <?php endif; ?>
+      <!-- Language selector -->
+      <nav class="lang-selector" aria-label="<?php echo __('header.language'); ?>">
+        <?php foreach (getSupportedLangs() as $code): ?>
+          <a href="<?php echo langUrl($code); ?>" hreflang="<?php echo $code; ?>" lang="<?php echo $code; ?>" class="lang-option<?php echo getLang() === $code ? ' active' : ''; ?>"<?php echo getLang() === $code ? ' aria-current="true"' : ''; ?>><?php echo strtoupper($code); ?></a>
+        <?php endforeach; ?>
+      </nav>
+    </div>
 
     <!-- Fixed burger button -->
     <button class="btn btn-outline-secondary burger-menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTools" aria-controls="offcanvasTools" aria-label="<?php echo __('header.tools_info'); ?>" title="<?php echo __('header.tools_info'); ?>">
@@ -74,6 +98,9 @@
         </button>
         <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#menuPrefsModal">
           <i class="ion-ios-gear-outline" aria-hidden="true"></i> <?php echo __('burger.customize_menu'); ?>
+        </button>
+        <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#menuEditorModal">
+          <i class="ion-ios-compose-outline" aria-hidden="true"></i> <?php echo __('menuedit.title'); ?>
         </button>
         <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#a11yModal">
           <i class="ion-ios-body-outline" aria-hidden="true"></i> <?php echo __('burger.accessibility'); ?>

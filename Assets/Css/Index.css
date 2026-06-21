@@ -508,11 +508,45 @@ pre {
 }
 
 /* --- Language selector --- */
-.lang-selector {
+/* Fixed cluster holding the PhoneFake logo + the language bar, anchored to the
+   left of the burger button. Flex so the logo naturally sits before the bar. */
+.header-right-tools {
     position: fixed;
     top: 1rem;
     right: 4.5rem;
     z-index: 1040;
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+}
+
+.phonefake-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background: rgba(33, 37, 41, .9);
+    border: 1px solid #495057;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background .15s;
+}
+.phonefake-logo:hover,
+.phonefake-logo:focus-visible {
+    background: #343a40;
+    border-color: #adb5bd;
+    transform: translateY(-1px);
+}
+.phonefake-logo img {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.lang-selector {
     display: flex;
     gap: 4px;
     background: rgba(33, 37, 41, .9);
@@ -546,9 +580,20 @@ pre {
 }
 
 @media (max-width: 575.98px) {
-    .lang-selector {
+    .header-right-tools {
         top: .5rem;
         right: 3.5rem;
+        gap: .35rem;
+    }
+    .phonefake-logo {
+        width: 34px;
+        height: 34px;
+    }
+    .phonefake-logo img {
+        width: 18px;
+        height: 18px;
+    }
+    .lang-selector {
         padding: 2px 3px;
         gap: 2px;
     }
@@ -798,4 +843,140 @@ body.a11y-spacing * {
 body.a11y-cursor,
 body.a11y-cursor * {
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath d='M5 2 L5 21 L10 16 L13 22 L16 21 L13 15 L20 15 Z' fill='%23000' stroke='%23fff' stroke-width='1.5'/%3E%3C/svg%3E") 4 2, auto !important;
+}
+
+/* Featured site in the listing (PhoneFake / "appli") — logo + alias, shown first */
+.featured-site a {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-weight: 600;
+}
+.featured-site-logo {
+    vertical-align: middle;
+}
+.featured-site-alias {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: .85em;
+}
+
+/* ===================================================================
+   PhoneFake discovery modal
+   =================================================================== */
+.phonefake-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+}
+.phonefake-tagline {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: .8rem;
+}
+.phonefake-features {
+    line-height: 1.7;
+    padding-left: 1.2rem;
+    margin-bottom: .5rem;
+}
+.phonefake-where {
+    font-size: .85rem;
+    margin-top: .6rem;
+    border-left: 3px solid var(--border);
+    padding-left: .6rem;
+}
+.phonefake-note {
+    font-size: .85rem;
+    margin-top: .8rem;
+}
+
+/* ===================================================================
+   Menu editor modal
+   =================================================================== */
+.menu-editor-cat {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: .7rem .8rem;
+    margin-bottom: .8rem;
+    background: var(--surface-2);
+}
+.menu-editor-cat-head {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    flex-wrap: wrap;
+    margin-bottom: .6rem;
+}
+.menu-editor-cat-label {
+    font-weight: 600;
+    flex: 1 1 160px;
+    min-width: 120px;
+}
+.menu-editor-cat-label-input {
+    flex: 1 1 160px;
+    min-width: 120px;
+}
+.menu-editor-icon-input {
+    flex: 0 1 160px;
+    min-width: 110px;
+}
+.menu-editor-badge {
+    display: inline-block;
+    margin-left: .5rem;
+    padding: .1rem .45rem;
+    font-size: .68rem;
+    font-weight: 600;
+    border-radius: 999px;
+    background: var(--border);
+    color: var(--text);
+    vertical-align: middle;
+}
+.menu-editor-icbtn {
+    padding: .1rem .45rem;
+    line-height: 1.2;
+}
+.menu-editor-links {
+    padding-left: .4rem;
+    border-left: 2px solid var(--border);
+}
+.menu-editor-link {
+    display: flex;
+    align-items: flex-start;
+    gap: .4rem;
+    margin-bottom: .4rem;
+}
+.menu-editor-link-ctrls {
+    display: flex;
+    gap: .25rem;
+    flex: 0 0 auto;
+    padding-top: .15rem;
+}
+.menu-editor-link-fields {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: .4rem;
+    flex: 1 1 auto;
+}
+.menu-editor-empty {
+    font-size: .85rem;
+    margin: .2rem 0 .4rem;
+}
+.menu-editor-status {
+    margin-top: .8rem;
+    min-height: 1.2em;
+    font-size: .9rem;
+}
+.menu-editor-status.is-ok    { color: var(--ok); }
+.menu-editor-status.is-error { color: var(--accent); }
+
+@media (max-width: 575.98px) {
+    .menu-editor-link {
+        flex-wrap: wrap;
+    }
+    .menu-editor-link-fields {
+        grid-template-columns: 1fr;
+    }
 }
