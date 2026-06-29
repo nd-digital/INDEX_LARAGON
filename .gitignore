@@ -22,3 +22,6 @@ Thumbs.db
 # Internal working notes (not published on GitHub)
 /CLAUDE.md
 /memory/
+
+# Playwright MCP test artifacts
+.playwright-mcp/
