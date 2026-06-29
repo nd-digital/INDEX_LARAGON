@@ -171,6 +171,9 @@ include('./INDEX_LARAGON/Partials/Head.php');
         $dirPath     = '.'; // current directory (www/) to list
         $files       = [];
         $directories = [];
+        // Image files are never projects or browsable tools — only stray files
+        // (exports, screenshots…). Hide them from the loose-files listing.
+        $hidden_file_exts = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg', 'bmp', 'ico', 'avif'];
 
         $dir = opendir($dirPath);
         if ($dir === false) {
@@ -184,6 +187,10 @@ include('./INDEX_LARAGON/Partials/Head.php');
             if (is_dir($dirPath . '/' . $element)) {
               $directories[] = mb_strtolower($element);
             } else {
+              // Skip stray image files (kept out of the workspace listing).
+              if (in_array(strtolower(pathinfo($element, PATHINFO_EXTENSION)), $hidden_file_exts, true)) {
+                continue;
+              }
               $files[] = $element;
             }
           }
