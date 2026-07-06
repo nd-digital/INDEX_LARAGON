@@ -128,6 +128,30 @@ function read_log_lines(string $path): array {
 $log_access     = read_log_lines('./INDEX_LARAGON/LOG/access.log');
 $log_intrusions = read_log_lines('./INDEX_LARAGON/LOG/intrusions.log');
 
+// Quick liveness probe for a local dev service (host + port). Short timeout so a
+// stopped service never noticeably slows the page down.
+function dev_tool_online(string $host, int $port): bool {
+  $conn = @fsockopen($host, $port, $errno, $errstr, 0.3);
+  if ($conn) { fclose($conn); return true; }
+  return false;
+}
+
+// Development tools shown in their own dashboard section. Extensible: append a
+// tool (Adminer, etc.) here and it renders automatically.
+//   label/desc : i18n keys · url : opened in a new tab · icon : Ionicons class
+//   check      : [host, port] live probe (optional) · hint : start command shown
+//                as a tooltip when the service is down (optional)
+$dev_tools = [
+  [
+    'label' => 'tools.mailpit',
+    'desc'  => 'tools.mailpit_desc',
+    'url'   => 'http://localhost:8025',
+    'icon'  => 'ion-ios-email-outline',
+    'check' => ['127.0.0.1', 8025],
+    'hint'  => 'pm2 start C:\\laragon\\bin\\mailpit\\mailpit.exe --name mailpit',
+  ],
+];
+
 // Raw menu structure + translated category labels, exposed to the menu editor (JS).
 $menu_for_js = json_decode(@file_get_contents(__DIR__ . '/Menu/menu.json'), true);
 if (!is_array($menu_for_js)) $menu_for_js = [];
@@ -239,6 +263,38 @@ include('./INDEX_LARAGON/Partials/Head.php');
         ?>
       </section>
     </div>
+
+    <!-- BEGIN dev tools -->
+    <div class="Info">
+      <h2 class="Title_List"><?php echo __('tools.section_title'); ?></h2>
+      <section class="Border_Box_Simple">
+        <ul class="dev-tools-list">
+          <?php foreach ($dev_tools as $tool):
+            $online = isset($tool['check']) ? dev_tool_online($tool['check'][0], $tool['check'][1]) : true;
+            $state  = $online ? 'active' : 'stopped';
+            $stateLabel = $online ? __('tools.status_active') : __('tools.status_stopped');
+            // When the service is down, surface the start command as a tooltip.
+            $tip = (!$online && !empty($tool['hint'])) ? __('tools.stopped_hint', ['cmd' => $tool['hint']]) : '';
+            ?>
+            <li class="dev-tool">
+              <a class="dev-tool-link" href="<?php echo htmlspecialchars($tool['url']); ?>"
+                 target="_blank" rel="noopener"
+                 aria-label="<?php echo htmlspecialchars(__($tool['label']) . ' — ' . $stateLabel); ?>"
+                 <?php if ($tip !== ''): ?>title="<?php echo htmlspecialchars($tip); ?>"<?php endif; ?>>
+                <span class="dev-tool-status is-<?php echo $state; ?>" aria-hidden="true"></span>
+                <i class="<?php echo htmlspecialchars($tool['icon']); ?>" aria-hidden="true"></i>
+                <span class="dev-tool-text">
+                  <span class="dev-tool-title"><?php echo htmlspecialchars(__($tool['label'])); ?></span>
+                  <span class="dev-tool-desc"><?php echo htmlspecialchars(__($tool['desc'])); ?></span>
+                </span>
+                <span class="dev-tool-badge is-<?php echo $state; ?>"><?php echo htmlspecialchars($stateLabel); ?></span>
+              </a>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      </section>
+    </div>
+    <!-- END dev tools -->
   </main>
   <footer class="site-footer">
     <div class="footer-links">
