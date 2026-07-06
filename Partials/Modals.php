@@ -255,6 +255,7 @@
               <li><?php echo __('readme.f_a11y'); ?></li>
               <li><?php echo __('readme.f_customize'); ?></li>
               <li><?php echo __('readme.f_menuedit'); ?></li>
+              <li><?php echo __('readme.f_mailpit'); ?></li>
             </ul>
             <h6 style="color:#e94560; border-bottom:1px solid #0f3460; padding-bottom:.4rem; margin:1.1rem 0 .6rem;"><?php echo __('readme.usage_title'); ?></h6>
             <ul style="line-height:1.7; padding-left:1.2rem;">

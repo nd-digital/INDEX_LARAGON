@@ -861,76 +861,19 @@ body.a11y-cursor * {
     font-size: .85em;
 }
 
-/* --- Development tools section (extensible tiles with a live status dot) --- */
-.dev-tools-list {
-    list-style: none;
-    margin: 0;
-    padding: .3rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .6rem;
-}
-.dev-tool {
-    flex: 1 1 260px;
-    min-width: 0;
-}
-.dev-tool-link {
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    padding: .7rem .9rem;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--surface-2);
-    color: var(--text);
-    text-decoration: none;
-    transition: background .15s, border-color .15s;
-}
-.dev-tool-link:hover {
-    background: var(--surface);
-    border-color: var(--accent);
-}
-.dev-tool-link > i {
-    font-size: 1.35rem;
-    flex-shrink: 0;
-}
-/* Live status dot: green (up) / grey (down). Never the sole status cue —
-   a text badge repeats it for colour-blind and screen-reader users. */
-.dev-tool-status {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    background: var(--text-muted);
-}
-.dev-tool-status.is-active {
-    background: var(--ok);
-    box-shadow: 0 0 6px var(--ok);
-}
-.dev-tool-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-    flex: 1;
-    min-width: 0;
-}
-.dev-tool-title {
-    font-weight: 600;
-}
-.dev-tool-desc {
-    font-size: .8rem;
-    color: var(--text-muted);
-}
-.dev-tool-badge {
-    font-size: .72rem;
-    padding: .1rem .55rem;
+/* Dev-tool live status pill shown in the burger menu. Text (not colour alone)
+   so it stays readable for colour-blind and screen-reader users:
+   green "active" when the service answers, grey "stopped" otherwise. */
+.tool-status-badge {
+    margin-left: auto;
+    font-size: .7rem;
+    padding: .05rem .55rem;
     border-radius: 999px;
     border: 1px solid var(--text-muted);
     color: var(--text-muted);
-    flex-shrink: 0;
     white-space: nowrap;
 }
-.dev-tool-badge.is-active {
+.tool-status-badge.is-active {
     color: var(--ok);
     border-color: var(--ok);
 }

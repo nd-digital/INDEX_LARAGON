@@ -87,6 +87,23 @@
         <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#adminerModal">
           <i class="ion-ios-browsers-outline" aria-hidden="true"></i> <?php echo __('burger.adminer'); ?>
         </button>
+        <?php // External dev tools (Mailpit, …) with a live status pill — see $dev_tools in index.php.
+        foreach (($dev_tools ?? []) as $tool):
+          $online     = isset($tool['check']) ? dev_tool_online($tool['check'][0], $tool['check'][1]) : true;
+          $stateLabel = $online ? __('tools.status_active') : __('tools.status_stopped');
+          // Tooltip: the start command when the service is down, otherwise the
+          // tool's description.
+          $title = (!$online && !empty($tool['hint']))
+                 ? __('tools.stopped_hint', ['cmd' => $tool['hint']])
+                 : (isset($tool['desc']) ? __($tool['desc']) : '');
+          ?>
+          <a class="offcanvas-tools-link" href="<?php echo htmlspecialchars($tool['url']); ?>" target="_blank" rel="noopener"
+             aria-label="<?php echo htmlspecialchars(__($tool['label']) . ' — ' . $stateLabel); ?>"
+             <?php if ($title !== ''): ?>title="<?php echo htmlspecialchars($title); ?>"<?php endif; ?>>
+            <i class="<?php echo htmlspecialchars($tool['icon']); ?>" aria-hidden="true"></i> <?php echo htmlspecialchars(__($tool['label'])); ?>
+            <span class="tool-status-badge <?php echo $online ? 'is-active' : ''; ?>"><?php echo htmlspecialchars($stateLabel); ?></span>
+          </a>
+        <?php endforeach; ?>
         <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#journalModal">
           <i class="ion-ios-list-outline" aria-hidden="true"></i> <?php echo __('burger.connection_log'); ?>
           <?php if (count($log_intrusions) > 0): ?>

@@ -19,6 +19,7 @@ Tableau de bord d'accueil pour le dossier `www/` d'un serveur local (Laragon, th
 - 🧭 **Menu latéral** de liens utiles au développement, classés par catégorie (Git, Docker, SEO, IA, bases de données, sécurité…).
 - ➕ **Création rapide de projet** (avec structure de dossiers optionnelle).
 - 🛠️ **Outil intégré** : Adminer (gestion des bases MySQL).
+- 📮 **Mailpit** : raccourci vers l'attrape-emails de dev local (SMTP `localhost:1025`, interface `localhost:8025`), avec indicateur d'état actif/arrêté dans le menu.
 - 🌍 **Multilingue** : FR / EN / ES / IT / DE.
 - ♿ **Accessibilité réglable** : thème clair/sombre, taille du texte, contraste élevé, police dyslexie, modes daltonisme, réduction des animations.
 - 🎛️ **Menu personnalisable** : activer/désactiver le menu, choisir les catégories affichées.
@@ -64,6 +65,7 @@ Home dashboard for the `www/` folder of a local server (Laragon, theoretically c
 - 🧭 **Side menu** of useful dev links, sorted by category (Git, Docker, SEO, AI, databases, security…).
 - ➕ **Quick project creation** (with an optional folder structure).
 - 🛠️ **Built-in tool**: Adminer (MySQL database management).
+- 📮 **Mailpit**: shortcut to the local dev-email catcher (SMTP `localhost:1025`, UI `localhost:8025`), with a live active/stopped status in the menu.
 - 🌍 **Multilingual**: FR / EN / ES / IT / DE.
 - ♿ **Adjustable accessibility**: light/dark theme, text size, high contrast, dyslexia font, colour-blindness modes, reduced motion.
 - 🎛️ **Customizable menu**: enable/disable the menu, choose which categories show.
@@ -109,6 +111,7 @@ Panel de inicio para la carpeta `www/` de un servidor local (Laragon, teóricame
 - 🧭 **Menú lateral** de enlaces útiles para el desarrollo, por categoría (Git, Docker, SEO, IA, bases de datos, seguridad…).
 - ➕ **Creación rápida de proyectos** (con estructura de carpetas opcional).
 - 🛠️ **Herramienta integrada**: Adminer (gestión de bases MySQL).
+- 📮 **Mailpit**: acceso al capturador de correos de desarrollo local (SMTP `localhost:1025`, interfaz `localhost:8025`), con indicador de estado activo/detenido en el menú.
 - 🌍 **Multilingüe**: FR / EN / ES / IT / DE.
 - ♿ **Accesibilidad ajustable**: tema claro/oscuro, tamaño del texto, alto contraste, fuente para dislexia, modos de daltonismo, reducción de animaciones.
 - 🎛️ **Menú personalizable**: activar/desactivar el menú, elegir las categorías mostradas.
@@ -154,6 +157,7 @@ Dashboard iniziale per la cartella `www/` di un server locale (Laragon, teoricam
 - 🧭 **Menu laterale** di link utili allo sviluppo, per categoria (Git, Docker, SEO, IA, database, sicurezza…).
 - ➕ **Creazione rapida di progetti** (con struttura di cartelle opzionale).
 - 🛠️ **Strumento integrato**: Adminer (gestione database MySQL).
+- 📮 **Mailpit**: scorciatoia al catcher di email di sviluppo locale (SMTP `localhost:1025`, interfaccia `localhost:8025`), con indicatore di stato attivo/fermo nel menu.
 - 🌍 **Multilingue**: FR / EN / ES / IT / DE.
 - ♿ **Accessibilità regolabile**: tema chiaro/scuro, dimensione del testo, alto contrasto, font dislessia, modalità daltonismo, riduzione delle animazioni.
 - 🎛️ **Menu personalizzabile**: attiva/disattiva il menu, scegli le categorie mostrate.

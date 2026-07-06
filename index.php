@@ -263,38 +263,6 @@ include('./INDEX_LARAGON/Partials/Head.php');
         ?>
       </section>
     </div>
-
-    <!-- BEGIN dev tools -->
-    <div class="Info">
-      <h2 class="Title_List"><?php echo __('tools.section_title'); ?></h2>
-      <section class="Border_Box_Simple">
-        <ul class="dev-tools-list">
-          <?php foreach ($dev_tools as $tool):
-            $online = isset($tool['check']) ? dev_tool_online($tool['check'][0], $tool['check'][1]) : true;
-            $state  = $online ? 'active' : 'stopped';
-            $stateLabel = $online ? __('tools.status_active') : __('tools.status_stopped');
-            // When the service is down, surface the start command as a tooltip.
-            $tip = (!$online && !empty($tool['hint'])) ? __('tools.stopped_hint', ['cmd' => $tool['hint']]) : '';
-            ?>
-            <li class="dev-tool">
-              <a class="dev-tool-link" href="<?php echo htmlspecialchars($tool['url']); ?>"
-                 target="_blank" rel="noopener"
-                 aria-label="<?php echo htmlspecialchars(__($tool['label']) . ' — ' . $stateLabel); ?>"
-                 <?php if ($tip !== ''): ?>title="<?php echo htmlspecialchars($tip); ?>"<?php endif; ?>>
-                <span class="dev-tool-status is-<?php echo $state; ?>" aria-hidden="true"></span>
-                <i class="<?php echo htmlspecialchars($tool['icon']); ?>" aria-hidden="true"></i>
-                <span class="dev-tool-text">
-                  <span class="dev-tool-title"><?php echo htmlspecialchars(__($tool['label'])); ?></span>
-                  <span class="dev-tool-desc"><?php echo htmlspecialchars(__($tool['desc'])); ?></span>
-                </span>
-                <span class="dev-tool-badge is-<?php echo $state; ?>"><?php echo htmlspecialchars($stateLabel); ?></span>
-              </a>
-            </li>
-          <?php endforeach; ?>
-        </ul>
-      </section>
-    </div>
-    <!-- END dev tools -->
   </main>
   <footer class="site-footer">
     <div class="footer-links">
