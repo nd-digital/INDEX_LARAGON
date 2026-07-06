@@ -265,6 +265,10 @@
               <li><?php echo __('readme.u4'); ?></li>
             </ul>
             <p style="font-size:.85rem; color:#888; margin-top:1rem;">
+              <?php echo __('readme.mailpit_note'); ?>
+              <a href="https://mailpit.axllent.org" target="_blank" rel="noopener" style="color:#09f;">mailpit.axllent.org</a>
+            </p>
+            <p style="font-size:.85rem; color:#888; margin-top:1rem;">
               <?php echo __('readme.author'); ?>
               <a href="https://nicolas-degabriel.digital" target="_blank" style="color:#09f;">nicolas-degabriel.digital</a>
             </p>

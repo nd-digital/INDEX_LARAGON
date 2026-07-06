@@ -200,6 +200,21 @@ Les fichiers à placer à la racine de `www/` sont fournis dans [`install/www-ro
 - **`index.php`** — point d'entrée (obligatoire) · *entry point (required)*
 - **`.htaccess`** — restreint tout `www/` au localhost (réseau = 403) + force HTTPS (recommandé) · *restricts all of `www/` to localhost (network = 403), forces HTTPS (recommended)*
 
+### Mailpit — emails de dev · dev email (optionnel · optional)
+
+Mailpit **n'est pas embarqué** dans ce dépôt : c'est un outil local séparé qui capture les emails de dev (SMTP `localhost:1025`, interface `http://localhost:8025`). Le dashboard ne fait que **pointer vers son interface** et afficher son état. · *Mailpit is **not bundled** in this repo: it is a separate local tool that catches dev emails (SMTP `localhost:1025`, UI `http://localhost:8025`). The dashboard only **links to its UI** and shows its status.*
+
+- **Site officiel · Official site** : <https://mailpit.axllent.org> — dépôt · repo : <https://github.com/axllent/mailpit>
+- **Laragon** : souvent déjà fourni dans `C:\laragon\bin\mailpit\mailpit.exe`. Pour le garder actif en permanence · *often already provided at `C:\laragon\bin\mailpit\mailpit.exe`. To keep it running* :
+
+  ```bash
+  pm2 start C:\laragon\bin\mailpit\mailpit.exe --name mailpit
+  pm2 save
+  ```
+
+- **WAMP / MAMP / XAMPP / autre · other** : télécharger le binaire depuis le site officiel puis le lancer (il écoute alors SMTP `1025` / UI `8025`). · *download the binary from the official site and run it (it then listens on SMTP `1025` / UI `8025`).*
+- **Côté application · App side** : router le SMTP de dev vers `127.0.0.1:1025`. · *point your dev SMTP to `127.0.0.1:1025`.*
+
 ### Structure (`INDEX_LARAGON/`)
 
 ```text

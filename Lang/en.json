@@ -247,6 +247,7 @@
     "menuedit.confirm_reload": "Discard your unsaved changes?",
     "readme.f_menuedit": "Built-in menu editor: add, edit, reorder categories and links (saved on this machine).",
     "readme.f_mailpit": "Mailpit shortcut (in the ≡ menu): opens the local dev-email catcher, with a live active/stopped status.",
+    "readme.mailpit_note": "Mailpit is a separate dev tool — bundled with Laragon (bin/mailpit); on WAMP/MAMP/XAMPP, download the single binary (SMTP 1025 · UI 8025) from",
     "phonefake.where": "How it works: each subfolder of www/appli/ that contains an index.html appears as a testable app inside PhoneFake.",
     "menuedit.icon_hint": "The icon is an Ionicons class (e.g. ion-bag, ion-code) shown next to the category.",
     "menuedit.choose_icon": "Change icon",
