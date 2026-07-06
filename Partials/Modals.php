@@ -280,7 +280,22 @@
       </div>
     </div>
 
-    <!-- Modal README -->
+    <!-- Modal README file: renders the real README.md (blocked over HTTP, read from disk in index.php) -->
+    <div class="modal fade" id="readmeFileModal" tabindex="-1" aria-labelledby="readmeFileLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down modal-readme">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="readmeFileLabel">README</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
+          </div>
+          <div class="modal-body">
+            <div class="readme-md"><?php echo $readme_html; ?></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Help (curated, translated summary — opened from the burger menu) -->
     <div class="modal fade" id="readmeModal" tabindex="-1" aria-labelledby="readmeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down modal-readme">
         <div class="modal-content">

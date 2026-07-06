@@ -720,6 +720,43 @@ button.offcanvas-tools-link {
         max-width: 50vw;
     }
 }
+/* Rendered README.md inside its modal */
+.readme-md {
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+.readme-md h1 { font-size: 1.5rem; margin: .2rem 0 .8rem; }
+.readme-md h2 {
+    font-size: 1.25rem;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: .3rem;
+    margin: 1.5rem 0 .6rem;
+}
+.readme-md h3 { font-size: 1.05rem; margin: 1.1rem 0 .5rem; }
+.readme-md ul { padding-left: 1.3rem; }
+.readme-md li { margin: .2rem 0; }
+.readme-md a { color: var(--link); }
+.readme-md code {
+    background: var(--surface-2);
+    padding: .1rem .35rem;
+    border-radius: 4px;
+    font-size: .9em;
+}
+.readme-md pre {
+    background: var(--surface-2);
+    padding: .7rem .9rem;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+.readme-md pre code { background: none; padding: 0; }
+.readme-md blockquote {
+    border-left: 3px solid var(--accent);
+    margin: .6rem 0;
+    padding: .2rem .8rem;
+    color: var(--text-muted);
+}
+.readme-md hr { border: 0; border-top: 1px solid var(--border); margin: 1.3rem 0; }
 
 /* --- Update-available banner (read-only GitHub version check) --- */
 .update-banner {

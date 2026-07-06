@@ -160,6 +160,58 @@ foreach (scandir('.') ?: [] as $e) {
 }
 sort($www_projects, SORT_STRING | SORT_FLAG_CASE);
 
+// Render the project README.md so the dashboard can show it in a modal. The file
+// is blocked over HTTP by .htaccess (*.md -> 404), so it is read from disk and
+// converted here with a minimal Markdown -> HTML pass (only the subset the file
+// uses). All text is escaped first; only safe tags are emitted.
+function md_inline(string $s): string {
+  $s = htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+  $s = preg_replace_callback('/`([^`]+)`/', fn($m) => '<code>' . $m[1] . '</code>', $s);
+  $s = preg_replace('/!\[[^\]]*\]\([^)]*\)/', '', $s); // drop images (GitHub-only)
+  $s = preg_replace('/\[([^\]]+)\]\(([^)\s]+)[^)]*\)/', '<a href="$2" target="_blank" rel="noopener">$1</a>', $s);
+  $s = preg_replace('#&lt;(https?://[^&\s]+)&gt;#', '<a href="$1" target="_blank" rel="noopener">$1</a>', $s);
+  $s = preg_replace('/\*\*([^*]+)\*\*/', '<strong>$1</strong>', $s);
+  $s = preg_replace('/(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/', '<em>$1</em>', $s);
+  return $s;
+}
+function render_markdown(string $md): string {
+  if ($md === '') return '';
+  $lines = preg_split('/\r\n|\r|\n/', $md);
+  $html = ''; $inCode = false; $inList = false; $para = [];
+  $flushPara = function () use (&$para, &$html) {
+    if ($para) { $html .= '<p>' . md_inline(implode(' ', $para)) . '</p>'; $para = []; }
+  };
+  $closeList = function () use (&$inList, &$html) {
+    if ($inList) { $html .= '</ul>'; $inList = false; }
+  };
+  foreach ($lines as $line) {
+    if (preg_match('/^\s*```/', $line)) {
+      if ($inCode) { $html .= '</code></pre>'; $inCode = false; }
+      else { $flushPara(); $closeList(); $html .= '<pre><code>'; $inCode = true; }
+      continue;
+    }
+    if ($inCode) { $html .= htmlspecialchars(preg_replace('/^ {1,2}/', '', $line), ENT_QUOTES, 'UTF-8') . "\n"; continue; }
+    $t = trim($line);
+    if ($t === '') { $flushPara(); $closeList(); continue; }
+    if (preg_match('/^(-{3,}|\*{3,})$/', $t)) { $flushPara(); $closeList(); $html .= '<hr>'; continue; }
+    if (preg_match('/^(#{1,6})\s+(.*)$/', $t, $m)) {
+      $flushPara(); $closeList(); $lvl = strlen($m[1]);
+      $html .= "<h$lvl>" . md_inline($m[2]) . "</h$lvl>"; continue;
+    }
+    if (preg_match('/^>\s?(.*)$/', $t, $m)) {
+      $flushPara(); $closeList(); $html .= '<blockquote>' . md_inline($m[1]) . '</blockquote>'; continue;
+    }
+    if (preg_match('/^[-*+]\s+(.*)$/', $t, $m)) {
+      $flushPara(); if (!$inList) { $html .= '<ul>'; $inList = true; }
+      $html .= '<li>' . md_inline($m[1]) . '</li>'; continue;
+    }
+    $closeList(); $para[] = $t;
+  }
+  $flushPara(); if ($inList) $html .= '</ul>'; if ($inCode) $html .= '</code></pre>';
+  return $html;
+}
+$readme_html = render_markdown((string) @file_get_contents(__DIR__ . '/README.md'));
+
 // Raw menu structure + translated category labels, exposed to the menu editor (JS).
 $menu_for_js = json_decode(@file_get_contents(__DIR__ . '/Menu/menu.json'), true);
 if (!is_array($menu_for_js)) $menu_for_js = [];
@@ -283,7 +335,7 @@ include('./INDEX_LARAGON/Partials/Head.php');
         github.com/nd-digital
       </a>
       <span class="footer-sep" aria-hidden="true">·</span>
-      <button type="button" class="footer-link-btn" data-bs-toggle="modal" data-bs-target="#readmeModal">
+      <button type="button" class="footer-link-btn" data-bs-toggle="modal" data-bs-target="#readmeFileModal">
         <span aria-hidden="true">📖</span> README
       </button>
     </div>
