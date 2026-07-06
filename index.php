@@ -284,7 +284,7 @@ include('./INDEX_LARAGON/Partials/Head.php');
       </a>
       <span class="footer-sep" aria-hidden="true">·</span>
       <button type="button" class="footer-link-btn" data-bs-toggle="modal" data-bs-target="#readmeModal">
-        <span aria-hidden="true">📖</span> <?php echo __('burger.readme'); ?>
+        <span aria-hidden="true">📖</span> README
       </button>
     </div>
   </footer>
