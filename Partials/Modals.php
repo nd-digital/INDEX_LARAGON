@@ -282,7 +282,7 @@
 
     <!-- Modal README -->
     <div class="modal fade" id="readmeModal" tabindex="-1" aria-labelledby="readmeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-scrollable modal-fullscreen-sm-down">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down modal-readme">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="readmeModalLabel"><?php echo __('burger.readme'); ?></h5>

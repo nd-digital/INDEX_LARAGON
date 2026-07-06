@@ -282,6 +282,10 @@ include('./INDEX_LARAGON/Partials/Head.php');
         </svg>
         github.com/nd-digital
       </a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <button type="button" class="footer-link-btn" data-bs-toggle="modal" data-bs-target="#readmeModal">
+        <span aria-hidden="true">📖</span> <?php echo __('burger.readme'); ?>
+      </button>
     </div>
   </footer>
   <script src='./INDEX_LARAGON/Assets/JQuery/Jquery-3-6-0.js'></script>

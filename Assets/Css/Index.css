@@ -686,7 +686,8 @@ button.offcanvas-tools-link {
     flex-wrap: wrap;
 }
 .footer-links a,
-.footer-links a:visited {
+.footer-links a:visited,
+.footer-links .footer-link-btn {
     color: var(--text-muted);
     text-decoration: none;
     display: inline-flex;
@@ -695,11 +696,29 @@ button.offcanvas-tools-link {
     transition: color .15s;
 }
 .footer-links a:hover,
-.footer-links a:focus-visible {
+.footer-links a:focus-visible,
+.footer-links .footer-link-btn:hover,
+.footer-links .footer-link-btn:focus-visible {
     color: #fff;
+}
+/* Footer README trigger: a button that must read like the sibling links. */
+.footer-link-btn {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
 }
 .footer-sep {
     color: #4a5878;
+}
+/* README modal opened from the footer/burger: centred, half the screen wide
+   on tablets and up (full screen on phones via modal-fullscreen-sm-down). */
+@media (min-width: 576px) {
+    .modal-readme {
+        width: 50vw;
+        max-width: 50vw;
+    }
 }
 
 /* --- Update-available banner (read-only GitHub version check) --- */
