@@ -167,7 +167,13 @@ sort($www_projects, SORT_STRING | SORT_FLAG_CASE);
 function md_inline(string $s): string {
   $s = htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
   $s = preg_replace_callback('/`([^`]+)`/', fn($m) => '<code>' . $m[1] . '</code>', $s);
-  $s = preg_replace('/!\[[^\]]*\]\([^)]*\)/', '', $s); // drop images (GitHub-only)
+  // Images: keep them, but rewrite README-relative paths (resolved from the repo
+  // root) to the web path the dashboard is served under (www/ -> ./INDEX_LARAGON/).
+  $s = preg_replace_callback('/!\[([^\]]*)\]\(([^)\s]+)[^)]*\)/', function ($m) {
+    $src = $m[2];
+    if (!preg_match('#^(?:https?:)?//#', $src)) $src = './INDEX_LARAGON/' . ltrim($src, './');
+    return '<img src="' . $src . '" alt="' . $m[1] . '" style="max-width:100%;height:auto;">';
+  }, $s);
   $s = preg_replace('/\[([^\]]+)\]\(([^)\s]+)[^)]*\)/', '<a href="$2" target="_blank" rel="noopener">$1</a>', $s);
   $s = preg_replace('#&lt;(https?://[^&\s]+)&gt;#', '<a href="$1" target="_blank" rel="noopener">$1</a>', $s);
   $s = preg_replace('/\*\*([^*]+)\*\*/', '<strong>$1</strong>', $s);
