@@ -574,3 +574,20 @@
     if (input.value && !frames[0].getAttribute('src')) load(normalize(input.value));
   });
 })();
+
+// --- README modal: make the in-doc anchor links (the language table of contents)
+// scroll within the modal body instead of navigating the whole page. ---
+(function () {
+  var md = document.querySelector('#readmeFileModal .readme-md');
+  if (!md) return;
+  md.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = decodeURIComponent((a.getAttribute('href') || '').slice(1));
+    if (!id) return;
+    var target = md.querySelector('[id="' + id.replace(/(["\\])/g, '\\$1') + '"]');
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ block: 'start' });
+  });
+})();

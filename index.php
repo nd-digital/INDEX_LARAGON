@@ -174,16 +174,30 @@ function md_inline(string $s): string {
     if (!preg_match('#^(?:https?:)?//#', $src)) $src = './INDEX_LARAGON/' . ltrim($src, './');
     return '<img src="' . $src . '" alt="' . $m[1] . '" style="max-width:100%;height:auto;">';
   }, $s);
-  $s = preg_replace('/\[([^\]]+)\]\(([^)\s]+)[^)]*\)/', '<a href="$2" target="_blank" rel="noopener">$1</a>', $s);
+  // Links: in-page anchors (#…, the language table of contents) stay in the modal;
+  // everything else opens in a new tab.
+  $s = preg_replace_callback('/\[([^\]]+)\]\(([^)\s]+)[^)]*\)/', function ($m) {
+    if ($m[2] !== '' && $m[2][0] === '#') return '<a href="' . $m[2] . '">' . $m[1] . '</a>';
+    return '<a href="' . $m[2] . '" target="_blank" rel="noopener">' . $m[1] . '</a>';
+  }, $s);
   $s = preg_replace('#&lt;(https?://[^&\s]+)&gt;#', '<a href="$1" target="_blank" rel="noopener">$1</a>', $s);
   $s = preg_replace('/\*\*([^*]+)\*\*/', '<strong>$1</strong>', $s);
   $s = preg_replace('/(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/', '<em>$1</em>', $s);
   return $s;
 }
+// GitHub-compatible heading slug: lowercase, drop punctuation (keep letters incl.
+// accents, digits, spaces, hyphens), then each space -> hyphen. Matches the
+// #français / #annexe--appendix-… anchors the README already links to.
+function md_slug(string $text): string {
+  $t = preg_replace('/[`*_]/', '', $text);
+  $t = mb_strtolower($t, 'UTF-8');
+  $t = preg_replace('/[^\p{L}\p{N} \-]+/u', '', $t);
+  return str_replace(' ', '-', $t);
+}
 function render_markdown(string $md): string {
   if ($md === '') return '';
   $lines = preg_split('/\r\n|\r|\n/', $md);
-  $html = ''; $inCode = false; $inList = false; $para = [];
+  $html = ''; $inCode = false; $inList = false; $para = []; $slugs = [];
   $flushPara = function () use (&$para, &$html) {
     if ($para) { $html .= '<p>' . md_inline(implode(' ', $para)) . '</p>'; $para = []; }
   };
@@ -202,7 +216,11 @@ function render_markdown(string $md): string {
     if (preg_match('/^(-{3,}|\*{3,})$/', $t)) { $flushPara(); $closeList(); $html .= '<hr>'; continue; }
     if (preg_match('/^(#{1,6})\s+(.*)$/', $t, $m)) {
       $flushPara(); $closeList(); $lvl = strlen($m[1]);
-      $html .= "<h$lvl>" . md_inline($m[2]) . "</h$lvl>"; continue;
+      // Dedupe like GitHub (slug, slug-1, slug-2…) so ids stay unique.
+      $base = md_slug($m[2]);
+      if (isset($slugs[$base])) { $slug = $base . '-' . (++$slugs[$base]); }
+      else { $slugs[$base] = 0; $slug = $base; }
+      $html .= "<h$lvl id=\"$slug\">" . md_inline($m[2]) . "</h$lvl>"; continue;
     }
     if (preg_match('/^>\s?(.*)$/', $t, $m)) {
       $flushPara(); $closeList(); $html .= '<blockquote>' . md_inline($m[1]) . '</blockquote>'; continue;
