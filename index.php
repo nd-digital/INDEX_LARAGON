@@ -152,6 +152,14 @@ $dev_tools = [
   ],
 ];
 
+// Project folders in www/, offered as quick picks in the responsive-preview tool.
+$www_projects = [];
+foreach (scandir('.') ?: [] as $e) {
+  if ($e === '' || $e[0] === '.' || in_array($e, ['index.php', 'INDEX_LARAGON', 'Assets'], true)) continue;
+  if (is_dir($e)) $www_projects[] = $e;
+}
+sort($www_projects, SORT_STRING | SORT_FLAG_CASE);
+
 // Raw menu structure + translated category labels, exposed to the menu editor (JS).
 $menu_for_js = json_decode(@file_get_contents(__DIR__ . '/Menu/menu.json'), true);
 if (!is_array($menu_for_js)) $menu_for_js = [];

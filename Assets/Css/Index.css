@@ -878,6 +878,67 @@ body.a11y-cursor * {
     border-color: var(--ok);
 }
 
+/* --- Responsive preview (one page shown at 3 viewports side by side) --- */
+.rp-toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: .8rem;
+}
+.rp-toolbar-label {
+    font-weight: 600;
+    margin: 0;
+}
+.rp-url {
+    flex: 1 1 260px;
+    max-width: 480px;
+}
+.rp-hint {
+    font-size: .8rem;
+    color: var(--text-muted);
+    flex: 1 1 100%;
+}
+.rp-stage {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+.rp-frame {
+    margin: 0;
+    flex: 0 0 auto;
+}
+.rp-frame-label {
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: .35rem;
+    text-align: center;
+}
+.rp-frame-dim {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+/* The viewport clips the iframe, which renders at true device size and is
+   scaled down via a CSS variable so all three fit on one row. */
+.rp-viewport {
+    width: calc(var(--w) * var(--scale));
+    height: calc(var(--h) * var(--scale));
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fff;
+}
+.rp-iframe {
+    width: var(--w);
+    height: var(--h);
+    border: 0;
+    transform: scale(var(--scale));
+    transform-origin: top left;
+}
+
 /* ===================================================================
    PhoneFake discovery modal
    =================================================================== */

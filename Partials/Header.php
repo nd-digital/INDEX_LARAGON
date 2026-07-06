@@ -104,6 +104,9 @@
             <span class="tool-status-badge <?php echo $online ? 'is-active' : ''; ?>"><?php echo htmlspecialchars($stateLabel); ?></span>
           </a>
         <?php endforeach; ?>
+        <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#responsiveModal">
+          <i class="ion-ios-monitor-outline" aria-hidden="true"></i> <?php echo __('responsive.title'); ?>
+        </button>
         <button type="button" class="offcanvas-tools-link" data-bs-toggle="modal" data-bs-target="#journalModal">
           <i class="ion-ios-list-outline" aria-hidden="true"></i> <?php echo __('burger.connection_log'); ?>
           <?php if (count($log_intrusions) > 0): ?>

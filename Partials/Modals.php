@@ -30,6 +30,51 @@
       </div>
     </div>
 
+    <!-- Responsive preview: one page shown at 3 viewports side by side.
+         Client-only (iframes to a localhost URL the user picks); no server write. -->
+    <div class="modal fade" id="responsiveModal" tabindex="-1" aria-labelledby="responsiveLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="responsiveLabel"><?php echo __('responsive.title'); ?></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php echo __('common.close'); ?>"></button>
+          </div>
+          <div class="modal-body">
+            <form id="rpForm" class="rp-toolbar">
+              <label for="rpUrl" class="rp-toolbar-label"><?php echo __('responsive.url_label'); ?></label>
+              <input list="rpProjects" id="rpUrl" class="form-control form-control-sm rp-url" type="text"
+                     placeholder="<?php echo htmlspecialchars(__('responsive.url_ph')); ?>" autocomplete="off">
+              <datalist id="rpProjects">
+                <?php foreach ($www_projects as $p): ?>
+                  <option value="/<?php echo htmlspecialchars(rawurlencode($p)); ?>/"><?php echo htmlspecialchars($p); ?></option>
+                <?php endforeach; ?>
+              </datalist>
+              <button type="submit" class="btn btn-sm btn-danger rp-load"><?php echo __('responsive.load'); ?></button>
+              <span class="rp-hint"><?php echo __('responsive.hint'); ?></span>
+            </form>
+            <div class="rp-stage" id="rpStage">
+              <?php
+              $rp_devices = [
+                ['key' => 'desktop', 'w' => 1280, 'h' => 800,  'scale' => 0.32],
+                ['key' => 'tablet',  'w' => 768,  'h' => 1024, 'scale' => 0.42],
+                ['key' => 'mobile',  'w' => 375,  'h' => 667,  'scale' => 0.62],
+              ];
+              foreach ($rp_devices as $d): ?>
+                <figure class="rp-frame">
+                  <figcaption class="rp-frame-label">
+                    <?php echo __('responsive.' . $d['key']); ?> <span class="rp-frame-dim"><?php echo $d['w'] . '×' . $d['h']; ?></span>
+                  </figcaption>
+                  <div class="rp-viewport" style="--w:<?php echo $d['w']; ?>px; --h:<?php echo $d['h']; ?>px; --scale:<?php echo $d['scale']; ?>;">
+                    <iframe class="rp-iframe" data-device="<?php echo $d['key']; ?>" title="<?php echo htmlspecialchars(__('responsive.' . $d['key'])); ?>" referrerpolicy="no-referrer"></iframe>
+                  </div>
+                </figure>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Connection log modal -->
     <div class="modal fade" id="journalModal" tabindex="-1" aria-labelledby="journalModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-scrollable modal-fullscreen-sm-down">

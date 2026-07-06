@@ -524,3 +524,53 @@
   bridge('menuEditorToPrefs', 'menuEditorModal', 'menuPrefsModal');
   bridge('menuPrefsToEditor', 'menuPrefsModal', 'menuEditorModal');
 })();
+
+// --- Responsive preview: load one URL into the 3 device iframes (desktop /
+// tablet / mobile). Client-only; the last URL is remembered locally. ---
+(function () {
+  var modal = document.getElementById('responsiveModal');
+  if (!modal) return;
+  var form   = modal.querySelector('#rpForm');
+  var input  = modal.querySelector('#rpUrl');
+  var frames = modal.querySelectorAll('.rp-iframe');
+  var KEY = 'index_laragon_rp_url';
+
+  // Resolve user input to a loadable URL: full http(s) URL as-is, other schemes
+  // rejected, anything else treated as a path under this origin (localhost).
+  function normalize(v) {
+    v = (v || '').trim();
+    if (!v) return '';
+    if (/^https?:\/\//i.test(v)) return v;
+    if (/^[a-z][a-z0-9+.\-]*:\/\//i.test(v)) return '';
+    if (v.charAt(0) !== '/') v = '/' + v;
+    return window.location.origin + v;
+  }
+  function load(url) {
+    if (!url) return;
+    for (var i = 0; i < frames.length; i++) frames[i].src = url;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var url = normalize(input.value);
+    if (!url) return;
+    try { localStorage.setItem(KEY, input.value); } catch (err) {}
+    load(url);
+  });
+
+  // Prefill with the last previewed URL (or the first project) when opening.
+  modal.addEventListener('show.bs.modal', function () {
+    if (input.value) return;
+    var last = '';
+    try { last = localStorage.getItem(KEY) || ''; } catch (err) {}
+    if (!last) {
+      var firstOpt = modal.querySelector('#rpProjects option');
+      if (firstOpt) last = firstOpt.value;
+    }
+    input.value = last;
+  });
+  modal.addEventListener('shown.bs.modal', function () {
+    input.focus();
+    if (input.value && !frames[0].getAttribute('src')) load(normalize(input.value));
+  });
+})();
