@@ -2,8 +2,8 @@
 
 ![Aperçu du tableau de bord INDEX_LARAGON](docs/screenshot.png)
 
-**Langues · Languages · Idiomas · Lingue :**
-🇫🇷 [Français](#français) · 🇬🇧 [English](#english) · 🇪🇸 [Español](#español) · 🇮🇹 [Italiano](#italiano)
+**Langues · Languages · Idiomas · Lingue · Sprachen :**
+🇫🇷 [Français](#français) · 🇬🇧 [English](#english) · 🇪🇸 [Español](#español) · 🇮🇹 [Italiano](#italiano) · 🇩🇪 [Deutsch](#deutsch)
 
 ---
 
@@ -188,6 +188,52 @@ Dashboard iniziale per la cartella `www/` di un server locale (Laragon, teoricam
 
 - I log (`LOG/*.log`) contengono indirizzi IP e **non sono versionati**.
 - Il `.htaccess` opzionale (vedi l'[Appendice](#annexe--appendix--anexo--appendice)) limita tutto `www/` a localhost.
+
+---
+
+## Deutsch
+
+Start-Dashboard für den `www/`-Ordner eines lokalen Servers (Laragon, theoretisch kompatibel mit WAMP / MAMP / XAMPP). Es ersetzt die Standard-Indexseite durch ein praktisches Dashboard für die Entwicklung.
+
+> **Nur localhost**: Jede Anfrage von einer anderen IP erhält eine gefälschte 404-Seite und wird protokolliert.
+
+### Funktionen
+
+- 📂 **Auflistung** der Websites und Dateien in `www/` (alphabetisch, nach Buchstaben gruppiert).
+- 🧭 **Seitenmenü** mit nützlichen Dev-Links, nach Kategorie sortiert (Git, Docker, SEO, KI, Datenbanken, Sicherheit…).
+- ➕ **Schnelle Projekterstellung** (mit optionaler Ordnerstruktur).
+- 🛠️ **Integriertes Tool**: Adminer (MySQL-Datenbankverwaltung).
+- 📮 **Mailpit**: Verknüpfung zum lokalen Dev-E-Mail-Catcher (SMTP `localhost:1025`, Oberfläche `localhost:8025`), mit Live-Status aktiv/gestoppt im Menü.
+- 🌍 **Mehrsprachig**: FR / EN / ES / IT / DE.
+- ♿ **Anpassbare Barrierefreiheit**: helles/dunkles Theme, Textgröße, hoher Kontrast, Legasthenie-Schriftart, Farbenblindheits-Modi, reduzierte Animationen.
+- 🎛️ **Anpassbares Menü**: Menü aktivieren/deaktivieren, angezeigte Kategorien wählen.
+- ✏️ **Integrierter Menü-Editor**: Kategorien und Links hinzufügen, bearbeiten und neu anordnen (lokal gespeichert).
+- 🔔 **Update-Banner**: prüft die neueste auf GitHub veröffentlichte Version.
+- 🔒 **Sicherheit**: localhost-Beschränkung, CSRF-Schutz, Protokollierung von Zugriffen und Eindringversuchen.
+
+### Stack
+
+- PHP 8.0+ (prozedural, ohne Framework, ohne Abhängigkeiten)
+- Bootstrap 5 + jQuery 3.6 (mitgeliefert)
+- Speicherung in Flat Files (Logs), keine Datenbank
+
+### Installation
+
+1. Dieses Repository nach `www/INDEX_LARAGON/` klonen:
+
+   ```bash
+   cd c:/laragon/www
+   git clone <url> INDEX_LARAGON
+   ```
+
+2. **Den Inhalt von [`install/www-root/`](install/www-root/) in das `www/`-Stammverzeichnis kopieren**: `index.php` (ersetzt die Standarddatei) und optional `.htaccess` (Netzwerkbeschränkung).
+
+3. `http://localhost/` öffnen.
+
+### Sicherheit & Datenschutz
+
+- Die Logs (`LOG/*.log`) enthalten IP-Adressen und werden **nicht versioniert**.
+- Die optionale `.htaccess` (siehe [Anhang](#annexe--appendix--anexo--appendice)) beschränkt das gesamte `www/` auf localhost.
 
 ---
 
