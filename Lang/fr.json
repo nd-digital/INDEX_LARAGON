@@ -259,5 +259,9 @@
     "phonefake.where": "Fonctionnement : chaque sous-dossier de www/appli/ contenant un index.html apparaît comme une appli testable dans PhoneFake.",
     "menuedit.icon_hint": "L'icône est une classe Ionicons (ex. ion-bag, ion-code) affichée à côté de la catégorie.",
     "menuedit.choose_icon": "Changer l'icône",
-    "menuedit.search_icon": "Rechercher une icône…"
+    "menuedit.search_icon": "Rechercher une icône…",
+    "usage.one": "codeur utilise actuellement INDEX Laragon",
+    "usage.many": "codeurs utilisent actuellement INDEX Laragon",
+    "footer.stars_title": "Étoiles GitHub",
+    "footer.downloads_title": "Téléchargements des releases"
 }

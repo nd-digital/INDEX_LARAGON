@@ -259,5 +259,9 @@
     "phonefake.where": "Cómo funciona: cada subcarpeta de www/appli/ que contiene un index.html aparece como una app de prueba dentro de PhoneFake.",
     "menuedit.icon_hint": "El icono es una clase Ionicons (p. ej. ion-bag, ion-code) que se muestra junto a la categoría.",
     "menuedit.choose_icon": "Cambiar icono",
-    "menuedit.search_icon": "Buscar un icono…"
+    "menuedit.search_icon": "Buscar un icono…",
+    "usage.one": "programador está usando INDEX Laragon ahora",
+    "usage.many": "programadores están usando INDEX Laragon ahora",
+    "footer.stars_title": "Estrellas en GitHub",
+    "footer.downloads_title": "Descargas de las versiones"
 }

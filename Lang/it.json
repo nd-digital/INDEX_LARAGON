@@ -259,5 +259,9 @@
     "phonefake.where": "Come funziona: ogni sottocartella di www/appli/ che contiene un index.html appare come app testabile dentro PhoneFake.",
     "menuedit.icon_hint": "L'icona è una classe Ionicons (es. ion-bag, ion-code) mostrata accanto alla categoria.",
     "menuedit.choose_icon": "Cambia icona",
-    "menuedit.search_icon": "Cerca un'icona…"
+    "menuedit.search_icon": "Cerca un'icona…",
+    "usage.one": "programmatore sta usando INDEX Laragon ora",
+    "usage.many": "programmatori stanno usando INDEX Laragon ora",
+    "footer.stars_title": "Stelle su GitHub",
+    "footer.downloads_title": "Download delle release"
 }

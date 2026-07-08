@@ -87,6 +87,39 @@
   } catch (e) {}
 })();
 
+// --- GitHub popularity (stars + release downloads), READ-ONLY.
+// The browser reads PUBLIC repo data straight from the GitHub API (nothing about
+// the user is sent — same idea as a shields.io badge). Cached 6h in localStorage,
+// async and non-blocking: offline / rate-limited → badges simply stay hidden. ---
+(function () {
+  var REPO = 'nd-digital/INDEX_LARAGON';
+  var KEY = 'index_laragon_ghstats';
+  var TTL = 6 * 3600 * 1000;
+  var starEl = document.getElementById('ghStars'), starN = document.getElementById('ghStarCount');
+  var dlEl = document.getElementById('ghDownloads'), dlN = document.getElementById('ghDlCount');
+  if (!starEl && !dlEl) return;
+  function fmt(n) { return n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1) + 'k' : String(n); }
+  function render(stars, downloads) {
+    if (starEl && typeof stars === 'number') { starN.textContent = fmt(stars); starEl.hidden = false; }
+    if (dlEl && typeof downloads === 'number' && downloads > 0) { dlN.textContent = fmt(downloads); dlEl.hidden = false; }
+  }
+  try {
+    var c = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if (c && (Date.now() - c.t) < TTL) { render(c.s, c.d); return; }
+  } catch (e) {}
+  function j(u) { return fetch(u, { headers: { 'Accept': 'application/vnd.github+json' } }).then(function (r) { return r.ok ? r.json() : Promise.reject(); }); }
+  Promise.all([
+    j('https://api.github.com/repos/' + REPO).then(function (d) { return d.stargazers_count; }).catch(function () { return null; }),
+    // Sum download_count across all release assets (0 until assets are attached).
+    j('https://api.github.com/repos/' + REPO + '/releases?per_page=100')
+      .then(function (rs) { return rs.reduce(function (s, r) { return s + (r.assets || []).reduce(function (a, x) { return a + (x.download_count || 0); }, 0); }, 0); })
+      .catch(function () { return null; })
+  ]).then(function (res) {
+    render(res[0], res[1]);
+    try { localStorage.setItem(KEY, JSON.stringify({ s: res[0], d: res[1], t: Date.now() })); } catch (e) {}
+  }).catch(function () {});
+})();
+
 // --- Side-menu customization (preferences stored locally; no server write).
 // Enable/disable the whole menu and choose which categories are shown. ---
 (function () {
@@ -590,4 +623,48 @@
     e.preventDefault();
     target.scrollIntoView({ block: 'start' });
   });
+})();
+
+// --- Live usage counter: subscribes to a prod SSE endpoint and shows a
+// split-flap "N coders currently using INDEX Laragon" badge in the footer.
+// Anonymous (nothing about the user is sent) and non-blocking: when the server
+// is unreachable it keeps the last value stored in localStorage, and only stays
+// hidden when nothing has ever been received. Label is translated via window.__
+// (usage.one / usage.many), falling back to French. ---
+(function () {
+  const COUNTER_URL = 'https://live.nicolas-degabriel.digital/events?app=index';
+  const wrap = document.getElementById('usageCounter');
+  const flaps = document.getElementById('ucFlaps');
+  const label = document.getElementById('ucLabel');
+  if (!wrap || !flaps || !label || !COUNTER_URL || typeof EventSource === 'undefined') return;
+  const KEY = 'indexlaragon-usage';
+  // Use the i18n bridge when a real translation exists, otherwise the fallback.
+  function t(key, fallback) {
+    return (typeof window.__ === 'function' && window.__(key) !== key) ? window.__(key) : fallback;
+  }
+  function setFlap(el, ch) {
+    if (el.dataset.d === ch) return;
+    el.dataset.d = ch;
+    el.textContent = ch;
+    el.classList.remove('flip');
+    void el.offsetWidth;
+    el.classList.add('flip');
+  }
+  function render(n) {
+    if (!Number.isFinite(n) || n < 0) return;
+    const s = String(n);
+    while (flaps.children.length < s.length) { const f = document.createElement('span'); f.className = 'flap'; flaps.appendChild(f); }
+    while (flaps.children.length > s.length) flaps.removeChild(flaps.lastChild);
+    for (let i = 0; i < s.length; i++) setFlap(flaps.children[i], s[i]);
+    label.textContent = (n <= 1)
+      ? t('usage.one', 'codeur utilise actuellement INDEX Laragon')
+      : t('usage.many', 'codeurs utilisent actuellement INDEX Laragon');
+    wrap.hidden = false;
+  }
+  try { const v = parseInt(localStorage.getItem(KEY), 10); if (Number.isFinite(v)) render(v); } catch (e) {}
+  try {
+    const es = new EventSource(COUNTER_URL); let errs = 0;
+    es.onmessage = (ev) => { errs = 0; try { const d = JSON.parse(ev.data); if (typeof d.count === 'number') { render(d.count); try { localStorage.setItem(KEY, String(d.count)); } catch (e) {} } } catch (e) {} };
+    es.onerror = () => { if (++errs >= 6) es.close(); };
+  } catch (e) {}
 })();

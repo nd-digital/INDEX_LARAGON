@@ -259,5 +259,9 @@
     "phonefake.where": "How it works: each subfolder of www/appli/ that contains an index.html appears as a testable app inside PhoneFake.",
     "menuedit.icon_hint": "The icon is an Ionicons class (e.g. ion-bag, ion-code) shown next to the category.",
     "menuedit.choose_icon": "Change icon",
-    "menuedit.search_icon": "Search an icon…"
+    "menuedit.search_icon": "Search an icon…",
+    "usage.one": "coder is currently using INDEX Laragon",
+    "usage.many": "coders are currently using INDEX Laragon",
+    "footer.stars_title": "GitHub stars",
+    "footer.downloads_title": "Release downloads"
 }

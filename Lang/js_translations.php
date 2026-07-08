@@ -12,7 +12,7 @@ $lang = getLang();
 $all  = getTranslations();
 
 // Only send keys needed by JavaScript (clock, common, log, folder confirms, etc.)
-$js_prefixes = ['clock.', 'common.', 'log.', 'main.', 'folder.', 'api.', 'burger.', 'header.', 'learning.', 'sidebar.', 'menuedit.', 'phonefake.'];
+$js_prefixes = ['clock.', 'common.', 'log.', 'main.', 'folder.', 'api.', 'burger.', 'header.', 'learning.', 'sidebar.', 'menuedit.', 'phonefake.', 'usage.'];
 
 $js_data = [];
 foreach ($all as $key => $value) {

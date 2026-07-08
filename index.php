@@ -358,10 +358,19 @@ include('./INDEX_LARAGON/Partials/Head.php');
         </svg>
         github.com/nd-digital
       </a>
+      <!-- GitHub popularity (public repo data, read client-side; hidden until loaded) -->
+      <a class="footer-stars" id="ghStars" href="https://github.com/nd-digital/INDEX_LARAGON/stargazers" target="_blank" rel="noopener noreferrer" title="<?php echo __('footer.stars_title'); ?>" hidden><span aria-hidden="true">⭐</span> <span id="ghStarCount"></span></a>
+      <a class="footer-stars" id="ghDownloads" href="https://github.com/nd-digital/INDEX_LARAGON/releases" target="_blank" rel="noopener noreferrer" title="<?php echo __('footer.downloads_title'); ?>" hidden><span aria-hidden="true">⬇</span> <span id="ghDlCount"></span></a>
       <span class="footer-sep" aria-hidden="true">·</span>
       <button type="button" class="footer-link-btn" data-bs-toggle="modal" data-bs-target="#readmeFileModal">
         <span aria-hidden="true">📖</span> README
       </button>
+    </div>
+    <!-- Live usage counter (subscribes to a prod SSE endpoint; anonymous, non-blocking) -->
+    <div class="usage-counter" id="usageCounter" hidden aria-live="polite">
+      <span class="uc-icon" aria-hidden="true">👥</span>
+      <span class="uc-flaps" id="ucFlaps"></span>
+      <span class="uc-label" id="ucLabel"></span>
     </div>
   </footer>
   <script src='./INDEX_LARAGON/Assets/JQuery/Jquery-3-6-0.js'></script>
